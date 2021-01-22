@@ -1,0 +1,70 @@
+### GIT ###
+
+1. What is GIT?
+    -> Free and open source version control system.
+
+2. What is version control system?
+    -> The management of changes to documents,computer programs, large web sites and 
+    others collections of information.
+    We track our code changes in GIT.
+
+3. TERMS
+    Directory -> Folder
+    Terminal or command line -> interface of text commands
+    CLI -> command line interface
+    cd -> change Directory
+    Repository -> project
+    Github -> A website to host your Repository online
+
+4. Git commands
+    clone -> Bring a repository, that is hosted somewhere like github into a folder 
+    on your local machine
+    status -> check your status of ypur changes
+    add -> Track your files and changes your files
+    commit -> save your files in git
+    push -> Upload git commit to a remote repo like github
+    pull -> Download changes from remote repo to your local machine
+
+5. What is the difference between pull and clone.
+    Both are doing the same thing but 
+        clone is download the entire project to your local system.
+        You don't have working repo in your system.
+        
+        pull is download the All commits and branch in the remote repo to local system. 
+        it means repo is already in your system.
+
+    You Can do by Two ways,
+
+    5.1. Cloning the Remote Repo to your Local host
+
+        example: git clone https://github.com/user-name/repository.git
+
+    5.2. Pulling the Remote Repo to your Local host
+
+        First you have to create a git local repo by,
+
+        example: git init or git init repo-name then, git pull https://github.com/user-name/repository.git
+
+        That's all, All commits and branch in the remote repo now available in the local repository of your computer.
+
+6. Local git workflow
+    git init                                                            ==> initializaion of repository
+        |
+        |
+    git status                                                          ==> check the status of your new and modified files
+        |
+        |
+    git add . (for all new and modified files)                          ==> changes files to ready to commit
+    git add file_name
+        |
+        |
+    git commit -m "heading message" -m "description(option)"            ==> save the changes in local repo
+        |
+        |
+    git remote -v                                                       ==> check the origin set in correct/working repo
+    git remote add origin https://github.com/partha-bro/study-repo.git  ==> add remote working repo to origin for short hand
+    git push origin master                                              ==> upload the local repo to remote repo
+        |
+        |
+    git pull https://github.com/partha-bro/study-repo.git               ==> download the changes of the remote repo
+
