@@ -48,6 +48,9 @@
         That's all, All commits and branch in the remote repo now available in the local repository of your computer.
 
 6. Local git workflow
+    touch README.md                                                     ==> Before create a repo make a README.md file
+        |               ( for heading: use # like <h1> tag and for sub heading: use ## like <h2> tag 
+        |                   for text or description: use simple text )
     git init                                                            ==> initializaion of repository
         |
         |
