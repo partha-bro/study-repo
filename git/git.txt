@@ -88,7 +88,7 @@
     git checkout -b "branch_name"                       ==> create and goto the same branch at same command(shorthand)
         |
         |
-    git diff                                            ==> code difference/modified between two branches
+    git diff "branch_name"                              ==> code difference/modified between two branches
         |
         |
     git merge "branch_name" master                      ==> merge branch to master
