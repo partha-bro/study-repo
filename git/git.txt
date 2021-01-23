@@ -62,6 +62,7 @@
         |
         |
     git commit -m "heading message" -m "description(option)"            ==> save the changes in local repo
+    git commit -am "heading message" -m "description(option)"           ==> shorthand for add and commit the code
         |
         |
     git remote -v                                                       ==> check the origin set in correct/working repo
@@ -94,6 +95,9 @@
     git merge "branch_name" master                      ==> merge branch to master
         |
         |
+    git push origin "branch_name"                       ==> upload branch changes to github repo
+        |
+        | 
     git branch -d "branch_name"                         ==> delete the branch after merging is complete
         |                                                   if not then show error 
         |
