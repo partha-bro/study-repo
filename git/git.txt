@@ -71,3 +71,31 @@
         |
     git pull https://github.com/partha-bro/study-repo.git               ==> download the changes of the remote repo
 
+7. What is Git branch
+    A branch represents an independent line of development. 
+    Branches serve as an abstraction of the edit/stage/commit process.
+
+8. Common options
+    git branch                                          ==> list all the branches
+        |
+        |
+    git branch "branch_name"                            ==> create new branch
+        |
+        |
+    git checkout "branch_name" or master                ==> goto the specific branch
+        |
+        |
+    git checkout -b "branch_name"                       ==> create and goto the same branch at same command(shorthand)
+        |
+        |
+    git diff                                            ==> code difference/modified between two branches
+        |
+        |
+    git merge "branch_name" master                      ==> merge branch to master
+        |
+        |
+    git branch -d "branch_name"                         ==> delete the branch after merging is complete
+        |                                                   if not then show error 
+        |
+    git branch -D "branch_name"                         ==> if you want to delete the branch without merging
+
