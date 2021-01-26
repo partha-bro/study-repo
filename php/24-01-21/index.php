@@ -1,4 +1,5 @@
 <?php
+### TOPIC NAME: Variable and Constants ###
 
 // variable of variables
     $male = 'Arjun bro';
@@ -24,7 +25,7 @@
     $_SESSION — Session variables
     $_ENV — Environment variables
     $_COOKIE — HTTP Cookies
-    $php_errormsg — The previous error message
+    $php_errormsg — The previous error message # use error_get_last ( )
     $http_response_header — HTTP response headers
     $argc — The number of arguments passed to script
     $argv — Array of arguments passed to script
