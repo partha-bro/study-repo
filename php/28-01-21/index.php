@@ -297,3 +297,6 @@ Percentage : <?= $percentage ?>
 <h2>Result:</h2>
 Final Result <?= ($percentage >= 60)  ? "Passed" : "Failed"; 
 ?>
+<hr/>
+<button><a href="assingment.php"> ASSIGNMENT </a></button>
+<hr/>

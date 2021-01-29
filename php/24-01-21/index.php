@@ -115,3 +115,7 @@
     $amuri = 'parida';
     $village = 'amuri';
     echo $$village . " title of my name <br/>";
+?>
+    <hr/>
+    <button><a href="assingment.php"> ASSIGNMENT </a></button>
+    <hr/>
