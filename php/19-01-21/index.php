@@ -1,6 +1,16 @@
 <?php
 
 ### TOPIC NAME: PHP Language Basics ###
+/*
+    1. Single line and multi line comment   Line = 15
+    2. Echo vs prit                         Line = 23
+    3. Variable declaration                 Line = 29
+    4. Add two value [integer and string]   Line = 34
+    5. Function with local value            Line = 44
+    6. Function with global value           Line = 52
+    7. Static value                         Line = 71
+    8. Superglobal value                    Line = 81
+*/
 
 #  single line comment
 // single line comment

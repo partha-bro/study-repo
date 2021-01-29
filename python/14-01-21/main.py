@@ -1,5 +1,17 @@
 ### Date: 14-1-2021
-
+"""
+    1. Concatenation                        Line = 15
+    2. User input                           Line = 28
+    3. int() function and split() function  Line = 33
+    4. Assign more than one value in one    Line = 42
+        assign op(=)
+    5. String formatting                    Line = 54
+    6. Exercise 1                           Line = 59
+    7. String indexing                      Line = 69
+    8. String slicing                       Line = 81
+    9. String slicing with step argument    Line = 89
+    10. Exercise 2                          Line = 93
+"""
 # only string concatination is possible
 
 first_name = 'DS'
@@ -27,7 +39,7 @@ total = int(number_one) + int(number_two)
 print(total) # output: 40 as two integer addition
 print('Total = '+str(total))  # total variable is integer so not concatetation with string [convert string]
 
-# more variables
+# Assign more than one value in one assign op(=)
 # initialization value to variable in one statement
 name, age = 'partha',25
 print('Your name is ' + name + ' and age is ' + str(age))
@@ -55,7 +67,7 @@ avg = (int(no_1)+int(no_2)+int(no_3))/3
 print(f'Your avg number is {avg}')
 
 # String indexing
-lan = "python"
+lang = "python"
 # char = start     end
 # p    =   0       -6
 # y    =   1       -5
@@ -63,18 +75,18 @@ lan = "python"
 # h    =   3       -3
 # o    =   4       -2
 # n    =   5       -1
-print(lan[1]) # y
-print(lan[-5]) # y
+print(lang[1]) # y
+print(lang[-5]) # y
 
 # String Slicing
 
-print(f'lan[0]= {lan[0]}') # p -> 0 index char
-print(f'lan[1:3]= {lan[1:3]}') # yt -> [starting index : stop index - 1]
-print(f'lan[:]= {lan[:]}') # python -> all char as a string
-print(f'lan[1:]= {lan[1:]}') # ython -> 1 index to last index of char
-print(f'lan[:4]= {lan[:4]}') # pyth -> 0 index to 3 index of char
+print(f'lang[0]= {lang[0]}') # p -> 0 index char
+print(f'lang[1:3]= {lang[1:3]}') # yt -> [starting index : stop index - 1]
+print(f'lang[:]= {lang[:]}') # python -> all char as a string
+print(f'lang[1:]= {lang[1:]}') # ython -> 1 index to last index of char
+print(f'lang[:4]= {lang[:4]}') # pyth -> 0 index to 3 index of char
 
-# Step argument
+# String slicing with step argument
 print('partha'[1:5:2]) # at -> 1 index to 4 index of char with 2 steps jump
 print('partha'[5::-2]) # at -> 5 index to 0 index of char with -2 steps jump [reverse]
 

@@ -1,5 +1,15 @@
 # 27-01-21
-
+"""
+    1. Infinity loop  Line = 6              Line = 13
+    2. For loop                             Line = 21
+    3. Exercise 1                           Line = 44
+    4. Exercise 2                           Line = 53
+    5. Break and continue                   Line = 73
+    6. MPDIFY NUMBER GUESSING GAME Exercise Line = 84
+    7. Step argument in range()             Line = 124
+    8. Go backword loop                     Line = 129
+    9. For loop using a string              Line = 134
+"""
 # infinity loop
 """
     Infinity loop means never ending loop and we want to stop it by pressing 'ctrl+c'
@@ -53,12 +63,12 @@ print(f'Total of each digits {num}: {total}')
 #   : 1
 # V : 1
 
-# name = 'Harshit Vashisth'
-# temp = ""
-# for i in range(len(name)):
-#     if name[i] not in temp:
-#         temp += name[i]
-#         print(f'{name[i]} : {name.count(name[i])}')
+name = 'Harshit Vashisth'
+temp = ""
+for i in range(len(name)):
+    if name[i] not in temp:
+        temp += name[i]
+        print(f'{name[i]} : {name.count(name[i])}')
 
 # break and continue
 for i in range(10):

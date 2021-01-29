@@ -1,21 +1,21 @@
 ### Date: 15-1-2021
-
+"""
 # String methods
 # Methods Lists
 
-# split()
-# len()
-# upper()
-# lower()
-# title()
-# count()
-# lstrip()
-# rstrip()
-# strip()
-# replace()
-# find()
-# center()
-
+    1. split()
+    2. len()            Line = 21
+    3. lower()          Line = 24
+    4. upper()          Line = 27
+    5. title()          Line = 30
+    6. count()          Line = 33
+    7. lstrip()         Line = 62
+    8. rstrip()         Line = 63
+    9. strip()          Line = 64
+    10. replace()       Line = 87
+    11. find()          Line = 87
+    12. center()        Line = 93
+"""
 name = 'Partha sarathi parida'
 
 # 1. length function

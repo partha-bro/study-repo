@@ -1,4 +1,16 @@
 ### GIT ###
+---------------------------------------------
+    1. What is GIT?
+    2. What is version control system?
+    3. TERMS:-
+    4. Git commands:-
+    5. What is the difference between pull and clone?
+    6. Local git workflow:-
+    7. What is Git branch?
+    8. Common options command on branch:-
+    9. How to undoing my changes in git?
+    10. What is fork in Github?
+---------------------------------------------
 
 1. What is GIT?
     -> Free and open source version control system.

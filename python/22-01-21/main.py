@@ -1,5 +1,21 @@
 ### Date: 22-1-2021
-
+"""
+	1. If statement						Line = 19
+	2. Pass statement					Line = 26
+	3. If-else statement				Line = 35
+	4. Nested if-else statement			Line = 41
+	5. Use random module 				Line = 53
+		and call randint(no1,no2)
+	6. Exercise 1						Line = 42
+	7. Exercise 2						Line = 69
+	8. If-elif-else statement			Line = 95
+	9. In Keyword use					Line = 115
+	10. Check empty or not				Line = 122
+	11. While loop						Line = 129
+	12. Exercise 3						Line = 135
+	13. Exercise 4						Line = 145
+	14. Exercise 5						Line = 167
+"""
 # if statement
 name, age = input('Enter your name with age using comma separated: ').split(",")
 age = int(age) # input field convert string to integer
@@ -116,7 +132,7 @@ while i<=5:
 	print(f'hello python {i}')
 	i += 1
 
-# EXERCISE 1
+# EXERCISE 3
 # Sum of n number using while loop 
 num = int(input('Enter your number: '))
 total = 0
@@ -126,7 +142,7 @@ while i<=num:
 	i += 1
 print(f'total sum of {num} is {total}')
 
-# EXERCISE 2
+# EXERCISE 4
 """
 	Ask user to input a number containing more than one digit
 	example - 1256
@@ -148,7 +164,7 @@ if num:
 else:
 	print('Please try to input again')
 
-# EXERCISE 3
+# EXERCISE 5
 """
 	ask a user for name
 	example - Harshit Vashisth

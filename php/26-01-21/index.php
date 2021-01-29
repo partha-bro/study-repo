@@ -1,5 +1,17 @@
 <?php
 ### TOPIC NAME: Expressions and Operators ###
+/*
+    1. Arithmatic op                Line = 34
+    2. Conditional/ternary op       Line = 83
+    3. increment/decrement op       Line = 191
+    4. Logical op                   Line = 87
+    5. Assignment op                Line = 163
+    6. comparision op               No data
+    7. Bitwise op                   Line = 208
+    8. Execution op                 Line = 247
+    9. Error control op             Line = 257
+    10. Operator Precedence         Line = 268
+*/
 
 // what is expression?
     // Expressions are evaluated into a result value or final value or single value

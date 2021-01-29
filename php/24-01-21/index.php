@@ -1,6 +1,16 @@
 <?php
 ### TOPIC NAME: Variable and Constants ###
 
+/*
+    1. Variable of variables    Line = 14
+    2. Predefind variables      Line = 25
+    3. isset() function         Line = 48
+    4. Define constant          Line = 66
+    5. Magical constant         Line = 76
+    6. Exercises                Line = 93
+    7. Assignment button        Line = 130
+*/
+
 // variable of variables
     $male = 'Arjun bro';
     

@@ -1,5 +1,10 @@
 ### Date: 13-1-2021
-
+"""
+    1. Single and multiple line comment     Line = 8
+    2. Escape sequence                      Line = 16
+    3. Division expresion                   Line = 21
+    4. To the power                         Line = 29
+"""
 # single line comment
 """
     multiple

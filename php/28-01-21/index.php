@@ -1,6 +1,18 @@
 <?php
 ### TOPIC NAME: Data Types ###
-
+/*
+    1. Integer                  Line = 33
+    2. float/double             Line = 55
+        2.1 round()
+        2.2 abs()
+    3. Bolean                   Line = 103
+    4. String                   Line = 128
+    5. Escape sequence          Line = 149
+        [ \t,\n,\b,\\,\',\"]
+    6. Null                     Line = 166
+    7. Exercises                Line = 188
+    8. Assignment button        Line = 311
+*/
 // What is Scalar data type?
 // scalar are data types that has single value like:
 // bolean 
@@ -175,7 +187,7 @@
     unset($name);
     echo ( !is_null($name) ) ? "Not Null" : "Empty" . PHP_EOL;
 ?>
-### EXCERCISE 1 ###
+<!-- ### EXCERCISE 1 ### -->
     <h1>Exercise 1: Use All Data Types</h1>
 
     <h2>Calculate the area using Length and breath using Integer:</h2>
