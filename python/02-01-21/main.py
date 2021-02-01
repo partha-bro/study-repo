@@ -1,17 +1,17 @@
 ### Date: 01-02-21 ###
 
 """
-    1. Fibonacci Series                                 Line = 7
-    2. Print Fibonacci series by using user's input,    Line = 31
+    1. Fibonacci Series                                 Line = 20
+    2. Print Fibonacci series by using user's input,    Line = 37
          how many numbers want to print 
-    3. Default parameter in function                    Line = 46
-    4. Global variable scope                            Line = 64
-    5. List                                             Line = 74
-    6. Slicing using in list                            Line = 84
-    7. Assign value in list                             Line = 87
-    8. Add to the list                                  Line = 95
+    3. Default parameter in function                    Line = 59
+    4. Global variable scope                            Line = 75
+    5. List                                             Line = 85
+    6. Slicing using in list                            Line = 93
+    7. Assign value in list                             Line = 96
+    8. Add to the list                                  Line = 100
         8.1 append()
-    9. Insert data in perticaular index                 Line = 104
+    9. Insert data in perticaular index                 Line = 107
         9.1 insert()
     10. List concatination                              Line = 112
     11. Extended method                                 Line = 115
