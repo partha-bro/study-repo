@@ -1,20 +1,34 @@
 ### Date: 01-02-21 ###
 
 """
-    1. Fibonacci Series                                 Line = 20
-    2. Print Fibonacci series by using user's input,    Line = 37
+    1. Fibonacci Series                                 Line = 7
+    2. Print Fibonacci series by using user's input,    Line = 31
          how many numbers want to print 
-    3. Default parameter in function                    Line = 59
-    4. Global variable scope                            Line = 75
-    5. List                                             Line = 85
-    6. Slicing using in list                            Line = 93
-    7. Assign value in list                             Line = 96
-    8. Add to the list                                  Line = 100
+    3. Default parameter in function                    Line = 46
+    4. Global variable scope                            Line = 64
+    5. List                                             Line = 74
+    6. Slicing using in list                            Line = 84
+    7. Assign value in list                             Line = 87
+    8. Add to the list                                  Line = 95
         8.1 append()
-    9. Insert data in perticaular index                 Line = 107
+    9. Insert data in perticaular index                 Line = 104
         9.1 insert()
     10. List concatination                              Line = 112
     11. Extended method                                 Line = 115
+	11.1 extend()
+    12. Delete data from list
+	12.1 pop()
+	12.2 del op
+	12.3 remove()
+    13. find data from list
+	13.1 in keyword
+    14. Count() method on list
+    15. sorted() function on list
+    16. sort() method on list
+    17. reverse() method on list
+    18. copy () method on list
+    19. clear() method on list
+    
 """
 
 # Fibinacci Series using function
@@ -127,3 +141,78 @@ print(f'extend list of mixed: {mixed}')
 
 mixed.append(numbers)
 print(f'append list of mixed: {mixed}')
+
+# Delete data from list
+data = [1,2,3,4,5,6,7]
+# pop method
+# pop method without index: delete last data from list
+data.pop()
+print(f'delete data using pop: {data}')
+# pop method with index: delete index data from list
+data.pop(2)
+print(f'delete data using pop: {data}')
+
+# del operator
+del data[2]
+print(f'delete data using del: {data}')
+del mixed
+data = 'delete list and assign a new string'
+print(data)
+
+# remove method
+data = [1,2,3,4,5,6,7]
+# remove data from list using value not index
+data.remove(4)
+print(f'delete data using remove: {data}')
+
+"""
+	NOTE:
+		Add data to list
+		1. append('value') : Add data in last position take value
+		2. extend('list or value') : extend the list in one data to one index
+		3. insert(index,'value') : Insert data in perticaular index
+
+		Delete data from list
+		1. pop()/pop('index') : delete data in last position take value or index
+		2. remove('index') : it is use to remove data using value
+		3. del/del list['index'] : delete data in perticaular index and delete the 				variable
+"""
+
+# find data from list by using IN keyword
+if 4 in data:
+	print(f'4 is present {data}')
+else:
+	print(f'4 is not present {data}')
+
+data = ['mango','apple','grapes','orange','apple']
+# Count() method on list
+print(f"no of apple in list: {data.count('apple')}")
+
+# sorted() function on list
+print(f"Sorted() function the list: {sorted(data)}")
+
+# sort() method on list
+data.sort()
+print(f"Sort the list: {data}")
+
+"""
+	Difference between sort, sorted and reverse in list:
+	sort() is a method, call by list and result assign to that list.
+	Does change original data.we can not direct use {list.sort()} in 	print instead of use {list}.
+	syntax: list.sort()
+	sorted() is a function, this function can take list on argument 	and result assign in different variable. Does not change original 		data.
+	syntax: list_new = sorted(list)
+	reverse() is a method, call by list and result assign to that list.
+	Does change original data.we can not direct use {list.reverse()} 	in print instead of use {list}.
+	syntax: list.reverse()
+"""
+# reverse() method on list
+data.reverse()
+print(f"Reverse Sort the list: {data}")
+# copy () method on list
+data_copy = data.copy()
+print(f"Copy the list: {data_copy}")
+# clear() method on list
+data.clear()
+print(f"Clear the list: {data}")
+
