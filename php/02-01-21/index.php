@@ -1,9 +1,9 @@
 <?php
 ### TOPIC NAME: Namespaces ###
 /*
-    1. Namespaces                   Line = 
-    2. Learn sub namespaces         Line =
-    3. Namespace Constant           Line = 
+    1. Namespaces                   Line = 9
+    2. Learn sub namespaces         Line = 31
+    3. Namespace Constant           Line = 40
 */
 
 // Namespaces [Like folder stucture use for not conflict same name of classes/function/constants, etc]

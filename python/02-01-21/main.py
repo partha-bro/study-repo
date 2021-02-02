@@ -15,19 +15,19 @@
         9.1 insert()
     10. List concatination                              Line = 112
     11. Extended method                                 Line = 115
-	11.1 extend()
-    12. Delete data from list
-	12.1 pop()
-	12.2 del op
-	12.3 remove()
-    13. find data from list
-	13.1 in keyword
-    14. Count() method on list
-    15. sorted() function on list
-    16. sort() method on list
-    17. reverse() method on list
-    18. copy () method on list
-    19. clear() method on list
+	    11.1 extend()
+    12. Delete data from list                           Line = 145
+        12.1 pop()
+        12.2 del op
+        12.3 remove()
+    13. find data from list                             Line = 181
+	    13.1 in keyword
+    14. Count() method on list                          Line = 188
+    15. sorted() function on list                       Line = 191
+    16. sort() method on list                           Line = 194
+    17. reverse() method on list                        Line = 209
+    18. copy () method on list                          Line = 212
+    19. clear() method on list                          Line = 216
     
 """
 
