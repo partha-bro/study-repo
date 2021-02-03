@@ -28,7 +28,7 @@
     17. reverse() method on list                        Line = 209
     18. copy () method on list                          Line = 212
     19. clear() method on list                          Line = 216
-    
+    20. Exercise 1-shuffle() method of random module    Line = 219
 """
 
 # Fibinacci Series using function
@@ -216,3 +216,25 @@ print(f"Copy the list: {data_copy}")
 data.clear()
 print(f"Clear the list: {data}")
 
+## Exercise 1
+"""
+    Define a prgram that take input by user's how many number of elements in a list
+    Given list's element is index of new element like below example
+    a list of 5 value of index is equal to a list of 5 index
+    Example
+    n = 6  
+    a =     [0,4,5,2,1,3]
+    output: [0,1,3,5,4,2]      5 = a[2], next a[5] = 3 is assign in output list[2]
+"""
+import random
+num = int(input('Enter your number to list element: '))
+a = []                                  # input list
+opt = []                                # output list
+for i in range(0,num):                  # make input list of random number
+    a.append(i)
+random.shuffle(a)
+print(f'Your input list: {a}')
+for i in a:
+    opt.append(a[i])
+
+print(f'Your output list: {opt}')
