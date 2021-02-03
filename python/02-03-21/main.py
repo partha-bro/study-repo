@@ -1,21 +1,21 @@
 ### Date: 03-02-21 ###
 
 """
-    1. Compare list                         Line = 18
+    1. Compare list                         Line = 21
         1.1 is op
         1.2 == op
-    2. Join and split method                Line = 37
+    2. Join and split method                Line = 41
         2.1 split()
         2.2 join()
-    3. List vs strings                      Line = 51
-    4. Looping in lists                     Line = 68
-    5. type()                               Line = 90
-    6. Generate lists with range functions  Line = 97
-    7. index() method                       Line = 102
-    8. pass list to a functions             Line = 106
-    9. Exercise 1                           Line = 115 
-    10. Exercise 2                          Line = 133
-    11. Exercise 3                          Line = 181
+    3. List vs strings                      Line = 55
+    4. Looping in lists                     Line = 72
+    5. type()                               Line = 94
+    6. Generate lists with range functions  Line = 101
+    7. index() method                       Line = 106
+    8. pass list to a functions             Line = 110
+    9. Exercise 1                           Line = 119 
+    10. Exercise 2                          Line = 137
+    11. Exercise 3                          Line = 185
 """
 
 ## is vs == for compare list
