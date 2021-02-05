@@ -2,22 +2,25 @@
 ### TOPIC NAME: Strings ###
 
 /*
-    1. How to Combine Two Strings                   Line = 22
-    2. HereDoc                                      Line = 37
-    3. NowDoc                                       Line = 65
-    4. strlen() - Find Length of String             Line = 102
-    5. Find Something in a String                   Line = 114
+    1. How to Combine Two Strings                   Line = 25
+    2. HereDoc                                      Line = 40
+    3. NowDoc                                       Line = 68
+    4. strlen() - Find Length of String             Line = 105
+    5. Find Something in a String                   Line = 117
         5.1 strpos()
         5.2 stripos()
-    6. Number of Words                              Line = 159
-    7. Replace Strings                              Line = 162
-    8. Reverse Strings                              Line = 165
-    9. Remove White Spaces                          Line = 168
-    10. Shuffle Strings                             Line = 173
-    11. Find Position case insenstive.              Line = 176
-    12. Upper and Lowercase                         Line = 179
-    13. Word Wrap the String and display it.        Line = 183
-
+    6. Number of Words                              Line = 162
+    7. Replace Strings                              Line = 165
+    8. Reverse Strings                              Line = 168
+    9. Remove White Spaces                          Line = 171
+    10. Shuffle Strings                             Line = 176
+    11. Find Position case insenstive.              Line = 179
+    12. Upper and Lowercase                         Line = 182
+    13. Word Wrap the String and display it.        Line = 186
+    14. trim()                                      Line = 191
+        14.1 ltrim()
+        14.2 rtrim()
+        
 */
 ## How to Combine Two Strings 
     //https://www.php.net/manual/en/ref.strings.php
@@ -185,5 +188,18 @@ DOC_LABEL;
     echo wordwrap($content, 25) . PHP_EOL;
     echo $content . PHP_EOL;
     
-    
-    
+// trim(): Remove space both left and right side of the string
+// ltrim(): Remove space both left side of the string
+// rtrim(): Remove space both right side of the string
+    $spaces = "      ";
+    $name = $spaces."partha".$spaces;
+    echo "With the space of word ".$name.PHP_EOL;
+    echo "Remove the space of word ".trim($name).PHP_EOL;
+    echo "Remove the left space of word ".ltrim($name).PHP_EOL;
+    echo "Remove the right space of word ".rtrim($name).PHP_EOL;
+
+    ?>
+    <!-- Exercise 1 -->
+    <hr/>
+    <button><a href="assingment.php"> ASSIGNMENT </a></button>
+    <hr/>
