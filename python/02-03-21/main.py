@@ -1,21 +1,24 @@
 ### Date: 03-02-21 ###
 
 """
-    1. Compare list                         Line = 21
+    1. Compare list                         Line = 24
         1.1 is op
         1.2 == op
-    2. Join and split method                Line = 41
+    2. Join and split method                Line = 44
         2.1 split()
         2.2 join()
-    3. List vs strings                      Line = 55
-    4. Looping in lists                     Line = 72
-    5. type()                               Line = 94
-    6. Generate lists with range functions  Line = 101
-    7. index() method                       Line = 106
-    8. pass list to a functions             Line = 110
-    9. Exercise 1                           Line = 119 
-    10. Exercise 2                          Line = 137
-    11. Exercise 3                          Line = 185
+    3. List vs strings                      Line = 58
+    4. Looping in lists                     Line = 75
+    5. type()                               Line = 97
+    6. Generate lists with range functions  Line = 121
+    7. index() method                       Line = 126
+    8. pass list to a functions             Line = 130
+    9. Exercise 1                           Line = 139 
+    10. Exercise 2                          Line = 157
+    11. Exercise 3                          Line = 205
+    12. Exercise 4                          Line = 224
+    13. Exercise 5                          Line = 250
+    14. Min and max functions               Line = 272
 """
 
 ## is vs == for compare list
@@ -37,6 +40,7 @@ print(f'{word_2} == {word_1} Equals to : {word_2 == word_1}')
 print(f'{word_2} == {word_4} Equals to : {word_2 == word_4}')
 print(f'{word_2} == {word_5} Equals to : {word_2 is word_5}')
 print('-----------------------------------------------------')
+
 ## join and split method
 # split() : break a sring to list
 string = 'Partha,25'
@@ -94,7 +98,24 @@ print('-----------------------------------------------------')
 num = 10
 print(f'matrix type: {type(matrix)}')
 print(f'num type: {type(num)}')
-print(f's type: {type(s)}')
+print(f's type: {type(s)}') 
+
+### Exercise
+"""
+    Define a function to count number of list present in input list
+
+    [1,2,3, [1,2]] ----> 1
+    [1,2,3, [1,2], [3,4]] ----> 2
+"""
+def countList(num_list):
+    count = 0
+    for n in num_list:
+        if type(n) == list:
+            count += 1
+    return count
+
+print(f'Count list in [1,2,3, [1,2]] is : {countList([1,2,3, [1,2]])}')
+print(f'Count list in [1,2,3, [1,2], [3,4]] is : {countList([1,2,3, [1,2], [3,4]])}')
 print('-----------------------------------------------------')
 
 ## generate lists with range functions
@@ -198,3 +219,60 @@ def reverse_list_string(str_list):
 
 list = ['abc','tuv','xyz']
 print(f'Reverse string of list {list} : {reverse_list_string(list)}')
+
+
+### Exercise 4
+"""
+    Filter odd even
+
+    example
+    [1,2,3,4,5,6,7] -----> [[1,3,5,7],[2,4,6]] 
+"""
+def filterOddEven(num_list):
+    filter_num = []
+    odd = []
+    even = []
+    for n in num_list:
+        if n%2 == 0:
+            even.append(n)
+        else:
+            odd.append(n)
+    filter_num.append(odd)
+    filter_num.append(even)
+    return filter_num
+
+num_user_input = int(input('Enter your number range: '))
+num_list = []
+for i in range(1,num_user_input+1):
+    num_list.append(i)
+print(f'{num_list} of  Filter of Odd and Even: {filterOddEven(num_list)}')
+
+### Exercise 5
+"""
+    Common elements finder function
+    Define a function which take 2 lists as input and return a list
+    which contains common elements of both lists
+
+    example
+    [1,2,5,8],[1,2,7,6] -----> [1,2] 
+"""
+def commonFinder(list_1,list_2):
+    output = []
+    for i in list_1:
+        for j in list_2:
+            if i == j:
+                output.append(i)
+                break
+    return output
+
+list_1 = [1,2,5,7,9]
+list_2 = [1,6,7,2,3]
+print(f'Common elements in {list_1} and {list_2} is : {commonFinder(list_1,list_2)}')
+
+## Min and max function 
+    # find min and max number of list
+
+numbers = [2,25,10]
+print(f'maximum number of {numbers} is {max(numbers)}')
+print(f'minimum number of {numbers} is {min(numbers)}')
+print('-----------------------------------------------------')
