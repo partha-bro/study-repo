@@ -1,15 +1,15 @@
 # Syllabus
 
 ### Date: 13-1-2021
-"""
+
     1. Single and multiple line comment     Line = 8
     2. Escape sequence                      Line = 16
     3. Division expresion                   Line = 21
     4. To the power                         Line = 29
-"""
+
 
 ### Date: 14-1-2021
-"""
+
     1. Concatenation                        Line = 15
     2. User input                           Line = 28
     3. int() function and split() function  Line = 33
@@ -21,12 +21,12 @@
     8. String slicing                       Line = 81
     9. String slicing with step argument    Line = 89
     10. Exercise 2                          Line = 93
-"""
+
 
 ### Date: 15-1-2021
-"""
-# String methods
-# Methods Lists
+
+#### String methods
+##### Methods Lists
 
     1. split()
     2. len()            Line = 21
@@ -40,10 +40,10 @@
     10. replace()       Line = 87
     11. find()          Line = 87
     12. center()        Line = 93
-"""
+
 
 ### Date: 22-1-2021
-"""
+
 	1. If statement						Line = 19
 	2. Pass statement					Line = 26
 	3. If-else statement				Line = 35
@@ -59,10 +59,10 @@
 	12. Exercise 3						Line = 135
 	13. Exercise 4						Line = 145
 	14. Exercise 5						Line = 167
-"""
 
-# 27-01-21
-"""
+
+### 27-01-21
+
     1. Infinity loop  Line = 6              Line = 13
     2. For loop                             Line = 21
     3. Exercise 1                           Line = 44
@@ -72,10 +72,10 @@
     7. Step argument in range()             Line = 124
     8. Go backword loop                     Line = 129
     9. For loop using a string              Line = 134
-"""
 
-# 29-01-21
-"""
+
+### 29-01-21
+
     1. Function                         Line = 12
     2. Functions with string argument   Line = 21
     3. Exercise 1                       Line = 28
@@ -84,11 +84,11 @@
     6. Exercise 4                       Line = 73
     7. Function inside call function    Line = 113
     8. Exercise 5 Palindrome            Line = 128
-"""
+
 
 ### Date: 01-02-21 ###
 
-"""
+
     1. Fibonacci Series                                 Line = 7
     2. Print Fibonacci series by using user's input,    Line = 31
          how many numbers want to print 
@@ -117,11 +117,10 @@
     18. copy () method on list                          Line = 212
     19. clear() method on list                          Line = 216
     20. Exercise 1-shuffle() method of random module    Line = 219
-"""
+
 
 ### Date: 03-02-21 ###
 
-"""
     1. Compare list                         Line = 24
         1.1 is op
         1.2 == op
@@ -140,4 +139,4 @@
     12. Exercise 4                          Line = 224
     13. Exercise 5                          Line = 250
     14. Min and max functions               Line = 272
-"""
+
