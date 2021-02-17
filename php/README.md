@@ -157,3 +157,15 @@
     8. Exercise 1                                                     Line = 227
     9. Exercise 2                                                     Line = 236
     10. Assignment                                                    Line = 278
+
+## Date: 16-02-21
+### TOPIC NAME: Handling Exceptions ###
+
+    1. Raise and Catch                                                Line = 15
+    2. Throw an Custom                                                Line = 47
+    3. Catch Multiple                                                 Line = 73
+    4. Difference between try-catch block 
+    and custom exception method                                       Line = 136
+    4. Finally Block                                                  Line = 152
+    5. Raise and Catch Errors                                         Line = 195
+    6. Exercise 1                                                     Line = 209 
