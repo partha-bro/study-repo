@@ -1,1 +1,1 @@
-This is a dummy file for testing purpose.
+Write data through file_put_contents(filename, data) function
