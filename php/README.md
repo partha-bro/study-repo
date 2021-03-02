@@ -200,3 +200,20 @@
     6. Exercise 1                                                     Line = 151 
     7. Exercise 2                                                     Line = 164
     8. Assignment                                                     Line = 183
+
+## Date: 02-03-21
+### TOPIC NAME: Date and Time ###
+
+    1. Getting the Timestamp and Date                                 Line = 20
+        1.1 date()
+        1.2 time() 
+    2. Converting the Timestamp                                       Line = 57
+        2.1 getdate()
+    3. Common Use Case of Date and Timestamp                          Line = 69
+        3.1 strtotime()
+        3.2 date_create('parameter')->format('d-m-y')
+    4. Exercise 1 - Print Australia Current Time                      Line = 105
+        4.1 date_default_timezone_set()
+        4.2 date_default_timezone_get()
+    5. Exercise 2 - Show the TimeDifference                           Line = 115
+    6. ASSIGNMENT                                                     Line = 123
