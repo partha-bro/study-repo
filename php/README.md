@@ -173,10 +173,30 @@
 ## Date: 01-03-21
 ### TOPIC NAME: Files ###
 
-    1. Working with Directories                         Line = 15
-    2. Copy, Rename and Delete a File                   Line = 47
-    3. Read and Write Files                             Line = 73
+    1. Working with Directories                         Line = 33
+        1.1 List all Files in a Directory
+            scandir()
+        1.2 Check for Specific Files in a Directory
+            is_file()
+        1.3 Check If the Name is a Directory or File.
+            is_dir()
+        1.4 Create Directory
+            file_exists()
+            mkdir()
+        1.5 Copy Files between Directories.
+            copy()
+    2. Copy, Rename and Delete a File                   Line = 76
+        2.1 copy()
+        2.2 rename()
+        2.3 unlink()
+    3. Read and Write Files                             Line = 96
+        3.1 file_get_contents()
+        3.2 file_put_contents()
+        3.3 file_put_contents('filename','data',FILE_APPEND)
     4. Read Configuration File into an Array            Line = 136
-    4. Read and Write CSV Data                          Line = 152
-    5. Exercise 1                                       Line = 209 
-    6. Exercise 2                                       Line = 209
+        4.1 parse_ini_file()
+    5. Read and Write CSV Data                          Line = 142
+        5.1 file()
+    6. Exercise 1                                       Line = 151 
+    7. Exercise 2                                       Line = 164
+    8. Assignment                                       Line = 183
