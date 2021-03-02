@@ -169,3 +169,14 @@
     4. Finally Block                                                  Line = 152
     5. Raise and Catch Errors                                         Line = 195
     6. Exercise 1                                                     Line = 209 
+
+## Date: 01-03-21
+### TOPIC NAME: Files ###
+
+    1. Working with Directories                         Line = 15
+    2. Copy, Rename and Delete a File                   Line = 47
+    3. Read and Write Files                             Line = 73
+    4. Read Configuration File into an Array            Line = 136
+    4. Read and Write CSV Data                          Line = 152
+    5. Exercise 1                                       Line = 209 
+    6. Exercise 2                                       Line = 209
