@@ -217,16 +217,3 @@
         4.2 date_default_timezone_get()
     5. Exercise 2 - Show the TimeDifference                           Line = 115
     6. ASSIGNMENT                                                     Line = 123
-
-## Date: 03-03-21
-### TOPIC NAME: PHP OOP Basics ###
-
-    1. What is OOP                                                    Line = 
-    2. What is Class                                                  Line = 
-    3. How to Define a Class                                          Line = 
-    4. What is Property and Methods                                   Line = 
-    5. What is Objects                                                Line = 
-    6. How to Define Objects                                          Line = 
-    7. Define Methods with Parameters and Return Value                Line = 
-    8. Use case of Users with Class and Objects                       Line = 
-    9. Project Calculate Employee Salary                              Line = 
