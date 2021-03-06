@@ -110,6 +110,23 @@ echo '<hr>';
 @$get = $_POST['path']; // data fetch from after submit - more security
 echo '<hr>';
 
+## What is the difference between get and post.
+    /*
+        GET-
+            1. The GET method passes our array variables through the URL parameters.
+            2. Should be used only for sending non-sensitive data.
+            3. Never send passwords through the GET method.
+            4. All variables are displayed openly in the URL.
+            5. The GET method has limits on how much information can be sent.
+            6. The current limit is 2000 characters
+        POST-
+            1. The POST method passes variables using the HTTP post method.
+            2. The POST method is much more secure because variables are not displayed in the URL.
+            3. Information is invisible to others because it is embedded within the body of the HTTP request.
+            4. It has no limits as to the amount of information we can send.
+            5. This method is preferred by developers.
+    */
+            
 // Examples - $_REQUEST ========>
 // we can access data from submit form using get/post method
 @$get = $_REQUEST['path']; // data fetch after submit
