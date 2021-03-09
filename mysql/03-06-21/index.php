@@ -2,12 +2,12 @@
 ### TOPIC NAME: PHP Development ###
 
 /*
-    1. PHP Form Output and Validation                               Line = 19
+    1. PHP Form Output and Validation                               Line = 16
     	1.1 htmlspcialchars()
     	1.2 trim()
     	1.3 striplashes()
     	1.4 preg_match()
-    2. Regular Expression
+    2. Regular Expression											Line = 65
     	2.1 preg_match()
     	2.1 preg_match_all()
 	                                                    
