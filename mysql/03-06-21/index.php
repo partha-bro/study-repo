@@ -10,6 +10,7 @@
     2. Regular Expression											Line = 65
     	2.1 preg_match()
     	2.1 preg_match_all()
+	3. Change password of mysql in phpmyadmin
 	                                                    
 */  
 
@@ -160,3 +161,18 @@ echo "<hr/>";
 	$exp_no = preg_match_all('/jan(uary)?/', $string, $arr);
 	echo "<pre>";
 	print_r($arr);
+
+echo "<hr/>";
+// 3. Change password of mysql in phpmyadmin
+	/*
+		Step 1 : Open phpmyadmin via URL: localhost/phpmyadmin
+		Step 2 : Click users tab
+		Step 3 : Now you can create a new user and set a password
+		Step 4 : If you want to set root password then
+		Step 5 : Click "edit privileges" of root user
+		Step 6 : Type your password
+		Step 7 : Now Error will occor to 'retry connect'
+		Step 8 : Goto to PATH: 'installed-folder'/xampp/phpmyadmin/config.inc.php
+		Step 9 : Find password and type your correct password and save it
+		Step 10 : Now connect sucessfully.
+	*/
