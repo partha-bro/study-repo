@@ -112,7 +112,9 @@ echo "<hr/>";
 echo "<hr/>";
 
 # WHERE clause data
-	$sql = 'select * from users WHERE password = 123456';
+	$sql = "SELECT * FROM users 
+	WHERE password = 123456
+	";
 	$no = $conn->query($sql);
 
 	if ($no->num_rows > 0) {
@@ -123,6 +125,84 @@ echo "<hr/>";
 		}
 	}else{
 		echo "0 result";
+	}
+
+echo "<hr/>";
+
+
+# AND opeartor
+	/*
+		AND op: Displays a record if both the first condition  AND the second condition are true.
+	*/
+	$sql = "SELECT * FROM users 
+	WHERE name='arjun' 
+	AND password='12'
+	";
+
+	$result = $conn->query($sql);
+
+	if ($result->num_rows > 0) {
+		# code...
+		while ($row = $result->fetch_assoc()) {
+			# code...
+			echo "id: ".$row['id']."<br/>";
+			echo "name: ".$row['name']."<br/>";
+			echo "number: ".$row['number']."<br/>";
+			echo "mail: ".$row['email']."<br/>";
+			echo "password: ".$row['password']."<br/>";
+		}
+	}else{
+		echo "0 results";
+	}
+
+echo "<hr/>";
+
+# OR opeartor
+	/*
+		OR op: Displays a record if either the first condition OR the second condition is true.
+	*/
+	$sql = "SELECT * FROM users 
+	WHERE name='arjun' 
+	OR password='123456'
+	";
+
+	$result = $conn->query($sql);
+
+	if ($result->num_rows > 0) {
+		# code...
+		while ($row = $result->fetch_assoc()) {
+			# code...
+			echo "id: ".$row['id']."<br/>";
+			echo "name: ".$row['name']."<br/>";
+			echo "number: ".$row['number']."<br/>";
+			echo "mail: ".$row['email']."<br/>";
+			echo "password: ".$row['password']."<br/>";
+		}
+	}else{
+		echo "0 results";
+	}
+
+echo "<hr/>";
+
+// ORDER BY keyword
+	/*
+		Display the records in ascending or descending order
+		sysntax: SELECT * FROM table_name ORDER BY column_name ASC/DESC, colume_name_2 ASC/DESC
+	*/
+	$sql = "SELECT * FROM users 
+	ORDER BY id DESC
+	";
+
+	$result = $conn->query($sql);
+
+	if ($result->num_rows > 0) {
+		# code...
+		while ($row = $result->fetch_assoc()) {
+			# code...
+			echo "id: ".$row['id']." name: ".$row['name']."<br/>";
+		}
+	}else{
+		echo "0 results";
 	}
 
 echo "<hr/>";
