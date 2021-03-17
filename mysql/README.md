@@ -3,6 +3,19 @@
 ## Date: 15-03-21
 ### TOPIC NAME: MySQL Database Part-1 ###
 
+	1. PHP Form Output and Validation                           
+    	1.1 htmlspcialchars()
+    	1.2 trim()
+    	1.3 striplashes()
+    	1.4 preg_match()
+    2. Regular Expression											Line = 65
+    	2.1 preg_match()
+    	2.1 preg_match_all()
+	3. Change password of mysql in phpmyadmin
+
+## Date: 15-03-21
+### TOPIC NAME: MySQL Database Part-1 ###
+
 	1. Connect to Database
 		1.1 connect through function with return
 		1.2 connect through class
