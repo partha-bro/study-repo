@@ -1,5 +1,5 @@
 <?php
-### TOPIC NAME: MySQL Database ###
+### TOPIC NAME: MySQL Database Part-1 ###
 /*
 	1. Connect to Database
 		1.1 connect through function with return
@@ -7,6 +7,9 @@
 	2. Display all data
 	3. DISTINCT data
 	4. WHERE clause data
+	5. AND opeartor
+	6. OR opeartor
+	7. ORDER BY keyboard
 */
 // Connect to Database
 	/*
@@ -112,6 +115,7 @@ echo "<hr/>";
 echo "<hr/>";
 
 # WHERE clause data
+
 	$sql = "SELECT * FROM users 
 	WHERE password = 123456
 	";
@@ -195,6 +199,7 @@ echo "<hr/>";
 
 	$result = $conn->query($sql);
 
+
 	if ($result->num_rows > 0) {
 		# code...
 		while ($row = $result->fetch_assoc()) {
@@ -204,6 +209,9 @@ echo "<hr/>";
 	}else{
 		echo "0 results";
 	}
+
+	echo "<pre>";
+	print_r($conn);
 
 echo "<hr/>";
 
