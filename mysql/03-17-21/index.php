@@ -53,11 +53,12 @@
 	}
 
 ?>
-<fieldset>
+<fieldset align='center'>
 	<legend>
 		DATA
 	</legend>
 	<button><a href="<?php echo $_SERVER['PHP_SELF'] ?>">Home</a></button>
+	<STRONG style='color:red;'> <?= date('d-M-Y h:i:s A') ?></STRONG>
 	<button><a href="insert_db.php">Insert</a></button>
 </fieldset>
 <br/>
@@ -88,16 +89,16 @@
 					echo "<td>".$rows['number']."</td>";
 					echo "<td>".$rows['email']."</td>";
 					echo "<td>".$rows['date']."</td>";
-					echo "<td>
+					echo "<td >
 							<form method='post' action='edit_db.php'>
 								<input type='hidden' name='id' value='".$rows['id']."'>
-								<input type='submit' name='edit' value='Edit'>
+								<input type='submit' name='edit' value='Edit' style='background-color:blue;color:white;'>
 							</form>
 								</td>";
 					echo "<td>
 							<form method='post' action='delete_db.php'>
 								<input type='hidden' name='id' value='".$rows['id']."'>
-								<input type='submit' name='delete' value='Delete'>
+								<input type='submit' name='delete' value='Delete' style='background-color:red;color:white;'>
 							</form>
 								</td>";
 					echo "</tr>";
@@ -122,6 +123,3 @@
 	}else{
 		echo "ERROR: ".$conn->error;
 	}
-	
- ?>
-

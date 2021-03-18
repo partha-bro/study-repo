@@ -36,3 +36,14 @@
 	4. How to Update data from database?
 	5. How to get last id of insert data from database?
 	6. How to executed multiple statement in one query?
+
+## Date: 18-03-21
+### TOPIC NAME: Project ###
+
+	1. Basic Code
+		1.1 Pass Value from Form on Same Page and Other Page
+		1.2 PHP Condition with Using Form
+		1.3 Use Square and SUM Function with Form
+		1.4 Get value from links in PHP
+		1.5 Work with PHP Form
+	2. PHP - One Click Password Generator 
