@@ -31,7 +31,29 @@
 				</select>
 				<input class="button" type="submit"  value="GENERATE" >
 			</form>
+			<?php
+				if (isset($_POST['limit'])) {
+					# code...
+					function randomPassword() {
+					    $limit = $_POST['limit'];
+					    $alphabet = 'abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+?>;<:"ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+					    $pass = ''; //remember password to declare $pass 
+					    $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+					    for ($i = 0; $i < $limit; $i++) {
+					        $n = rand(0, $alphaLength);
+					        $pass .= $alphabet[$n];
+					    }  // For Loop End
+					    return $pass; //turn the array into a string
+					} // Function End
 
+					$p = randomPassword(); // Call Function
+
+
+					echo '<p><input type="text" value="'.$p.'"  id="myInput"/></p>';
+					echo '<p><button class="button" onclick="myFunction()">COPY</button></p>';
+
+					} // If End
+			?>
 		</div>
 	</body>
 </html>
