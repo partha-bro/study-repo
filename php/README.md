@@ -217,3 +217,8 @@
         4.2 date_default_timezone_get()
     5. Exercise 2 - Show the TimeDifference                           Line = 115
     6. ASSIGNMENT                                                     Line = 123
+
+## Date: 20-03-21
+### TOPIC NAME: PHP OOPs ###
+
+    1. 

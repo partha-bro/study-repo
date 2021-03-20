@@ -47,3 +47,9 @@
 		1.4 Get value from links in PHP
 		1.5 Work with PHP Form
 	2. PHP - One Click Password Generator 
+	3. Registration - Sign up Sing In Sign out --> i am not able to understand it.
+		3.1 use class
+		3.2 use try catch block
+		3.3 use pdo class
+		3.4 use session
+		3.5 use mysql
