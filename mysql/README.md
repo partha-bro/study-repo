@@ -37,6 +37,34 @@
 	5. How to get last id of insert data from database?
 	6. How to executed multiple statement in one query?
 
+## Date: 21-03-21
+### TOPIC NAME: PHP MySQLi ###
+
+	1. PHP MySQLi Procedural
+		1. MySQLi Procedural
+			1.1 Make a connection
+			1.2 Run the given query
+			1.3 Fetch number of rows
+			1.4 Fetch the data
+			1.5 Error
+			1.6 Close the connection
+	2. PHP MySQLi Object Oriented
+		1. MySQLi Procedural
+			1.1 Make a connection
+			1.2 Run the given query
+			1.3 Fetch number of rows
+			1.4 Fetch the data
+			1.5 Error
+			1.6 Close the connection
+	3. PHP MySQLi PDO
+		1. MySQLi Procedural
+			1.1 Make a connection
+			1.2 Run the given query
+			1.3 Fetch number of rows
+			1.4 Fetch the data
+			1.5 Error
+			1.6 Close the connection
+
 ## Date: 18-03-21
 ### TOPIC NAME: Project ###
 

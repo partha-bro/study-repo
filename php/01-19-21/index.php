@@ -2,14 +2,15 @@
 
 ### TOPIC NAME: PHP Language Basics ###
 /*
-    1. Single line and multi line comment   Line = 15
-    2. Echo vs prit                         Line = 23
-    3. Variable declaration                 Line = 29
-    4. Add two value [integer and string]   Line = 34
-    5. Function with local value            Line = 44
-    6. Function with global value           Line = 52
-    7. Static value                         Line = 71
-    8. Superglobal value                    Line = 81
+    1. Single line and multi line comment   Line = 16
+    2. Echo vs prit                         Line = 24
+    3. use {} to read value of variable     Line = 30
+    4. Variable declaration                 Line = 35
+    5. Add two value [integer and string]   Line = 40
+    6. Function with local value            Line = 50
+    7. Function with global value           Line = 58
+    8. Static value                         Line = 77
+    9. Superglobal value                    Line = 87
 */
 
 #  single line comment
@@ -24,6 +25,11 @@
 echo "Hello world!<br/>";
 print "Hello world!<br/>";
 print_r($_SERVER);
+echo '<hr>';
+
+// use {} to read value of variable
+$name = "partha";
+echo "{$name} <br/>";
 echo '<hr>';
 
 # variabale = "value";
