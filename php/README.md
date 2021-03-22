@@ -158,7 +158,7 @@
     9. Exercise 2                                                     Line = 236
     10. Assignment                                                    Line = 278
 
-## Date: 16-02-21
+## Date: 10-02-21
 ### TOPIC NAME: Handling Exceptions ###
 
     1. Raise and Catch                                                Line = 15

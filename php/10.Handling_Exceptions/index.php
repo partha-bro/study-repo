@@ -15,7 +15,7 @@
 ## Raise and Catch an Exception
     /*
 		Syntax: 
-		
+		$e->getMessage(), $e->getLine(), $e->getFile()
 
 		try{
 			throw new Exception('Error message')
@@ -227,6 +227,6 @@ echo "<hr/>";
 		findInteger(3);	// rise error
 		findInteger(4); // not run because of out of try block 
 	} catch (Exception $e) {
-		echo "Error : ".$e->getMessage();
+		echo "Error : ".$e->getMessage()." Line: ".$e->getLine()." File: ".$e->getFile();
 	}
 echo "<hr/>";
