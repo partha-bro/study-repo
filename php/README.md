@@ -218,7 +218,23 @@
     5. Exercise 2 - Show the TimeDifference                           Line = 115
     6. ASSIGNMENT                                                     Line = 123
 
-## Date: 20-03-21
-### TOPIC NAME: PHP OOPs ###
+## Date: 23-03-21
+### TOPIC NAME: PHP OOPs Part 1 ###
 
-    1. 
+    1. What is OOP  
+    2. What is Class
+    3. How to Define a Class
+    4. What is Property and Methods
+    5. What is Objects
+    6. How to Define Objects
+    7. Constructor
+    8. Inheritance
+    9. Access Modifiers
+    10. Overriding Methods & Properties
+    11. Abstract Class
+    12. Interfaces
+    13. Static Members
+    14. Late Static Binding
+
+## Date: 24-03-21
+### TOPIC NAME: PHP OOPs Part 2 ###

@@ -14,4 +14,4 @@
 		$session->redirect('denied.php');
 	}
 
-	?>
+?>
