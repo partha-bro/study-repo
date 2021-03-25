@@ -238,3 +238,7 @@
 
 ## Date: 24-03-21
 ### TOPIC NAME: PHP OOPs Part 2 ###
+
+    1. Traits
+    2. Traits - Method Overriding
+    3. Type Hinting
