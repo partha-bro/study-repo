@@ -21,8 +21,8 @@
     3. isset() function                                               Line = 48
     4. Define constant                                                Line = 66
     5. Magical constant                                               Line = 76
-    6. Exercises                                                      Line = 93
-    7. Assignment button                                              Line = 130
+    6. Exercises                                                      Line = 139
+    7. Assignment button                                              Line = 176
 
 ## Date: 26-01-21
 ### TOPIC NAME: Expressions and Operators ###
@@ -242,3 +242,22 @@
     1. Traits
     2. Traits - Method Overriding
     3. Type Hinting
+    4. Namespace
+    5. Method Chaining
+    6. Magic Method
+    7. __destruct()
+    8. autoload method
+    9. __get() method
+    10. __set() method
+    11. __call() method
+    12. __callStatic() method
+    13. __isset() method
+    14. __unset() method
+    15. __toString() method
+    16. __sleep() method
+    17. __wakeup() method
+    18. __clone() method
+    19. __invoke() method
+    20. Magic constant
+    21. conditional function of oops
+    22. get functions in oops

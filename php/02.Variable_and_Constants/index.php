@@ -7,8 +7,8 @@
     3. isset() function         Line = 48
     4. Define constant          Line = 66
     5. Magical constant         Line = 76
-    6. Exercises                Line = 93
-    7. Assignment button        Line = 130
+    6. Exercises                Line = 139
+    7. Assignment button        Line = 176
 */
 
 // variable of variables
@@ -76,19 +76,93 @@
 # magical cconstant
 # magical constant like predefind constant use anywhere for respective porpose
 /*
-    __LINE__ 	        ==> The current line number of the file.
-    __FILE__ 	        ==> The full path and filename of the file with symlinks resolved. If used inside an include, the name of the included file is returned.
-    __DIR__ 	        ==> The directory of the file. If used inside an include, the directory of the included file is returned. This is equivalent to dirname(__FILE__). This directory name does not have a trailing slash unless it is the root directory.
-    __FUNCTION__ 	    ==> The function name, or {closure} for anonymous functions.
-    __CLASS__ 	        ==> The class name. The class name includes the namespace it was declared in (e.g. Foo\Bar). When used in a trait method, __CLASS__ is the name of the class the trait is used in.
-    __TRAIT__ 	        ==> The trait name. The trait name includes the namespace it was declared in (e.g. Foo\Bar).
-    __METHOD__ 	        ==> The class method name.
-    __NAMESPACE__ 	    ==> The name of the current namespace.
-    ClassName::class 	==> The fully qualified class name. 
+    // use anywhere in php code
+        __LINE__ 	        ==> The current line number of the file.
+        __FILE__ 	        ==> The full path and filename of the file with symlinks resolved. If used inside an include, the name of the included file is returned.
+        __DIR__ 	        ==> The directory of the file. If used inside an include, the directory of the included file is returned. This is equivalent to dirname(__FILE__). This directory name does not have a trailing slash unless it is the root directory.
+    // use inside the function in php code
+        __FUNCTION__ 	    ==> The function name, or {closure} for anonymous functions.
+    // use inside the class in php code
+        __CLASS__ 	        ==> The class name. The class name includes the namespace it was declared in (e.g. Foo\Bar). When used in a trait method, __CLASS__ is the name of the class the trait is used in.
+    // use inside the trait in php code
+        __TRAIT__ 	        ==> The trait name. The trait name includes the namespace it was declared in (e.g. Foo\Bar).
+    // use inside the method of class in php code
+        __METHOD__ 	        ==> The class method name.
+    // use inside the namespace file in php code
+        __NAMESPACE__ 	    ==> The name of the current namespace.
 */
-    echo __LINE__." __LINE__ <br/>";
-    echo __DIR__. " __DIR__ <br/>";
-    echo '<hr/>';
+echo "<hr/>";
+// __LINE__ 
+    echo "Get the line no is ".__LINE__;
+echo "<hr/>";
+
+// __FILE__ 
+    echo "Get the full path of file is ".__FILE__;
+echo "<hr/>";
+
+// __DIR__ 
+    echo "Get the full path of directory is ".__DIR__;
+echo "<hr/>";
+
+// __FUNCTION__
+    function show()
+    {
+        # code...
+        echo "Get the function name is ".__FUNCTION__;
+    }
+    
+echo "<hr/>";
+
+// __CLASS__ 
+    class Abc{
+
+        public function __construct()
+        {
+            # code...
+            echo "Get the class name is ".__CLASS__;
+        }
+    }
+     $obj = new Abc;
+echo "<hr/>"; 
+
+// __TRAIT__ 
+    trait Mytrait{
+        public function getTraitName()
+        {
+            # code...
+            echo "Get the trait name is ".__TRAIT__;
+        }
+
+    }
+    class Abcd{
+        use Mytrait;
+        
+    }
+     $obj = new Abcd;
+     $obj->getTraitName();
+echo "<hr/>"; 
+
+// __METHOD__ 
+    class Abcde{
+
+        public function __construct()
+        {
+            # code...
+            echo "Get the method name is ".__METHOD__;
+        }
+    }
+    $obj = new Abcde;
+echo "<hr/>"; 
+
+// __NAMESPACE__
+    require( '../05.Namespaces/sub_namespace/sub1.php');
+
+    use sub_namespace\sub1 as ns;
+
+    ns\find_namespace();
+echo "<hr/>";
+
+
 
 ### EXERCISE 1
 # String variables:
