@@ -19,12 +19,44 @@
 	1. Connect to Database
 		1.1 connect through function with return
 		1.2 connect through class
-	2. Display all data
-	3. DISTINCT data
-	4. WHERE clause data
-	5. AND opeartor
-	6. OR opeartor
-	7. ORDER BY keyboard
+	2. show tables from database
+	3. Create Table with auto increment using primary key
+	4. Insert data
+	5. Constraints
+		NOT NULL
+		UNIQUE
+		DEFAULT
+		CHECK
+		FOREIGN KEY
+		PRIMARY KEY
+	6. Insert data using constraint
+	7. Display data
+	8. Conditional base
+		=  				
+		>				
+		<			
+		>=			
+		<=			
+		<> or !=	
+		BETWEEN 	
+		LIKE 			
+		IN 
+	9. Regular Expression 
+	10. ORDER BY
+	11. DISTINCT
+	12. IS NULL & IS NOT NULL
+	13. LIMIT & OFFSET
+	14. Aggregate function
+			COUNT()
+			MAX()
+			MIN()
+			SUM()
+			AVG()
+	15. Update data
+	16. Delete
+	17. Commit & Rollback
+	18. Primary key
+	19. Foreign key
 
 ## Date: 17-03-21
 ### TOPIC NAME: MySQL Database Part-2 ###
