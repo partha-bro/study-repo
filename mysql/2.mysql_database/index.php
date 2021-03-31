@@ -8,6 +8,12 @@
 	3. Create Table with auto increment using primary key
 	4. Insert data
 	5. Constraints
+		NOT NULL
+		UNIQUE
+		DEFAULT
+		CHECK
+		FOREIGN KEY
+		PRIMARY KEY
 	6. Insert data using constraint
 	7. Display data
 	8. Conditional base
@@ -21,6 +27,26 @@
 		LIKE 			
 		IN 
 	9. Regular Expression 
+	10. ORDER BY
+	11. DISTINCT
+	12. IS NULL & IS NOT NULL
+	13. LIMIT & OFFSET
+	14. Aggregate function
+			COUNT()
+			MAX()
+			MIN()
+			SUM()
+			AVG()
+	15. Update data
+	16. Delete
+	17. Commit & Rollback
+	18. Primary key
+	19. Foreign key
+	20. JOINS
+			INNER JOIN
+			LEFT JOIN
+			RIGHT JOIN
+			CROSS JOIN
 */
 
 // 1. Connect to Database
@@ -261,3 +287,403 @@ echo "<hr/>";
 			SELECT * FROM personal WHERE name REGEXP '[s-z]';
 
 	*/
+// 10. ORDER BY
+	/*
+		ORDER BY age ASC
+		ORDER BY age DESC
+	*/
+	$sql = $conn->prepare('SELECT * FROM personal ORDER BY age ASC');
+	$sql->execute();
+	$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+	if ($sql->rowCount()> 0) {
+		# code...
+		foreach ($result as $key => $value) {
+			# code...
+			echo "Id - {$value['id']} | Name - {$value['name']} | Age - {$value['age']} | Gender - {$value['gender']} | Phone - {$value['phone']} | City - {$value['city']} <br/>";
+		}
+
+	}
+echo "===============================<br/>";
+	$sql = $conn->prepare('SELECT * FROM personal WHERE gender="M" ORDER BY age DESC');
+	$sql->execute();
+	$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+	if ($sql->rowCount()> 0) {
+		# code...
+		foreach ($result as $key => $value) {
+			# code...
+			echo "Id - {$value['id']} | Name - {$value['name']} | Age - {$value['age']} | Gender - {$value['gender']} | Phone - {$value['phone']} | City - {$value['city']} <br/>";
+		}
+
+	}
+echo "<hr/>";
+
+// 11. DISTINCT
+	/*
+		It means no duplicate value of perticular column.
+	*/
+	$sql = $conn->prepare('SELECT DISTINCT city FROM personal');
+	$sql->execute();
+	$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+	if ($sql->rowCount()> 0) {
+		# code...
+		foreach ($result as $key => $value) {
+			# code...
+			echo " City - {$value['city']} <br/>";
+		}
+
+	}
+echo "<hr/>";
+
+// 12. IS NULL & IS NOT NULL
+	/*
+		IS : it is a oprator.
+		NULL : it is null/empty value.
+	*/
+	$sql = $conn->prepare('SELECT * FROM personal WHERE phone IS NULL');
+	$sql->execute();
+	$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+	if ($sql->rowCount()> 0) {
+		# code...
+		foreach ($result as $key => $value) {
+			# code...
+			echo "Id - {$value['id']} | Name - {$value['name']} | Age - {$value['age']} | Gender - {$value['gender']} | Phone - {$value['phone']} | City - {$value['city']} <br/>";
+		}
+
+	}
+echo "===============================<br/>";
+	$sql = $conn->prepare('SELECT * FROM personal WHERE phone IS NOT NULL');
+	$sql->execute();
+	$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+	if ($sql->rowCount()> 0) {
+		# code...
+		foreach ($result as $key => $value) {
+			# code...
+			echo "Id - {$value['id']} | Name - {$value['name']} | Age - {$value['age']} | Gender - {$value['gender']} | Phone - {$value['phone']} | City - {$value['city']} <br/>";
+		}
+
+	}
+echo "<hr/>";
+
+// 13. LIMIT & OFFSET
+	/*
+		LIMIT use for limit data we can access	
+		OFFSET is use for starting number and number to haw many records.
+	*/
+	$sql = $conn->prepare('SELECT * FROM personal WHERE city="puri" LIMIT 2');
+	$sql->execute();
+	$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+	if ($sql->rowCount()> 0) {
+		# code...
+		foreach ($result as $key => $value) {
+			# code...
+			echo "Id - {$value['id']} | Name - {$value['name']} | Age - {$value['age']} | Gender - {$value['gender']} | Phone - {$value['phone']} | City - {$value['city']} <br/>";
+		}
+
+	}
+echo "===============================<br/>";
+	$sql = $conn->prepare('SELECT * FROM personal WHERE city="puri" LIMIT 2,2');
+	$sql->execute();
+	$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+	if ($sql->rowCount()> 0) {
+		# code...
+		foreach ($result as $key => $value) {
+			# code...
+			echo "Id - {$value['id']} | Name - {$value['name']} | Age - {$value['age']} | Gender - {$value['gender']} | Phone - {$value['phone']} | City - {$value['city']} <br/>";
+		}
+
+	}
+echo "<hr/>";
+
+// 14. Aggregate function
+	/*
+		It means predefined function to perforn certurn task and fetch records.
+			COUNT()
+			MAX()
+			MIN()
+			SUM()
+			AVG()
+	*/
+	$sql = $conn->prepare('SELECT COUNT(age) as no FROM personal');
+	$sql->execute();
+	$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+	if ($sql->rowCount()> 0) {
+		# code...
+		foreach ($result as $key => $value) {
+			# code...
+			echo "No of student - {$value['no']} <br/>";
+		}
+
+	}
+	echo "===============================<br/>";
+	$sql = $conn->prepare('SELECT MAX(age) as no FROM personal');
+	$sql->execute();
+	$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+	if ($sql->rowCount()> 0) {
+		# code...
+		foreach ($result as $key => $value) {
+			# code...
+			echo "Maximum age of student - {$value['no']} <br/>";
+		}
+
+	}
+	echo "===============================<br/>";
+	$sql = $conn->prepare('SELECT MIN(age) as no FROM personal');
+	$sql->execute();
+	$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+	if ($sql->rowCount()> 0) {
+		# code...
+		foreach ($result as $key => $value) {
+			# code...
+			echo "Minimum age of student - {$value['no']} <br/>";
+		}
+
+	}
+	echo "===============================<br/>";
+	$sql = $conn->prepare('SELECT SUM(age) as no FROM personal');
+	$sql->execute();
+	$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+	if ($sql->rowCount()> 0) {
+		# code...
+		foreach ($result as $key => $value) {
+			# code...
+			echo "SUM age of student - {$value['no']} <br/>";
+		}
+
+	}
+	echo "===============================<br/>";
+	$sql = $conn->prepare('SELECT AVG(age) as no FROM personal');
+	$sql->execute();
+	$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+	if ($sql->rowCount()> 0) {
+		# code...
+		foreach ($result as $key => $value) {
+			# code...
+			echo "Avrage age of student - {$value['no']} <br/>";
+		}
+
+	}
+echo "<hr/>";
+
+// 15. Update data
+	/*
+	syntax: Single data
+				UPDATE table_namw SET column_1=value_1,column_2=value_2,column_3=value_3
+				WHERE column = value
+			Multi data
+				UPDATE table_namw SET column_1=value_1,column_2=value_2,column_3=value_3
+				WHERE column IN (start row,end row)
+
+	*/
+try{
+	$age = 15;
+	$sql = $conn->prepare('UPDATE personal SET age=? WHERE id=1');
+	// $sql->execute(['15']);
+
+	if ($sql->execute([$age])) {
+		# code...
+		echo "Data update successfully. <br/>";
+	}else{
+		echo "Data not update successfully. <br/>";
+	}
+
+}catch( PDOException $e){
+	echo "UPDATE-ERROR: ".$e->getLine()." = ".$e->getMessage();
+}
+	
+echo "<hr/>";
+
+// 16. DELETE
+	/*
+	syntax: Single data
+				DELETE FROM table_name WHERE column = value;
+			Multi data
+				DELETE FROM table_name;
+
+	*/
+// 17. COMMIT & ROLLBACK
+	/*
+		COMMIT for save the sql command.
+		ROLLBACK for auto backup/reverse sql command before COMMIT
+
+		these are use only in 3 sql command like
+										INSERT
+										UPDATE
+										DELETE
+	*/
+	try{
+		$conn->beginTransaction();
+
+	$sql_command = 'DELETE FROM personal WHERE id=34 ;';
+	$sql_command .= 'UPDATE personal SET age=65 WHERE id=1 ;';
+	$sql = $conn->prepare($sql_command);
+	// $sql->execute(['15']);
+
+	if ($sql->execute()) {
+		# code...
+		echo "Data update successfully with rollback PDO function. <br/>";
+	}else{
+		echo "Data not update successfully with rollback PDO function. <br/>";
+	}
+
+		$conn->rollback();
+
+}catch( PDOException $e ){
+	echo "UPDATE-ERROR: ".$e->getLine()." = ".$e->getMessage();
+}
+	
+echo "<hr/>";
+
+// 18. Primary key
+	/*
+		1. Primary key always has unique data.
+		2. A primary key cannot have null value
+		3. A table can contain only one primary key constraint.
+
+		syntax: CREATE TABLE personal(
+					id INT AUTO_INCREMENT PRIMARY KEY,
+					name VARCHAR(50) NOT NULL,
+					age int NOT NULL CHECK(age>17),
+					phone VARCHAR(50) DEFAULT NULL,
+					city VARCHAR(50) DEFAULT 'Puri'
+				);
+
+				CREATE TABLE personal(
+					id INT AUTO_INCREMENT,
+					name VARCHAR(50) NOT NULL,
+					age int NOT NULL,
+					phone VARCHAR(50) DEFAULT NULL,
+					city VARCHAR(50) DEFAULT 'Puri',
+					PRIMARY KEY(id)
+				);
+	*/
+// 19. Foreign key
+	/*
+		1. A foreign key is a key used to link two tables together.
+		2. A foreign key in one table used to point Primary key in another table.
+		
+	When create foreign key for 1st time
+		CREATE TABLE personal(
+					id INT AUTO_INCREMENT,
+					name VARCHAR(50) NOT NULL,
+					age int NOT NULL,
+					phone VARCHAR(50) DEFAULT NULL,
+					city INT NOT NULL,
+					PRIMARY KEY(id),
+					FOREIGN KEY (city) REFERENCES City (cid)
+				);
+		HERE: city is foreign key of personal table
+				City is another table having cid primary key
+
+		When create foreign key for already created table.
+			ALTER TABLE table_name ADD FOREIGN KEY (city) REFERENCES City (cid);
+	*/
+try{
+	// $conn->beginTransaction();
+
+	$sql_command = 'SELECT * from personal 
+					INNER JOIN city ON personal.city = city.cid';
+	$sql = $conn->prepare($sql_command);
+	$sql->execute();
+	$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+	if ($sql->rowCount()) {
+		foreach ($result as $key => $value) {
+			# code...
+			echo "Id - {$value['id']} | Name - {$value['name']} | Age - {$value['age']} | Gender - {$value['gender']} | Phone - {$value['phone']} | City - {$value['city']} | City_name - {$value['cname']} <br/>";
+		}
+	}
+		// $conn->rollback();
+
+}catch( PDOException $e ){
+	echo "UPDATE-ERROR: ".$e->getLine()." = ".$e->getMessage();
+}
+echo "<hr/>";
+
+// 20. JOINS
+	/*
+		Types of joins in mysql
+			INNER JOIN
+			LEFT JOIN
+			RIGHT JOIN
+			CROSS JOIN
+	*/
+// INNER JOIN
+	/*
+		it fetch all data that is common in 2 tables.
+		syntax:  SELECT * from personal p
+					INNER JOIN city c ON p.city = c.cid
+	*/
+try{
+	$sql_command = 'SELECT * from personal p
+					INNER JOIN city c ON p.city = c.cid';
+	$sql = $conn->prepare($sql_command);
+	$sql->execute();
+	$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+	if ($sql->rowCount()) {
+		foreach ($result as $key => $value) {
+			# code...
+			echo "Id - {$value['id']} | Name - {$value['name']} | Age - {$value['age']} | Gender - {$value['gender']} | Phone - {$value['phone']} | City_name - {$value['cname']} <br/>";
+		}
+	}
+
+}catch( PDOException $e ){
+	echo "innerjoin-ERROR: ".$e->getLine()." = ".$e->getMessage();
+}
+echo "<hr/>";
+
+// LEFT JOIN & RIGHT JOIN
+	/*
+		it fetch all data of left table and right table data common in 2 tables.
+		syntax:  SELECT * from personal p
+					LEFT JOIN city c ON p.city = c.cid
+
+		it fetch all data of right table and left table data common in 2 tables.
+				SELECT * from personal p
+					RIGHT JOIN city c ON p.city = c.cid
+	*/
+try{
+	$sql_command = 'SELECT * from personal p
+					RIGHT JOIN city c ON p.city = c.cid';
+	$sql = $conn->prepare($sql_command);
+	$sql->execute();
+	$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+	if ($sql->rowCount()) {
+		foreach ($result as $key => $value) {
+			# code...
+			echo "Id - {$value['id']} | Name - {$value['name']} | Age - {$value['age']} | Gender - {$value['gender']} | Phone - {$value['phone']} | City_name - {$value['cname']} <br/>";
+		}
+	}
+
+}catch( PDOException $e ){
+	echo "innerjoin-ERROR: ".$e->getLine()." = ".$e->getMessage();
+}
+echo "<hr/>";
+
+// CROSS JOIN
+	/*
+		it fetch all data of left table and right table data. like 
+		1st row of left data join to 1st row of right data,
+		1st row of left data join to 2nd row of right data,
+		2nd row of left data join to 1st row of right data, etc.
+
+		[4 row of left data] cross join  [4 row of right data] = 4X4 = 16 combination of total data 
+
+		syntax:  SELECT * from personal p
+					CROSS JOIN city c ON p.city = c.cid
+	*/
+try{
+	$sql_command = 'SELECT * from personal p
+					CROSS JOIN city';
+	$sql = $conn->prepare($sql_command);
+	$sql->execute();
+	$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+	if ($sql->rowCount()) {
+		foreach ($result as $key => $value) {
+			# code...
+			echo "Id - {$value['id']} | Name - {$value['name']} | Age - {$value['age']} | Gender - {$value['gender']} | Phone - {$value['phone']} | City_name - {$value['cname']} <br/>";
+		}
+	}
+
+}catch( PDOException $e ){
+	echo "innerjoin-ERROR: ".$e->getLine()." = ".$e->getMessage();
+}
+echo "<hr/>";
