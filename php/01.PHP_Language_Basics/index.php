@@ -2,15 +2,16 @@
 
 ### TOPIC NAME: PHP Language Basics ###
 /*
-    1. Single line and multi line comment   Line = 16
-    2. Echo vs prit                         Line = 24
-    3. use {} to read value of variable     Line = 30
-    4. Variable declaration                 Line = 35
-    5. Add two value [integer and string]   Line = 40
-    6. Function with local value            Line = 50
-    7. Function with global value           Line = 58
-    8. Static value                         Line = 77
-    9. Superglobal value                    Line = 87
+    1. Single line and multi line comment   Line = 17
+    2. Echo vs prit                         Line = 25
+    3. use {} to read value of variable     Line = 31
+    4. Variable declaration                 Line = 36
+    5. Add two value [integer and string]   Line = 41
+    6. Function with local value            Line = 51
+    7. Function with global value           Line = 59
+    8. Static value                         Line = 78
+    9. Superglobal value                    Line = 88
+    10. die() & exit()                      Line = 216
 */
 
 #  single line comment
@@ -178,6 +179,8 @@ unset($_SESSION["Rollnumber"]); // Destroying Certain Session Data
     [type] 	Type of the file (like .pdf, .zip, .jpeg…..etc)
     [tmp_name] 	A temporary address where the file is located before processing the upload request
     [error] 	Types of error occurred when the file is uploading
+
+    move_uploaded_file(file, destination) to upload file
 */
 ?>
 <form action="$_SERVER['PHP_SELF']" method="post" enctype="multipart/form-data">
@@ -192,7 +195,11 @@ unset($_SESSION["Rollnumber"]); // Destroying Certain Session Data
 echo '<hr/>';
 // Examples - $_SERVER ========>
 /*
-    It is a PHP super global variable that stores the information about headers, paths and script locations.
+    It is a PHP super global variable that stores the information about headers, paths and script locations like,
+                HTTP connection
+                SERVER connection
+                HOST connection
+                URL connection
 */
 echo $_SERVER['PHP_SELF']; 
 echo "<br>"; 
@@ -205,3 +212,16 @@ echo "<br>";
 echo $_SERVER['SCRIPT_NAME']; 
 echo "<br>";
 echo '<hr>';
+echo "<pre>";
+print_r($_SERVER);
+
+// 10. die() & exit()
+    /*
+        Both functions are the same tto exit the code right here.[ when use die(); or exit(); ]
+    */
+    echo "1. some message <br/>";
+    echo "2. some message <br/>";
+    echo "3. some message <br/>";
+    die('After this not run code.');
+    echo "4. some message <br/>";
+    echo "5. some message <br/>";

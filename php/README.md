@@ -3,14 +3,16 @@
 ## Date: 19-01-21
 ### TOPIC NAME: PHP Language Basics ###
 
-    1. Single line and multi line comment                             Line = 15
-    2. Echo vs prit                                                   Line = 23
-    3. Variable declaration                                           Line = 29
-    4. Add two value [integer and string]                             Line = 34
-    5. Function with local value                                      Line = 44
-    6. Function with global value                                     Line = 52
-    7. Static value                                                   Line = 71
-    8. Superglobal value                                              Line = 81
+    1. Single line and multi line comment                               Line = 17
+    2. Echo vs prit                                                     Line = 25
+    3. use {} to read value of variable                                 Line = 31
+    4. Variable declaration                                             Line = 36
+    5. Add two value [integer and string]                               Line = 41
+    6. Function with local value                                        Line = 51
+    7. Function with global value                                       Line = 59
+    8. Static value                                                     Line = 78
+    9. Superglobal value                                                Line = 88
+    10. die() & exit()                                                  Line = 216
 
 ## Date: 24-01-21
 ### TOPIC NAME: Variable and Constants ###
