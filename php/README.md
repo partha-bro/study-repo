@@ -263,3 +263,10 @@
     20. Magic constant
     21. conditional function of oops
     22. get functions in oops
+
+## Date: 01-04-21
+### TOPIC NAME: PHP Ajax ###
+    1. Introduction and fetch data
+    1. Insrt data
+    1. Delete data
+    1. Update data

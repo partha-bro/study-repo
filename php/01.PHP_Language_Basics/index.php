@@ -142,14 +142,31 @@ echo '<hr>';
 // Examples - $_COOKIE ========>
 // An associative array of variables passed to the current script via HTTP Cookies. 
 // set a cookie for remember browser any data of certain time
+// We can access the cookie in any pages before expire.
+    /*
+        syntax:
+            setcookie("key", "value", "expire time",path,domain,secure,httponly); // set cookie
+
+        key = name of cookie value
+        value = value of cookie 
+        expire time = expire time in sec
+        path = where to access cookie
+        domain = which domain to access cookie
+        secure = secure page or not, if http protocol then type false
+                                        if https protocol then type true
+        httponly = developer can access the cookie in client side( javascript ) of server side( php/python ).
+    */
 $value = 'Set cookie in browser';
 
-// setcookie("key", "value", "expire time"); // set cookie
+// setcookie("key", "value", "expire time in sec",path,domain,secure,httponly); // set cookie
 setCookie("TestCookie", $value);  /* expire in 1 hour(60 * 60) 
-                                                    sec * min * hour * day = 60 * 60 * 24 * 10 (for 10 days)*/
-
-echo $_COOKIE["TestCookie"]; //  access the cookie
-
+                                    sec * min * hour * day = 60 * 60 * 24 * 10 (for 10 days)*/
+    echo "Cookie is set.";
+?>
+<hr/>
+    <button><a href="cookie_session_value.php"> Cookie Retrive </a></button>
+<hr/>
+<?php
 // setCookie("TestCookie", "", 1); // delete the cookie
 echo '<hr>';
 
@@ -166,8 +183,15 @@ $_SESSION["Rollnumber"] = "11";   //Storing Session Data
 
 // Accessing Session Data: [ firstly calling session_start() and then by passing ]
 // session_start(); // hide this code, because already stated above.
-echo 'The Roll number of the student is :' . $_SESSION["Rollnumber"] . '<br>'; 
-unset($_SESSION["Rollnumber"]); // Destroying Certain Session Data
+echo 'Session is set <br>'; 
+// session_unset($_SESSION["Rollnumber"]); // Delete Certain Session value
+// session_destroy();                       // Destroying Certain Session
+?>
+<hr/>
+    <button><a href="cookie_session_value.php"> Session Retrive </a></button>
+<hr/>
+<?php
+
 
 // $_FILES Array (HTTP File Upload variables)
 /*
@@ -183,14 +207,15 @@ unset($_SESSION["Rollnumber"]); // Destroying Certain Session Data
     move_uploaded_file(file, destination) to upload file
 */
 ?>
-<form action="$_SERVER['PHP_SELF']" method="post" enctype="multipart/form-data">
+<form action="<?= $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
     <label>Please upload your file:</label>
     <input type='file' name='files' />
     <input type='submit' name='upload' />
 </form>
 <?php
     if(isset($_POST['upload'])){
-        print_r($_FILES['files']['name']);
+        echo "<pre>";
+        print_r($_FILES['files']);
     }
 echo '<hr/>';
 // Examples - $_SERVER ========>
