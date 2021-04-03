@@ -138,3 +138,16 @@
 10. What is fork in Github?
     when we click fork button in any repository of github, that repo's copy is created in my github profile.
     in short, it takes ownership of any repository to mine.
+
+11. How to check prev command and how to directly run that command?
+    A. `history` command is use to show your all prev typing command in git terminal.
+    B. `!` this exponential symbol with your number of cammand hit run that command.
+
+        example:
+                $ history
+                1. ls
+                2. whoami
+                3. history
+
+                $ !2<enter>
+                result of whoami command

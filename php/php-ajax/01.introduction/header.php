@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>UPDATE || AJAX</title>
+	<title>PHP || AJAX</title>
 </head>
 <body align='center'>
 	<h3> Data Table </h3>
@@ -9,7 +9,9 @@
 	<button ><a href='../01.introduction/index.php'>Home</a></button>
 	<button id="btn-data"><a href="../02.insert-record/index.php">Insert Data</a></button>
 	<button id="btn-data"><a href="../03.delete-record/index.php">Delete Data</a></button>
-	<button id="btn-data"><a href="../04.update-record/index.php">Update Data</a></button><br/><br/>
+	<button id="btn-data"><a href="../04.update-record/index.php">Update Data</a></button>
+	<button id="btn-data"><a href="../05.live-search/index.php">Live Search</a></button>
+	<button id="btn-data"><a href="../06.pegination/index.php">Pegination</a></button><br/><br/>
 	<table align="center" border="5px" cellpadding="10" cellspacing="0">
 		<thead>
 			<tr>

@@ -11,6 +11,21 @@
 		Classic web pages, (which do not use AJAX) must reload the entire page if the content should change.
 
 		Examples of applications using AJAX: Google Maps, Gmail, Youtube, and Facebook tabs.
+
+		syntax in jquery:
+		 					$(document).ready(function(){
+								// event like click a button
+								$('id with #').on('click',function(
+									$.ajax(
+										url: url of calling web page
+										type: method through travel variables (get/post)
+										data: variable that use in object type like {key:value}
+										success: function(data){
+											after run the target page the result will be.
+										}
+									);
+								));
+		 					});
  --> 
 <?php
 	include_once '../01.introduction/header.php'

@@ -266,7 +266,11 @@
 
 ## Date: 01-04-21
 ### TOPIC NAME: PHP Ajax ###
+
     1. Introduction and fetch data
-    1. Insrt data
-    1. Delete data
-    1. Update data
+    2. Insrt data
+    3. Delete data
+    4. Update data
+    5. Live Search
+    6. Pegination
+    7. load-more-pegination
