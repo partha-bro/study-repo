@@ -54,9 +54,9 @@ class database
 				if ( $sql->rowCount() ) {
 					# code...
 					$this->conn->commit();
-					return $last_id." Data is inserted.";
+					return $last_id." Data is inserted.<hr/>";
 				}else{
-					return "Data is not inserted.";
+					return "Data is not inserted.<hr/>";
 				}
 
 			}catch( PDOException $e){
@@ -64,28 +64,92 @@ class database
 			}
 		}else{
 			$this->conn->rollback();
-			return "$db_name: table is not present in the database.";
+			return "$db_name: table is not present in the database.<hr/>";
 		}
 
 
 	}
 
 	// update/modify data into database
-	public function update()
+	public function update( $db_name,$param,$where=null )
 	{
 		# code...
+		if ($this->tableExists( $db_name )) {
+			# code...
+			$args = [];
+			foreach ($param as $key => $value) {
+				# code...
+				$args[] = "$key = '$value'";
+			}
+			$str = implode(",", $args);
+
+			$sql_command = "UPDATE $db_name SET $str";
+			if ($where != null) {
+				# code...
+				$sql_command .= " WHERE $where";
+			}
+			$sql = $this->conn->prepare($sql_command);
+			$sql->execute();
+
+			if ($sql->rowCount() > 0) {
+				# code...
+				return $sql->rowCount()." No. of  Data is updated.<hr/>";
+			}else{
+				return "Duplicate value occurs, so don't update it.<hr/>";
+			}
+		}else{
+			return "$db_name: table is not present in the database.<hr/>";
+		}
 	}
 
 	// delete data into database
-	public function delete()
+	public function delete( $db_name, $where )
 	{
 		# code...
+		if ($this->tableExists($db_name)) {
+			# code...
+			if (isset($where)) {
+				# code...
+				$sql_command = "DELETE FROM $db_name WHERE $where";
+				$sql = $this->conn->prepare($sql_command);
+				$sql->execute();
+
+				if ( $sql->rowCount()) {
+				# code...
+					return $sql->rowCount()." No. of  Data is deleted.<hr/>";
+				}else{
+					return "No data is deleted.<hr/>";
+				}
+			}
+		}else{
+			return "$db_name: table is not present in the database.<hr/>";
+		}
 	}
 
 	// select data into database
-	public function select()
+	public function select( $db_name )
 	{
 		# code...
+		if ($this->tableExists($db_name)) {
+			# code...
+			$sql = $this->conn->prepare("SELECT * FROM $db_name");
+			$sql->execute();
+			$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+			if ($sql->rowCount()) {
+				# code...
+				$output = '';
+				foreach ($result as $key => $value) {
+					# code...
+					$output .= "id :".$value['id']." - name: ".$value['student_name']."<br>";
+				}
+				return $output."<hr/>";
+			}else{
+				return "0 Record.";
+			}
+		}else{
+			return "$db_name: table is not present in the database.<hr/>";
+		}
 	}
 
 	// verify the table in database
