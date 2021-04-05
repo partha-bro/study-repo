@@ -1,9 +1,9 @@
 <!-- 
 	How to make a load more pegination in website?
 
-    the difference between html() and append() in jquery?
-        html(): it means, it changes the inner html text of any tag
-        append(): it means, it bind the data of parent tag. like append tbody in table.
+    Q.The difference between html() and append() in jquery?
+       A. html(): it means, it changes the inner html text of any tag
+          append(): it means, it bind the data of parent tag. like append tbody in table.
 		Step 1: Take some default value in 1st page using LIMIT offset,limit command of mysql query.
 
 		Step 2: Add sql record with load more button with id and data-id attribute
@@ -15,6 +15,18 @@
                   var next_no = $(this).data("id");
                   loadTable(next_no);
               });
+
+        What is data-id attribute in html?
+        A. The data-* attribute is used to store custom data private to the page or application.
+
+          The data-* attribute gives us the ability to embed custom data attributes on all HTML elements.
+
+          * = any string we want to replace.
+
+          it use to retrive value of custom attribute like in jquery
+          data-name = 'partha';
+          in jquery: $(this).data('name') it retrive partha value.
+          this is current tag or button.
 
     Step 5: Now remove Load more button more than one
             if (data) {

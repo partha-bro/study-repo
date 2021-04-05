@@ -1,5 +1,7 @@
 <!-- 
-	
+	 Serialize() use to retrive data in string format.
+
+   When we use ajax in form tag, then submit button type must be in button not type='submit'.
 -->
 <?php
 	include_once '../01.introduction/header.php';
