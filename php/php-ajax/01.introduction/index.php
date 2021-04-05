@@ -19,7 +19,7 @@
 									$.ajax(
 										url: url of calling web page
 										type: method through travel variables (get/post)
-										data: variable that use in object type like {key:value}
+										data: String eg. name=partha&age=20&gender=male serialize() /Array/Objrct eg. {key:value}
 										success: function(data){
 											after run the target page the result will be.
 										}

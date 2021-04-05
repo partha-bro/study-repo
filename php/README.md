@@ -273,4 +273,5 @@
     4. Update data
     5. Live Search
     6. Pegination
-    7. load-more-pegination
+    7. Load-more-pegination
+    8. Serializa-Form

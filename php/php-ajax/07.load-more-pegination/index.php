@@ -1,42 +1,50 @@
 <!-- 
-	How to make a pegination in website?
-		Step 1: Take some default value in 1st page using LIMIT command of mysql query.
+	How to make a load more pegination in website?
 
-		Step 2: Find out total no of pegination button required
-					divide by total record and show record
-					total record - find out in count() in mysql query
+    the difference between html() and append() in jquery?
+        html(): it means, it changes the inner html text of any tag
+        append(): it means, it bind the data of parent tag. like append tbody in table.
+		Step 1: Take some default value in 1st page using LIMIT offset,limit command of mysql query.
 
-		Step 3: Now when i click page number then autometicaly fetch page numberusing jquery like
-						$(document).on('click','#pegination button',function(){
-				  			var no = $(this).attr('id');
-				  			console.log(no);
-				  		};
+		Step 2: Add sql record with load more button with id and data-id attribute
 
-		Step 4: The formula of show record according to page
-				offset value = (page no - 1) * limit record
-				query use LIMIT offset,limit no on command 
+		Step 3: now the data-id set by last value of id record of mysql
+
+		Step 4: When click load more button then fetch data-id number call function of data("id") in jquery
+              $(document).on('click','#ajaxbtn',function(){
+                  var next_no = $(this).data("id");
+                  loadTable(next_no);
+              });
+
+    Step 5: Now remove Load more button more than one
+            if (data) {
+              $('#pegination').remove();     // remove the previous load more button
+              $('#loadData').append(data);    // append the data
+            }else{
+              $('#ajaxbtn').prop('disabled',true);  // disable the data
+              $('#ajaxbtn').html('Finished');       // load more button name in finished
+            }
 -->
 <?php
 	include_once '../01.introduction/header.php';
 ?>
-		<tbody id="data">
-			<tr>
-				<td>1</td>
-				<td>Arjun</td>
-				<td>25</td>
-				<td>M</td>
-				<td>7011483096</td>
-				<td>Puri</td>
-				<td><button id="1" onclick="editData(1);">Edit</button></td>
-				<td><button id="1" onclick="deleteData(1);">Delete</button></td>
-      </tr>
-    </tbody>
+
   </table>
-<br/><br/>
-<div id='pegination' align='center'>
-  <button id='2'>Load More</button>
-</div>
-		
+  <table id='loadData' align="center" border="5px" cellpadding="10" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Phone</th>
+        <th>City</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+      </tr>
+    </thead>
+
+  </table>
 
 	<script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -45,27 +53,35 @@
 
   <script type="text/javascript">
   	$(document).ready(function(){
-  		function loadPageNo(no = 0){
-  			$.ajax({
-  				url: 'pegination.php',
-  				type: 'POST',
-  				data: {page_no : no},
-  				success: function(data){
-  					$('#data').html(data);
-  				}
-  			});
-  		}
 
-  		// show 2 record so we can no of page is divide by total record.
-  		loadPageNo();
+      $('#table').remove();  // remove the header file of table tag
 
-  		// when no of page in click.
-  		$(document).on('click','#pegination button',function(){
-  			var no = $(this).attr('id');
-  			console.log(no);
-  			loadPageNo(no);
-  		});
-  	});
+      function loadTable(page_no){
+        $.ajax({
+          url: 'pegination.php',
+          type: 'post',
+          data: { page_no:page_no },
+          success: function(data){
+            if (data) {
+              $('#pegination').remove();
+              $('#loadData').append(data);
+            }else{
+              $('#ajaxbtn').prop('disabled',true);
+              $('#ajaxbtn').html('Finished');
+            }
+            
+          }
+        });
+      }
+
+      loadTable();
+
+      $(document).on('click','#ajaxbtn',function(){
+          $('#ajaxbtn').html('Loading...');
+          var next_no = $(this).data("id");
+          loadTable(next_no);
+      });
+    });
   </script>
 </body>
 </html>

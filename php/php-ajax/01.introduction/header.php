@@ -11,8 +11,9 @@
 	<button id="btn-data"><a href="../03.delete-record/index.php">Delete Data</a></button>
 	<button id="btn-data"><a href="../04.update-record/index.php">Update Data</a></button>
 	<button id="btn-data"><a href="../05.live-search/index.php">Live Search</a></button>
-	<button id="btn-data"><a href="../06.pegination/index.php">Pegination</a></button><br/><br/>
-	<table align="center" border="5px" cellpadding="10" cellspacing="0">
+	<button id="btn-data"><a href="../06.pegination/index.php">Button Pegination</a></button>
+	<button id="btn-data"><a href="../07.load-more-pegination/index.php">Load more Pegination</a></button><br/><br/>
+	<table id='table' align="center" border="5px" cellpadding="10" cellspacing="0">
 		<thead>
 			<tr>
 				<th>Id</th>
