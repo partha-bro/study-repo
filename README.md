@@ -5,6 +5,8 @@
    1. GIT : 	https://github.com/partha-bro/study-repo/tree/master/git
    2. PHP : 	https://github.com/partha-bro/study-repo/tree/master/php
    3. MySQL: 	https://github.com/partha-bro/study-repo/tree/master/mysql
+   4. AJAX :	https://github.com/partha-bro/study-repo/tree/master/php/php-ajax
+   5. JSON :	https://github.com/partha-bro/study-repo/tree/master/json
    4. Laravel:  
    5. Python : 	https://github.com/partha-bro/study-repo/tree/master/python
 

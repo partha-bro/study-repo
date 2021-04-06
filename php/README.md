@@ -1,4 +1,18 @@
-# Syllabus
+# PHP Syllabus
+
+## PHP 5 vs PHP 7
+
+    1. Performance
+    2. Return type
+    3. Exception handling (fatal error types)
+    4. Group use declaration
+    5. Support for 64-bit
+    6. Anonymous class
+    7. Three-way comparison operator (spaceship operator)
+    8. Null coalescing operator
+
+    https://www.bestinterviewquestion.com/blog/what-is-the-difference-between-php5-and-php7
+
 
 ## Date: 19-01-21
 ### TOPIC NAME: PHP Language Basics ###
