@@ -16,17 +16,17 @@
 
   <script type="text/javascript">
   	$(document).ready(function(){
-  		$.ajax({
-  			url: 'data.json',
-  			type: 'GET',
-  			success: function(data){
-  				// console.log(data);
-  				$.each( data, function( key,value){
-  					$('#load').append(value.id + " " + value.title + "<br/>");
-  				});
-  			}
-  		});
-  	});
+      $.ajax({
+        url: 'fetch_data.php',
+        type: 'POST',
+        data: { id : 2},
+        dataType: 'JSON',
+        success: function(data){
+          // $('#load').html(data.id);
+          console.log(data);
+        }
+      });
+    });
   </script>
 </body>
 </html>

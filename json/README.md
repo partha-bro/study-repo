@@ -4,6 +4,48 @@
 		 A. It stands for Javascript Object Notation.
 		 	it is used for store and exchange data.
 
+		 	NOTE: json file access in ajax jquery method.
+		 	Syntax:
+		 			// When page load document is ready to perform
+		 			$(document).ready(function(){
+
+		 			// call ajax method of jquery
+				      $.ajax({
+
+				    // url of json data or fetch json object using json_encode()
+				        url: 'fetch_data.php',
+
+				    // type of data transfer
+				        type: 'POST',
+
+				    // data transfer to url path using key:value 
+				        data: { id : 2},
+
+				    // datatype is mention about what type of data is retun
+				        dataType: 'JSON',
+
+				    // after the data is fetch what can we do with it.
+				        success: function(data){
+				          $.each(data, function(key, value){
+				            $('#load').append(value.id + " " + value.student_name + "<br/>");
+				          });
+				        }
+				      });
+				    });
+			Example of json call in ajax using jquery:
+				$(document).ready(function(){
+			      $.ajax({
+			        url: 'fetch_data.php',
+			        type: 'POST',
+			        data: { id : 2},
+			        dataType: 'JSON',
+			        success: function(data){
+			          $.each(data, function(key, value){
+			            $('#load').append(value.id + " " + value.student_name + "<br/>");
+			          });
+			        }
+			      });
+			    });
 	2. Example?
 		A. JSON - 
 		{
@@ -81,3 +123,14 @@
 
 		  Disadvantage:
 		  	Can not use it for transfor video, audio,images or any other binary information.
+
+	7. What is json_encode() & json_decode()?
+		A. json_encode() takes the multidimension array and converts into json object.
+			Syntax: json_encode(array)
+
+		B. json_decode() takes the json object and converts into php array/object.
+			Syntax: json_decode(json object,assoc)
+			but we can use instead of assoc the value is true/false like:
+
+				json_decode(json object,true)  it returns php array
+				json_decode(json object,false)  it returns php object
