@@ -75,3 +75,29 @@
 		header('Access-Control-Allow-Origin: *');							// open/partern API use
 				* means all develoers are use and any domain means allow perticular domain to use 
 		header('Access-Control-Allow-Headers:<header-name>');				// define header name for use
+
+## For testing APIs
+	
+	we can use POSTMAN chrome extension for testing.
+
+## How we can read all data using api?
+
+	use HTTP Method: GET
+	
+	NOTE: 1. Always use JSON format for read and write.
+
+	use json_encode for result and error because we can fetch the array from sql.
+
+## How we can read single data using api?
+
+	use HTTP Method: POST
+
+	Step 1: first input single data from user using json format so we fetch that using json_decode and convert to array.
+
+	Step 2: using that array we can run sql query
+
+	code:
+		// $data store array value, 'php://input' is use for input json file for api.
+		$data = json_decode(file_get_contents('php://input'),true);
+		$student_id = $data['id'];
+

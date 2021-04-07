@@ -139,6 +139,16 @@
     when we click fork button in any repository of github, that repo's copy is created in my github profile.
     in short, it takes ownership of any repository to mine.
 
+    Example:
+         Person 1 (Owner) : Hosts a project on github
+
+         Person 2 : Copy the Project (Fork)
+                    make desired changes to the code
+                    Request the owner to update the code base (Pull Request)
+
+         person 1 (Owner) : Reviews the code change & make the changes to original code base
+                            ( Merge Pull Request)
+
 11. How to check prev command and how to directly run that command?
     A. `history` command is use to show your all prev typing command in git terminal.
     B. `!` this exponential symbol with your number of cammand hit run that command.
