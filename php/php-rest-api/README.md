@@ -101,3 +101,12 @@
 		$data = json_decode(file_get_contents('php://input'),true);
 		$student_id = $data['id'];
 
+## Always use json data for working
+
+	in php
+		json_encode(array);
+		json_decode(json,true); // for array
+		json_decode(json,false); // for object
+
+	in jquery:
+		JSON.stringify(object) // convert object to json then send to api

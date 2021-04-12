@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>REST API CRUD</title>
+
+	<style type="text/css">
+		#body{
+			height: 100%;
+			width: 60%;
+			padding-left: 20%;
+			padding-right: 20%;
+		}
+		#header{
+			background-color: brown;
+			padding: 5px 5px;
+			color: white;
+		}
+		#input{
+			background-color: pink;
+			padding: 5px 5px;
+			color: black;
+		}
+		#model{
+			background-color: grey;
+			padding: 5px 5px;
+			color: white;
+		}
+		table{
+			height: 100%;
+			width: 100%;
+			font-weight: bolder;
+		}
+		thead{
+			background-color: yellow;
+		}
+		#edit{
+			background-color: green;
+			color: white;
+			font-weight: bold;
+		}
+		#delete{
+			background-color: red;
+			color: white;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+
+	<div id='body' align="center" >
+		<div id='header'>
+			<h2>PHP REST API CRUD</h2>
+			<input type="text" name="search">
+			<input type="button" name="search" value="search">
+		</div>
+		<br/>
+		<div id='input'>
+			Name: <input type="text" name="name">
+			age: <input type="number" name="age">
+			City: <input type="text" name="city">
+			<input type="button" name="save" value="save">
+		</div>
+		<br/>
+		<table id="table-data ">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Age</th>
+					<th>City</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody align="center"id="load-Data" >
+				<tr id="default-data">
+					<td>1</td>
+					<td>Name 1</td>
+					<td>25</td>
+					<td>Delhi</td>
+					<td><input type="button" id="edit" data-eid="1" name="edit" value="Edit"></td>
+					<td><input type="button" id="delete" data-did="1" name="delete" value="Delete"></td>
+				</tr>
+			</tbody>
+		</table>
+		<br/>
+		<div id='model'>
+			<input type="text" id="edit-id" name="id" hidden="">
+			Name: <input type="text" id="edit-name" name="name">
+			age: <input type="number" id="edit-age" name="age">
+			City: <input type="text" id="edit-city" name="city">
+			<input type="button" id="update" name="update" value="update">
+			<input type="button" id="close" name="close" value="close">
+		</div>
+	</div>
+</body>
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous">
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#model').hide();
+
+		// Fetch all records
+			function loadData(){
+				$.ajax({
+					url: 'http://localhost/test/personal/study-repo/php/php-rest-api/project/api/fetch-all-record.php',
+					type: 'GET',
+					datatype: 'JSON', 
+					success: function(data){
+						console.table(data);
+						if (data.status == false) {
+							$('#load-Data').append("<tr><td colspan='6' ><h1>"+ data.message +"</h1></td></tr>");
+						}else{
+							$('#default-data').remove();
+							$.each(data, function(key, value){
+								$('#load-Data').append("<tr><td>"+ value.id +"</td><td>"+ value.student_name +"</td><td>"+ value.age +"</td><td>"+ value.city +"</td><td><button id='edit' data-eid="+ value.id +" >Edit</button></td><td><button id='delete' data-did='" + value.id + "' name='delete' >Delete</button></td></tr>");
+							});
+							
+						}
+					}
+				});
+			}
+
+			loadData();
+
+		// insert new Record
+
+		// Delete Record
+			$(document).on('click','#delete',function(){
+				var id = $(this).data('did');			// fetch id from current click button
+				var object = { id: id};					// make a object of id
+				var myjson = JSON.stringify(object);	// convert object to json using stringify()
+				
+				$.ajax({
+					url: 'http://localhost/test/personal/study-repo/php/php-rest-api/project/api/delete-record.php',
+					type: 'POST',
+					datatype: 'json',
+					data: myjson,
+					success: function(data){
+						console.table(data);
+						alert(data[0].message);
+					}
+				});
+			});
+		// Fetch Single Record : Show in Modal box
+			$(document).on('click','#edit',function(){
+				$('#model').show();
+				var id = $(this).data('eid');
+				var object = { id: id};
+				var myjson = JSON.stringify(object);
+
+				$.ajax({
+					url: 'http://localhost/test/personal/study-repo/php/php-rest-api/project/api/fetch-single-record.php',
+					type: 'post',
+					datatype: 'json',
+					data: myjson,
+					success: function(data){
+						console.table(data);
+						$('#edit-id').val(data[0].id);
+						$('#edit-name').val(data[0].student_name);
+						$('#edit-age').val(data[0].age);
+						$('#edit-city').val(data[0].city);
+					}
+				});
+			});
+		// Hide Modal box
+			$(document).on('click','#close',function(){
+				$('#model').hide();
+			});
+		// Live search Record
+	});
+</script>
+</html>
