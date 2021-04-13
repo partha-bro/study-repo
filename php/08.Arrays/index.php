@@ -637,5 +637,8 @@ echo "<hr/>";
 echo "</pre>";
 ?>
     <hr/>
+        <button><a href="home.php"> Next </a></button>
+    <hr/>
+    <hr/>
         <button><a href="assingment.php"> ASSIGNMENT </a></button>
     <hr/>
