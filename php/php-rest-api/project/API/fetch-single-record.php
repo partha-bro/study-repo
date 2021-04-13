@@ -31,5 +31,6 @@
 			echo json_encode($array_error);
 		}
 	}catch( Exception $e ){
-		echo "Fetch-error: ".$e->getLine()."=>".$e->getMessage();
+		$message =  "Fetch-Single-Error: ".$e->getLine() ." :: ".$e->getMessage();
+		echo json_encode( [ "message"=> ".$message.", "status"=>false] );
 	}

@@ -55,10 +55,10 @@
 		</div>
 		<br/>
 		<div id='input'>
-			Name: <input type="text" name="name">
-			age: <input type="number" name="age">
-			City: <input type="text" name="city">
-			<input type="button" name="save" value="save">
+			Name: <input type="text" id="name" name="name">
+			age: <input type="number" id="age" name="age">
+			City: <input type="text" id="city" name="city">
+			<input type="button" id="insert" name="save" value="save">
 		</div>
 		<br/>
 		<table id="table-data ">
@@ -129,6 +129,27 @@
 			loadData();
 
 		// insert new Record
+			$(document).on('click','#insert',function(){
+				
+				var name = $('#name').val();
+				var age = $('#age').val();
+				var city = $('#city').val();
+
+				var object = { student_name:name, age:age, city:city };
+				var myjson = JSON.stringify(object);
+
+				$.ajax({
+					url: 'http://localhost/test/personal/study-repo/php/php-rest-api/project/api/insert-record.php',
+					type: 'post',
+					datatype: 'json',
+					data: myjson,
+					success: function(data){
+						console.table(data);
+						alert(data.message);
+					}
+				});
+			});
+
 
 		// Delete Record
 			$(document).on('click','#delete',function(){
@@ -143,7 +164,7 @@
 					data: myjson,
 					success: function(data){
 						console.table(data);
-						alert(data[0].message);
+						alert(data.message);
 					}
 				});
 			});
@@ -172,7 +193,30 @@
 			$(document).on('click','#close',function(){
 				$('#model').hide();
 			});
+
+		// Update data by edit 
+			$(document).on('click','#update',function(){
+				var sid = $('#edit-id').val();
+				var sname = $('#edit-name').val();
+				var sage = $('#edit-age').val();
+				var scity = $('#edit-city').val();
+
+				var object = { id:sid, student_name:sname, age:sage, city:scity };
+				var myjson = JSON.stringify(object);
+
+				$.ajax({
+					url: 'http://localhost/test/personal/study-repo/php/php-rest-api/project/api/update-record.php',
+					type: 'post',
+					datatype: 'json',
+					data: myjson,
+					success: function(data){
+						console.table(data);
+						alert(data.message);
+					}
+				});
+			});
 		// Live search Record
+		
 	});
 </script>
 </html>

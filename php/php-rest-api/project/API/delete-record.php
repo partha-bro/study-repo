@@ -1,13 +1,13 @@
 <?php
 
-	header('Content-Type: Application/JSON');
+	header('Content-Type: application/json');
 	header('Access-Control-Allow-Origin: *');
 	header('Access-Control-Allow-Methods: DELETE');
 	header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Access-Control-Allow-Methods,Content-Type,authorization,X-Requested-With');
 
 	// data fetch 
 	$data = json_decode(file_get_contents('php://input'),true);
-	$data_id = $data['id'];
+	$delete_id = $data['id'];
 
 	include_once 'database/dbconfig.php';
 
@@ -17,17 +17,18 @@
 		$sql = $db->conn->prepare('DELETE FROM student WHERE id = ?');
 
 		$db->conn->beginTransaction();
-		$sql->execute([$data_id]);
-		$sql->fetchAll(PDO::FETCH_ASSOC);
-		$no = $sql->rowCount();
-		if ($no) {
+
+		
+		if ($sql->execute([$delete_id])) {
 			# code...
+			$no = $sql->rowCount();
 			$db->conn->rollback();
-			echo json_encode( [ "message"=> "$no Record Deleted!", "status"=>true] );
+			$message = "$no Record Deleted!";
+			echo json_encode([ "message"=> $message, "status" => true ]);
 		}else{
-			echo json_encode( [ "message"=> "0 Record Deleted!", "status"=>false] );
+			echo json_encode([ "message"=> "Error: No delete perform", "status" => false ]);
 		}
 	} catch (Exception $e) {
 		$message =  "Delete-Error: ".$e->getLine() ." :: ".$e->getMessage();
-		echo json_encode( [ "message"=> ".$message.", "status"=>false] );
+		echo json_encode([ "message"=> ".$message.", "status"=>false ]);
 	}	
