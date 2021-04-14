@@ -53,6 +53,11 @@
 
 	$ php artisan serve
 
+## What is php artisan?
+
+	PHP 		: it is a php compiler php.exe.
+	Artisan		: Artisan is the name of the command-line interface included with Laravel. It provides a number of helpful commands for your use while developing your application. It is driven by the powerful Symfony Console component.
+
 ## Folder and file structure
 	
 	1. app
@@ -97,3 +102,105 @@
 	Goto the routes folder
 		and open web.php and make changes.
 
+## Controller:
+
+
+### What is Controller?
+	
+	The Controller is responsible for controlling the application logic and acts as the coordinator between the View and the Model. The Controller receives an input from the users via the View, then processes the user's data with the help of Model and passes the results back to the View.
+
+### How to make a controller in command line?
+
+	$ php artisan make:controller NameController
+
+	NOTE: name of control is equal to name of class so the writing style is eg. UserController
+
+### Where controller is exists?
+
+	Goto the app/http/Controllers folder.
+
+### Make function in Controller?
+
+	Simple create a normal function insde the class
+
+### How to call controller from routing for view?
+
+	Step 1: Goto the routes/web.php and open
+
+	Step 2: Now attach the controller file using 'use' keyword.
+
+	Step 3: Make a route function like-
+				Route::get('path',array [NameController::class,'method_name'] );
+
+				NOTE: Method_name must not contain brackets and use as a string with quotation
+
+	Step 4: If we want to input some data from user using URL
+				Route::get('path/{var_name}',array [NameController::class,'method_name'] );
+
+				that var_name use as controller method parameter.
+
+## View
+
+### What is view?
+
+	In MVC framework, the letter “V” stands for Views. It separates the application logic and the presentation logic. Views are stored in 'resources/views' directory. Generally, the view contains the HTML which will be served by the application.
+
+### Make a view file?
+
+	Step 1: Goto the resources/views folder
+
+	Step 2: Create a file and name that file is name.blade.php
+
+	NOTE: blade is template engine of laravel for view files.
+
+### how to call view pages?
+
+	There are two methods to call a view page:
+		
+		1. From route
+
+			Again there are two method of route to call a view
+
+				1. get() method
+
+					Route::get('path',function(){
+								return view('view_name');
+						});
+
+				2. view() method
+
+					Route::view('path','view_name');
+
+		2. From controller
+
+			in controller page, we can define a user-define function and inside that we can simply return view('view_name').
+
+### How to pass a value to view page?
+
+	NOTE: When we can pass the value using associated array.
+	
+	There are two methods to pass vlaue a view page:
+		
+		1. From route
+
+				1. get() method
+
+					Route::get('user2/{name}',function($name,$file = 'get method from Route'){
+						return view('user',['name'=>$name,'file'=>$file]);
+					});
+
+		2. From controller
+
+			in web.php file
+				Route::get('user/{name}',[UserController::class,'loadpage']);
+
+			In controller file
+				public function loadPage($name='Not provided.',$file = 'Controller')
+			    {
+			    	# code...
+			    	return view('user',['name'=>$name,'file'=>$file]);
+			    }	
+
+### How to retrive value from pass variale?
+
+	use {{variable_name}} to read the value. 
