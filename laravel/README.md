@@ -58,6 +58,14 @@
 	PHP 		: it is a php compiler php.exe.
 	Artisan		: Artisan is the name of the command-line interface included with Laravel. It provides a number of helpful commands for your use while developing your application. It is driven by the powerful Symfony Console component.
 
+## How to test our laravel code
+
+	For Link: https://www.youtube.com/watch?v=c3SWoQxGj58
+
+	There are two methods:
+		1. vendor/bin/phpunit
+		2. php artisan test
+
 ## Folder and file structure
 	
 	1. app

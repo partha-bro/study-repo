@@ -50,8 +50,14 @@
 	<div id='body' align="center" >
 		<div id='header'>
 			<h2>PHP REST API CRUD</h2>
-			<input type="text" name="search">
-			<input type="button" name="search" value="search">
+			<div id="search-div">
+				Search: <input type="text" id="search" name="search">
+				<div id="result">
+					
+				</div>
+			</div>
+			
+
 		</div>
 		<br/>
 		<div id='input'>
@@ -153,20 +159,32 @@
 
 		// Delete Record
 			$(document).on('click','#delete',function(){
-				var id = $(this).data('did');			// fetch id from current click button
-				var object = { id: id};					// make a object of id
-				var myjson = JSON.stringify(object);	// convert object to json using stringify()
-				
-				$.ajax({
-					url: 'http://localhost/test/personal/study-repo/php/php-rest-api/project/api/delete-record.php',
-					type: 'POST',
-					datatype: 'json',
-					data: myjson,
-					success: function(data){
-						console.table(data);
-						alert(data.message);
-					}
-				});
+				if(confirm('Do you really want to delete this record?')){
+					var id = $(this).data('did');			// fetch id from current click button
+					var object = { id: id};					// make a object of id
+					var myjson = JSON.stringify(object);	// convert object to json using stringify()
+					
+					var row = this;							// current delete button assign to row
+
+					$.ajax({
+						url: 'http://localhost/test/personal/study-repo/php/php-rest-api/project/api/delete-record.php',
+						type: 'POST',
+						datatype: 'json',
+						data: myjson,
+						success: function(data){
+							console.table(data);
+
+							if (data.status == true) {
+								alert(data.message);
+								$(row).closest('tr').fadeOut();	// jquery function to select and fadeout 
+							}else{
+								alert(data.message);
+							}
+							
+						}
+					});
+
+				}
 			});
 		// Fetch Single Record : Show in Modal box
 			$(document).on('click','#edit',function(){
@@ -216,7 +234,29 @@
 				});
 			});
 		// Live search Record
-		
+			$(document).on('keyup','#search',function(){
+				var search_term = $('#search').val();
+
+				$('#load-Data').html("");			// empty the table before the result comes
+
+				$.ajax({
+					url: 'http://localhost/test/personal/study-repo/php/php-rest-api/project/api/search-record.php?search=' + search_term,
+					type: 'get',
+					success: function(data){
+						console.table(data);
+
+						if (data.status == false) {
+							$('#load-Data').append("<tr><td colspan='6' ><h1>"+ data.message +"</h1></td></tr>");
+						}else{
+							$('#default-data').remove();
+							$.each(data, function(key, value){
+								$('#load-Data').append("<tr><td>"+ value.id +"</td><td>"+ value.student_name +"</td><td>"+ value.age +"</td><td>"+ value.city +"</td><td><button id='edit' data-eid="+ value.id +" >Edit</button></td><td><button id='delete' data-did='" + value.id + "' name='delete' >Delete</button></td></tr>");
+							});
+							
+						}
+					}
+				});
+			});
 	});
 </script>
 </html>
