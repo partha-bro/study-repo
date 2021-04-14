@@ -57,38 +57,38 @@ AJAX is about updating parts of a web page, without reloading the whole page.
 
 		Step 3: now the data-id set by last value of id record of mysql
 
-			Step 4: When click load more button then fetch data-id number call function of data("id") in jquery
+		Step 4: When click load more button then fetch data-id number call function of data("id") in jquery
 			              $(document).on('click','#ajaxbtn',function(){
 			                  var next_no = $(this).data("id");
 			                  loadTable(next_no);
 			              });
 
-        Step 5: Now remove Load more button more than one
+        	Step 5: Now remove Load more button more than one
 	            if (data) {
-	             	$('#pegination').remove();     // remove the previous load more button
-	             	$('#loadData').append(data);    // append the data
+	             	$('#pegination').remove();     		// remove the previous load more button
+	             	$('#loadData').append(data);    	// append the data
 	            }else{
-	              	$('#ajaxbtn').prop('disabled',true);  // disable the data
-	              	$('#ajaxbtn').html('Finished');       // load more button name in finished
+	              	$('#ajaxbtn').prop('disabled',true);  	// disable the data
+	              	$('#ajaxbtn').html('Finished');       	// load more button name in finished
 	            }
 
 ### The difference between html() and append() in jquery?
 
-       A. html()	: it means, it changes the inner html text of any tag
-          append()	: it means, it bind the data of parent tag. like append tbody in table.
+       html()	: it means, it changes the inner html text of any tag
+       append()	: it means, it bind the data of parent tag. like append tbody in table.
 
 ### What is data-id attribute in html?
 
-        A. The data-* attribute is used to store custom data private to the page or application.
+	The data-* attribute is used to store custom data private to the page or application.
 
-          The data-* attribute gives us the ability to embed custom data attributes on all HTML elements.
+	The data-* attribute gives us the ability to embed custom data attributes on all HTML elements.
 
-          * = any string we want to replace.
+	* = any string we want to replace.
 
-          it use to retrive value of custom attribute like in jquery
-          data-name = 'partha';
-          in jquery: $(this).data('name') it retrive partha value.
-          this is current tag or button.
+	it use to retrive value of custom attribute like in jquery
+		data-name = 'partha';
+		in jquery: $(this).data('name') it retrive partha value.
+		this is current tag or button.
 
 ## What is serialize() function and how to use it?
 
@@ -98,10 +98,10 @@ AJAX is about updating parts of a web page, without reloading the whole page.
 
   	example: 
   		$.ajax({
-            url: 'form-data.php',
-            type: 'post',
-            data: $('#data-form').serialize(),
-            success: function(data){
-              $('#result').html(data);
-            }
-          });
+		    url: 'form-data.php',
+		    type: 'post',
+		    data: $('#data-form').serialize(),
+		    success: function(data){
+		      $('#result').html(data);
+		    }
+		});
