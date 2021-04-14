@@ -94,7 +94,7 @@
 
 ## What are the data types use in JSON and example?
 
-	A.	There are six types like
+	A. There are six types like
 		1. string
 		2. number
 		3. boolean
@@ -105,11 +105,11 @@
 	Example:
 		{
 			"name" : "Arjun Bro",						// string
-			"age" : 25,									// number
-			"married" : false,							// boolean
-			"kids" : ,									// null
-			"hobbies" : [ "music", "computer"],			// array
-			"vehicle" : {								// object
+			"age" : 25,							// number
+			"married" : false,						// boolean
+			"kids" : ,							// null
+			"hobbies" : [ "music", "computer"],				// array
+			"vehicle" : {							// object
 				{"type" : "car","vname":"swift"},
 				{"type" : "bike","vname":"apache"}
 			}
