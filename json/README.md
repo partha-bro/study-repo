@@ -69,12 +69,12 @@
 
 ## Difference Between JSON and XML?
 
-	JSON | XML
-	----------
-	1. Javascript Object Notation | 1. Extensible markup language
-	2. Text based format | 2. Markup language
-	3. Light weight | 3. Heavier
-	4. Doesn't support comments and namespaces | 4. Support comments and namespaces	
+JSON | XML
+----------
+1. Javascript Object Notation | 1. Extensible markup language
+2. Text based format | 2. Markup language
+3. Light weight | 3. Heavier
+4. Doesn't support comments and namespaces | 4. Support comments and namespaces	
 
 ## Javascript Object vs JSON
 
