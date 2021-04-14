@@ -14,15 +14,15 @@
     10. What is fork in Github?
 ---------------------------------------------
 
-1. What is GIT?
+## What is GIT?
     -> Free and open source version control system.
 
-2. What is version control system?
+## What is version control system?
     -> The management of changes to documents,computer programs, large web sites and 
     others collections of information.
     We track our code changes in GIT.
 
-3. TERMS:-
+## TERMS:-
 
     Directory -> Folder
     Terminal or command line -> interface of text commands
@@ -31,7 +31,7 @@
     Repository -> project
     Github -> A website to host your Repository online
 
-4. Git commands:-
+## Git commands:-
 
     git clone                       -> Bring a repository, that is hosted somewhere like github into a folder 
                                         on your local machine
@@ -46,7 +46,7 @@
                                         ( it's work: add changes to untracked area)
     git reset --hard 'commit no'    -> it's roll back to given commit number from git log forcefully delete extra codes.
 
-5. What is the difference between pull and clone?
+## What is the difference between pull and clone?
     Both are doing the same thing but 
         clone is download the entire project to your local system.
         You don't have working repo in your system.
@@ -68,7 +68,7 @@
 
         That's all, All commits and branch in the remote repo now available in the local repository of your computer.
 
-6. Local git workflow:-
+## Local git workflow:-
 <pre>
     touch README.md                                                     ==> Before create a repo make a README.md file
         |               
@@ -94,11 +94,11 @@
         |
     git pull https://github.com/partha-bro/study-repo.git               ==> download the changes of the remote repo
 </pre>
-7. What is Git branch?
+## What is Git branch?
     A branch represents an independent line of development. 
     Branches serve as an abstraction of the edit/stage/commit process.
 
-8. Common options:-
+## Common options:-
 
     git branch                                          ==> list all the branches
         |
@@ -126,7 +126,7 @@
         |
     git branch -D "branch_name"                         ==> if you want to delete the branch without merging
 
-9. How to undoing my changes in git?
+## How to undoing my changes in git?
 
     git log                                             ==> check the all commit changes log file like history
     git reset 'file_name'                               ==> it's roll back staging area to untracked area
@@ -135,7 +135,7 @@
     git reset --hard 'commit no'                        ==> it's roll back to given commit number 
                                                             from git log forcefully delete extra codes.
 
-10. What is fork in Github?
+## What is fork in Github?
     when we click fork button in any repository of github, that repo's copy is created in my github profile.
     in short, it takes ownership of any repository to mine.
 
@@ -149,7 +149,7 @@
          person 1 (Owner) : Reviews the code change & make the changes to original code base
                             ( Merge Pull Request)
 
-11. How to check prev command and how to directly run that command?
+## How to check prev command and how to directly run that command?
     A. `history` command is use to show your all prev typing command in git terminal.
     B. `!` this exponential symbol with your number of cammand hit run that command.
 
