@@ -69,10 +69,10 @@
         That's all, All commits and branch in the remote repo now available in the local repository of your computer.
 
 6. Local git workflow:-
-
+<pre>
     touch README.md                                                     ==> Before create a repo make a README.md file
-        |               ( for heading: use # like <h1> tag and for sub heading: use ## like <h2> tag 
-        |                   for text or description: use simple text )
+        |               
+        |                   
     git init                                                            ==> initializaion of repository
         |
         |
@@ -93,7 +93,7 @@
         |
         |
     git pull https://github.com/partha-bro/study-repo.git               ==> download the changes of the remote repo
-
+</pre>
 7. What is Git branch?
     A branch represents an independent line of development. 
     Branches serve as an abstraction of the edit/stage/commit process.
