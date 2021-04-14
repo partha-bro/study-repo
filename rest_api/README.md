@@ -2,30 +2,30 @@
 
 ## What is REST, API and REST API?
 
-	API (Application Program Interface) is an agreed way to send and receive data between computers. For example, if you want to display Google Maps on your site, but the maps are on Google's servers, you need a way to ask Google to provide you with the maps. The way to ask Google to send you the requested maps is through an API provided by Google that tells you to which web addresses should you send the requests to get the data. In a more formal language, you need to send a request to the remote server to get a response.
+	1. API (Application Program Interface) is an agreed way to send and receive data between computers. For example, if you want to display Google Maps on your site, but the maps are on Google's servers, you need a way to ask Google to provide you with the maps. The way to ask Google to send you the requested maps is through an API provided by Google that tells you to which web addresses should you send the requests to get the data. In a more formal language, you need to send a request to the remote server to get a response.
 
-	REST (Representational State Transfer) is an API that defines a set of functions that programmers can use to send requests and receive responses using the HTTP protocol methods such as GET and POST.
+	2. REST (Representational State Transfer) is an API that defines a set of functions that programmers can use to send requests and receive responses using the HTTP protocol methods such as GET and POST.
 
-	REST API can be used by any site or application no matter what language it is written in because the requests are based on the universal HTTP protocol, and the information is usually returned in the JSON format that almost all of the programming languages can read.
+	3. REST API can be used by any site or application no matter what language it is written in because the requests are based on the universal HTTP protocol, and the information is usually returned in the JSON format that almost all of the programming languages can read.
 
 ## The HTTP Methods
 
-	GET		Retrieves data from a remote server. It can be a single resource or a list of resources.
+	GET	Retrieves data from a remote server. It can be a single resource or a list of resources.
 	POST	Creates/insert a new resource on the remote server. *
-	PUT		Updates the data on the remote server.
+	PUT	Updates the data on the remote server.
 	DELETE	Deletes data from the remote server.
 
 ## The HTTP status code
 
-	200	->	OK						->	The data was received and the operation was performed.
-	201	->	Created					->	The data was received and a new resource was created. The response needs to return the data in the payload.
-	204	->	No content				->	The operation was successful but no data is returned in the response body. This is useful when deleting a resource.
-	301	->	Moved permanently		->	This and all the future requests should be redirected to a new URL.
-	302	->	Moved temporarily		->	The resource moved temporarily to another URL.
-	400	->	Bad request				->	The server cannot accept the request because something is wrong with the client or the request that it sent.
-	403	->	Forbidden				->	The client is not allowed to use the resource.
-	404	->	Not found				->	The computer is not able to find the resource.
-	405	->	Method not allowed		->	For example, when sending a DELETE request to a server that doesn't support the method.
+	200	->	OK			->	The data was received and the operation was performed.
+	201	->	Created			->	The data was received and a new resource was created. The response needs to return the data in the payload.
+	204	->	No content		->	The operation was successful but no data is returned in the response body. This is useful when deleting a resource.
+	301	->	Moved permanently	->	This and all the future requests should be redirected to a new URL.
+	302	->	Moved temporarily	->	The resource moved temporarily to another URL.
+	400	->	Bad request		->	The server cannot accept the request because something is wrong with the client or the request that it sent.
+	403	->	Forbidden		->	The client is not allowed to use the resource.
+	404	->	Not found		->	The computer is not able to find the resource.
+	405	->	Method not allowed	->	For example, when sending a DELETE request to a server that doesn't support the method.
 	500	->	Internal server error	->	Service unavailable due to error on the server side.
 
 ## Commonly use of Web APIs:
@@ -70,11 +70,11 @@
 	Cache-Control: This is the cache policy defined by the server for this response, a cached response can be stored by the client and re-used till the time defined by the Cache-Control header.
 
 	Example:
-		header('Content-Type: application/json');							// What type of data return
+		header('Content-Type: application/json');				// What type of data return
 		header('Access-Control-Allow-Methods: GET,PUT,POST,DELETE');		// Which methods will use 
-		header('Access-Control-Allow-Origin: *');							// open/partern API use
+		header('Access-Control-Allow-Origin: *');				// open/partern API use
 				* means all develoers are use and any domain means allow perticular domain to use 
-		header('Access-Control-Allow-Headers:<header-name>');				// define header name for use
+		header('Access-Control-Allow-Headers:<header-name>');			// define header name for use
 
 ## For testing APIs
 	
