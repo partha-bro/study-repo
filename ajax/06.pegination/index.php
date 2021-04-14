@@ -1,21 +1,3 @@
-<!-- 
-	How to make a pegination in website?
-		Step 1: Take some default value in 1st page using LIMIT command of mysql query.
-
-		Step 2: Find out total no of pegination button required
-					divide by total record and show record
-					total record - find out in count() in mysql query
-
-		Step 3: Now when i click page number then autometicaly fetch page numberusing jquery like
-						$(document).on('click','#pegination button',function(){
-				  			var no = $(this).attr('id');
-				  			console.log(no);
-				  		};
-
-		Step 4: The formula of show record according to page
-				offset value = (page no - 1) * limit record
-				query use LIMIT offset,limit no on command 
--->
 <?php
 	include_once '../01.introduction/header.php';
 ?>
