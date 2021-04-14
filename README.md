@@ -6,10 +6,11 @@
    * GIT         : https://github.com/partha-bro/study-repo/tree/master/git
    * PHP         : https://github.com/partha-bro/study-repo/tree/master/php
    * MySQL       : https://github.com/partha-bro/study-repo/tree/master/mysql
-   * AJAX        : https://github.com/partha-bro/study-repo/tree/master/php/php-ajax
+   * AJAX        : https://github.com/partha-bro/study-repo/tree/master/ajax
    * JSON        : https://github.com/partha-bro/study-repo/tree/master/json
    * Laravel     : https://github.com/partha-bro/study-repo/tree/master/laravel
    * Python      : https://github.com/partha-bro/study-repo/tree/master/python
+   * REST API    : https://github.com/partha-bro/study-repo/tree/master/rest_api
 </pre>
 
 ## Extra content For study
