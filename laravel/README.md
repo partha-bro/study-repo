@@ -213,7 +213,6 @@
 
 	use {{variable_name}} to read the value. 
 
-<<<<<<< HEAD
 	{{}} : this is denotes as <?php ?> we can write php code in blade template. 
 
 ## Component
@@ -299,7 +298,7 @@
 	@foreach(array_variable as any_variable)
 		html code
 	@endforeach
-=======
+
 #### include View in View
 
 	using include() function
@@ -366,4 +365,4 @@
 #### Make Middleware
 #### Register It
 #### Apply Middleware
->>>>>>> b861b30ef9948ac531ea8d6b9064c2114c832af5
+
