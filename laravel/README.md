@@ -212,3 +212,89 @@
 ### How to retrive value from pass variale?
 
 	use {{variable_name}} to read the value. 
+
+	{{}} : this is denotes as <?php ?> we can write php code in blade template. 
+
+## Component
+
+### What is Component in laravel?
+
+	Components are a reusable group of elements. Like you may want to create a Navbar to be used in almost all of your web-app pages. So you build your Navbar as a Component and tell laravel to grab it whenever you need it, and for many times as you like.
+
+### How to make component in laravel?
+	
+	In terminal, we can make component, 
+	Command:
+		$ php artisan make:component component_name
+
+		This command make two files.
+			1. header.blade.php : 
+					This is html viewer of component_name file.
+					Location: resources/views/components/component_name.blade.php
+
+			2. header.php
+					This is logic code of component_name file.
+					Location: app/View/Components/component_name.php
+
+### How to use component?
+
+	Step 1: Make changes and write some common html code/view in component_name.blade.php
+
+	Step 2: Create some view file for attach common file of comonent_name
+			In view File, we can use a tag for include component file <x-conmponent_name />
+
+	Step 3: We can call that view from routes.
+	
+### How to pass data in component?
+	
+	Step 1: Make changes and write some common html code/view in component_name.blade.php
+
+	Step 2: Create some view file for attach common file of comonent_name
+			In view File, we can use a tag for include component file <x-conmponent_name />
+
+	Step 3: we can pass some value blade file to header.blade file then
+
+			1. tag with any name of attribute with value
+					<x-header name='User'/>
+			2. we can fetch that data from component controller and assign in cunstruct method
+					public $title;		// any name
+				    public function __construct($name)
+				    {
+				        //
+				        $this->title = $name;
+				    }
+
+	Step 4: Now we put that $title(any) variable in component view file
+					<h1>{{$title}} of Header file</h1>
+
+	Step 5: We can call that view from routes.
+
+## Blade Template
+
+### What is blade template?
+
+	Blade is the simple, yet powerful templating engine that is included with Laravel. Unlike some PHP templating engines, Blade does not restrict you from using plain PHP code in your templates.
+
+### Blade Template Expression
+	
+	{{}} : this is denotes as <?php ?> we can write php code in blade template. 
+
+### Conditions
+	
+	@if(condition)
+		html ccode
+	@elseif(condition)
+		html code
+	@else
+		html code
+	@endif
+
+### For and Foreach Loop
+
+	@for($i=0;$i<=10;$i++)
+		html code
+	@endfor
+
+	@foreach(array_variable as any_variable)
+		html code
+	@endforeach

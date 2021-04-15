@@ -12,19 +12,24 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// call wellcome view page
 Route::get('/', function () {
     return view('welcome');
 });
 
+// call controller method
 Route::get('show/{id}', [UserController::class,'show'] );
 
-// load page
-
+// call view
 Route::get('user/{name}',[UserController::class,'loadpage']);
-
-Route::view('user1/{name}','user');
 
 Route::get('user2/{name}',function($name,$file = 'get method from Route'){
 	return view('user',['name'=>$name,'file'=>$file]);
+});
+
+// call component
+Route::view('home','home');
+// Route::view('about','about');
+Route::get('about',function(){
+	return view('about',['names' => ['lipu','sipu','ram','hari']]);
 });

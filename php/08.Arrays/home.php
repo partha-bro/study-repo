@@ -6,7 +6,9 @@
 		2. Multi Dimension with Indexed
 		3. Multi Dimention with Associative
 		4. Multi dimension array using list() function
-
+        5. count() and sizeof() and array_count_values()
+        6. in_array() and array_search()
+        7. array_replace() and array_replace_recursive()
 	*/
 
 // 1. Multidimenstion array
@@ -136,4 +138,75 @@ echo "<hr/>";
     foreach($arr3 as list( "John"=>$a, "Jenny"=>$b, "Ajit"=>$c)){
         echo "$a ~ $b ~ $c <br/>";
     }
+echo "<hr/>";
+
+// 5. count() and sizeof() and array_count_values()
+
+    /*
+        count() and sizeof() functions are same to count the element present in an array.
+    */
+
+    echo "count: ".count($arr3)."<br/>";
+    echo "sizeof: ".sizeof($arr3)."<br/>";
+
+    // array_count_values() take an array parameer and return also an array but it gives count of an element of that array like duplicate or not. it does not suppoert multidimension array.
+
+    $arr4 = array( 'apple','orange','banana','apple','grapes','banana');
+    echo "<pre>";
+        print_r(array_count_values($arr4));
+    echo "</pre>";
+
+echo "<hr/>";
+
+// 6. in_array() and array_search()
+    
+    /*
+            in_array() = this function is use to search element in perticular array, but it gives boolean value like true or false.
+
+            array_search() = this function is use to search element in perticular array, but it gives key value of that element.
+    */
+
+    // $arr4 is numeric array and $arr3 is associative array
+
+    echo in_array('apple', $arr4)."<br/>";
+    echo array_search([
+            "John" => "john2@gmail.com",
+            "Jenny" => "jenny2@gmail.com",
+            "Ajit" => "ajit2@gmail.com"
+        ], $arr3)."<br/>";
+
+echo "<hr/>";
+
+// 7. array_replace() and array_replace_recursive()
+
+    /*
+        array_replace() = it replace the array between more than two array.
+                            it is only use in numeric & assiciative array
+                            it always give a new array, do not change in existing array.
+
+        array_replace_recursive() = it replace the array between more than two array.
+                            it is only use in multidimenstion assiciative array
+                            it always give a new array, do not change in existing array.
+
+        NOTE: it always replace goes right to left array.
+                if key value is same then replace that value.
+    */
+
+    $fruit = ['orange','banana','apple','a'=>'grapes'];
+    $veggie = ['carrot','pea'];
+    $color = ['red','a'=>'green'];
+
+    $new_arr = array_replace($fruit, $veggie, $color);
+    echo "<pre>";
+    print_r($new_arr);
+    echo "</pre>";
+
+    $arr5 = array( 'a'=>array('red'), 'b'=>array('pink','green'));
+    $arr6 = array( 'a'=>array('yellow'), 'b'=>array('black'));
+
+    $new_arr = array_replace_recursive($arr5, $arr6 );
+    echo "<pre>";
+    print_r($new_arr);
+    echo "</pre>";
+
 echo "<hr/>";
