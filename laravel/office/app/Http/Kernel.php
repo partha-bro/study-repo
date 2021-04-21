@@ -21,6 +21,9 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+
+        // Adding new middleware
+        // \App\Http\Middleware\ageCheck::class,
     ];
 
     /**
@@ -43,6 +46,10 @@ class Kernel extends HttpKernel
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
+
+        // 'agecheck' => [
+        //     \App\Http\Middleware\ageCheck::class,
+        // ],
     ];
 
     /**
@@ -62,5 +69,8 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+
+        // adding new middleware
+        'agecheck' => \App\Http\Middleware\ageCheck::class,
     ];
 }

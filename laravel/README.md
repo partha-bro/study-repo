@@ -361,8 +361,99 @@
 
 ## Middleware
 
-#### What is Group Middleware
-#### Make Middleware
-#### Register It
-#### Apply Middleware
+#### What is Middleware
+	
+	Middleware acts as a bridge between a request and a response. It is a type of filtering mechanism. ... Laravel includes a middleware that verifies whether the user of the application is authenticated or not.
 
+#### Middleware Types
+
+	There are three types of midddleware:
+		1. Global Middleware
+		2. Route Middleware
+		3. Route Middleware Group
+
+#### Make Middleware
+	
+	$ php artisan make:middleware middleware_name
+
+	location: goto the app/Http/Middleware/middleware_name.php
+
+#### Apply Middleware
+	
+	Lets see we can apply this middleware on global, so
+		Step 1: open Kernel.php  [ Path: app/Http/Kernel.php ]
+		Step 2: Now inside the kernel class look at a property 
+				protected $middleware 
+		Step 3: Define the middileware class like
+				\App\Http\Middleware\middleware_name::class
+
+## Group Middleware
+
+	Maybe the API group gets a different auth middleware, and it might get an API-specific rate limiter or something else. ... Laravel 5.2 has introduced something called middleware groups, which are essentially a shortcut to applying a larger group of middleware, using a single key.
+	
+#### Make Middleware
+	
+	$ php artisan make:middleware middleware_name
+
+	location: goto the app/Http/Middleware/middleware_name.php
+
+#### Register it
+
+	Lets see we can apply this middleware on group, so
+		Step 1: open Kernel.php  [ Path: app/Http/Kernel.php ]
+		Step 2: Now inside the kernel class look at a property 
+				protected $middlewareGroups
+		Step 3: Inside this middleware property, we can create a another custom key for apply group
+				And that key contain array of n no of middleware
+
+		Step 4: Define the middileware class in that value of key like
+				'agecheck' => [
+		            \App\Http\Middleware\ageCheck::class,
+		        ],
+
+#### Apply Middleware
+	
+	Apply it in route web.php
+
+	group is a static member function that carry two parameters,
+	1st = a array of middleware kay and value
+			['middleware'=>'agecheck']
+	2nd = a anonymous function that take routing
+
+
+	Route::group(['middleware'=>'agecheck'],function(){
+		Route::view('login','user');
+	});
+
+## Route middleware
+	
+#### Make Middleware
+	
+	$ php artisan make:middleware middleware_name
+
+	location: goto the app/Http/Middleware/middleware_name.php
+
+#### Register it
+
+	Lets see we can apply this middleware on indivisual route, so
+		Step 1: open Kernel.php  [ Path: app/Http/Kernel.php ]
+		Step 2: Now inside the kernel class look at a property 
+				protected $routeMiddleware
+		Step 3: Inside this middleware property, we can create a another custom key for apply indivisual route
+
+		Step 3: Define the middileware class in that value of key like
+				'agecheck' => \App\Http\Middleware\middleware_name::class,
+
+#### Apply Middleware
+	
+	Apply it in route web.php
+
+	group is a static member function that carry two parameters,
+	1st = a array of middleware kay and value
+			['middleware'=>'agecheck']
+	2nd = a anonymous function that take routing
+
+
+	Route::group(['middleware'=>'agecheck'],function(){
+		Route::view('login','user');
+	});

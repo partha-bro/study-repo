@@ -21,5 +21,19 @@ Route::get('/', function () {
 //user controller connection
 Route::post('user_controller',[UsersController::class,'getData']);
 
-// call the user view 
-Route::view('login','user');
+// apply global middleware
+// Route::view('login','user');
+// Route::view('noaccess','noaccess');
+
+// apply group middleware
+// Route::group(['middleware'=>'agecheck'],function(){
+// 	Route::view('login','user');
+	// Route::get('/', function () {
+	//     return view('welcome');
+	// });
+// });
+// Route::view('noaccess','noaccess');
+
+// apply route middleware
+Route::view('login','user')->middleware('agecheck');
+Route::view('noaccess','noaccess');
