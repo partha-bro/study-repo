@@ -457,3 +457,234 @@
 	Route::group(['middleware'=>'agecheck'],function(){
 		Route::view('login','user');
 	});
+
+## Connect with Database without model
+
+#### Config database
+	Goto the .env file and config your connection 
+		DB_CONNECTION=mysql
+		DB_HOST=127.0.0.1
+		DB_PORT=3306
+		DB_DATABASE=testing
+		DB_USERNAME=root
+		DB_PASSWORD=
+
+#### Import db class
+	use Illuminate\Support\Facades\DB;
+
+#### Fetch data from database
+	DB::select("select * from student");
+
+	NOTE: use return statement to display array element to json
+
+## Model 
+
+#### What is Model?
+
+	Model is a class that represents the logical structure and relationship of underlying data table. In Laravel, each of the database table has a corresponding “Model” that allow us to interact with that table. Models gives you the way to retrieve, insert, and update information into your data table.
+
+	Eg.
+		database = testing, table = students then our model is 'student'.
+
+#### Make Model
+
+	location: app/Models
+
+	php artisan make:model model_name
+		NOTE: model_name must be singular form of table_name
+
+		We can not use model without controller so make a controller with a model
+
+#### Fetch data from Model
+
+	Step 1: Import model in controller name
+	Step 2: Student::all(); fetch all data in array, if you return the array data then it shows json.
+	Step 3: Set a route for controller
+
+## HTTP Client
+
+#### What is Http Client
+	Laravel provides an expressive, minimal API around the Guzzle HTTP client, allowing you to quickly make outgoing HTTP requests to communicate with other web applications. Laravel's wrapper around Guzzle is focused on its most common use cases and a wonderful developer experience.
+
+#### How to use http client
+	use Illuminate\Support\Facades\Http;  http service
+
+	$data = Http::get('https://reqres.in/api/users?page=2');  api data or json file 
+
+#### Send Data to View
+	
+	return view('api',['collection'=>$data['data']]);
+
+#### Show Data in HTML Table
+	
+	@foreach($collection as $item)
+			<tr>
+				<td>{{$item['id']}}</td>
+				<td>{{$item['first_name']}}</td>
+				<td>{{$item['email']}}</td>
+				<td><img src="{{$item['avatar']}}"></td>
+			</tr>
+		@endforeach
+
+## HTTP Request Form
+
+#### What is Http request?
+
+	An HTTP request is an action to be performed on a resource identified by a given Request-URL. Request methods are case-sensitive, and should always be noted in upper case. There are various HTTP request methods, but each one is assigned a specific purpose.
+
+#### Http request method
+	
+	GET
+	POST
+	PUT
+	DELETE
+	HEAD
+	PATCH
+	OPTIONS
+
+#### make html form on view
+	
+	<form action="submit" method="post">			// action value is, for define route pages
+		@Csrf 										// need this token for form submit for authentication
+		{{method_field('DELETE')}}					// make a hidden http request method field and form method always POST untill it GET method
+		<input type="text" name="username" placeholder="Enter your name" > <br><br>
+		<input type="password" name="password" placeholder="Enter your password" > <br><br>
+		<button>Login</button>
+	</form>	
+
+#### route method for request
+
+	In web.php route:
+		Route::view('login','http_response');
+		Route::get('submit',[Http_responeController::class,'index']);
+		Route::post('submit',[Http_responeController::class,'index']);
+		Route::put('submit',[Http_responeController::class,'index']);
+		Route::delete('submit',[Http_responeController::class,'index']);
+
+#### Is possible that, all htttp request method is call by one route method? 
+
+	Yes, it is possible to call all http request in ahy method of route
+
+	ex. Route::any('submit',[Http_responeController::class,'index']);
+
+## Session
+
+#### Make a login form
+
+	<form action="session_2" method="post">
+		@csrf
+		<input type="text" name="username" placeholder="Enter your name" > <br><br>
+		<input type="password" name="password" placeholder="Enter your password" > <br><br>
+		<button>Login</button>
+	</form>
+
+#### Store data in session
+	
+	$username = $req->input('username');
+	$req->session()->put('user',$username);				// put('key','value');
+
+#### Get data from session
+	
+	{{ session('user') }}								// session('key')
+
+#### Delete data from session
+	
+	session->pull('user',null);							// pull('key',null); for delete the value
+
+#### How to know the session data is present or not
+	
+	session()->has('user')								// has('key')  to verify the key value is present
+
+## Flash session
+
+#### What is flash session
+	
+	You know how to pass flash messages in sessions in Laravel. ... In the blade template we will display it by calling the session as {{ Session::get('message') }}. If you are making use of the bootstrap alert classes you should flash two variables into the session ie. the message and the class of your alert
+
+#### store data in flash session
+	
+	$req->session()->flash('key','value');
+
+#### get data from flash session
+	
+	use in blade engine/page
+	@if(session('message'))
+		<h4>{{ session('message') }}</h4>
+	@endif
+
+#### delete data from flash sesssion
+
+	it autometically delete after refresh.
+
+## Upload file
+
+#### Make view
+	
+	make a view file in resources/views/upload.blade.php
+
+#### Make html form
+	
+	<form action='upload' method="post" enctype="multipart/form-data">
+		@csrf
+		<input type="file" name="file" ><br><br>
+		<button>Upload file</button>
+	</form>
+
+#### Make controller
+	
+	php artisan make:controller UploadController
+
+#### Code for upload file
+	
+	return $req->file('file')->store('img');
+
+	$req is a Request variable that take all data from view file
+	file('file_name') => this method is use only for take file
+	store('folder_name') => this method is store the file in respected folder
+	img folder locaton: storage/app/img
+
+#### How to set custom file name while upload file
+
+	Use storeAs() instead of store() to set a custom name
+
+	return $req->file('file')->storeAs('img', time().'.jpg');
+	
+## Laravel Localization
+
+#### What is Localization
+	
+	Localization in Laravel in it's simplest term means changing the application's default language to the language preferred by the user. ... We'll implement an app that supports four languages namely, German, Chinese, French and English language with English as the default language.	
+
+#### How to define localization
+	
+	1. Locale means language, so we can create more than one language in 'resourses/lang/'.
+	2. default folder is en for english. and  we can make different folder like hi for hindi/ od for odia
+
+	3. now make a php file in that with same name.  like lang.php
+
+	4. in that page we can return an associated array of key and different language of value
+
+	5. in view page we can call that language value in using {{ __('filename.key') }}
+
+#### Set default locale
+	
+	1. goto the config folder
+	2. open the app.php then find locale key and set the value of laguage folder name
+
+
+#### Set local with route
+
+	Route::get('lang/{lang}',function($lang){
+
+		App::setlocale($lang);
+
+		return view('language');
+	});
+
+	App is a class and setlocale a static method of language set 
+
+##
+####
+####
+####
+####
