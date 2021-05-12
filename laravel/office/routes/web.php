@@ -7,6 +7,8 @@ use App\Http\Controllers\ApiController;
 use App\Http\Controllers\http_responeController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\AddstudentController;
+use App\Http\Controllers\PeginationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,3 +91,11 @@ Route::get('lang/{lang}',function($lang){
 	App::setlocale($lang);
 	return view('language');
 });
+
+// save data into database
+Route::view('add','addstudent');
+Route::post('add',[AddstudentController::class,'addStudent']);
+
+// Pegination list
+
+Route::get('pegination',[PeginationController::class,'index']);

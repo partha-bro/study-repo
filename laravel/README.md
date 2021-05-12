@@ -683,8 +683,83 @@
 
 	App is a class and setlocale a static method of language set 
 
-##
-####
-####
-####
-####
+## Save Data in Database
+
+#### Make Html form in view
+	
+	filename: addstudent.blade.php
+
+	<h1>Add Student</h1>
+
+	@if( session('status') )
+		<strong style=" color: green">{{session('message')}}</strong>
+	@else
+		<strong style="color: red">{{session('message')}}</strong>
+	@endif
+	<form action="add" method="POST">
+		@csrf
+		<input type="text" name="student_name" placeholder="Enter name"> <br><br>
+		<input type="number" name="age" placeholder="Enter age"> <br><br>
+		<input type="text" name="city" placeholder="Enter city"> <br><br>
+		<button type="submit">Add Student</button>
+	</form>
+
+#### Make Controller and Model
+	
+	php artisan make:controller AddstudentController
+	php artisan make:model student
+
+#### Make route
+	
+	// save data into database
+	Route::view('add','addstudent');
+	Route::post('add',[AddstudentController::class,'addStudent']);
+
+#### Is that possible to without use 'uploaded_at' & 'created_at' to manupulate table?
+	
+	yes, it is.
+	We can goto specific table name of model and in that class assign a timestamps false, because we are not going to use it.
+	syntax: 
+				public $timestamps = false;
+
+## Pegination
+
+#### Make a model
+	
+	php artisan make:model student
+
+#### Make a controller and view
+	
+	php artisan make:controller PeginationController
+
+	view page : pegination.blade.php
+
+#### Fetch data from DB table
+	
+	in controller page, we can import model using
+		use App\Models\model_name;
+
+	then in the function, we can use 
+		$data = Model_name::all()
+
+	return that data to view
+		return view('pegination',compact('data'));
+
+#### Show data with pagination
+
+	in paginate the data we can use paginate method like:
+		$data = student::paginate(2);
+
+	in view we can show number and button
+	link() method use toshow the number of pages
+	below style is use to hide the arrow image but we can allow to change as per our reaquirement.
+		<div>
+			{{ $data->links() }}
+		</div>
+
+		<style type="text/css">
+			.w-5{
+				display: none;
+			}
+		</style>
+
