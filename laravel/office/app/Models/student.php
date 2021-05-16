@@ -9,4 +9,15 @@ class student extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    public function getStudentnameAttribute($value)
+    {
+    	# code...
+    	return ucfirst($value);
+    }
+
+    public function getCityAttribute($value)
+    {
+    	# code...
+    	return $value.' ,India';
+    }
 }

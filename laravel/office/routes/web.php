@@ -9,6 +9,12 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\AddstudentController;
 use App\Http\Controllers\PeginationController;
+use App\Http\Controllers\DeletestudentController;
+use App\Http\Controllers\EditstudentController;
+use App\Http\Controllers\QuerybuilderController;
+use App\Http\Controllers\AggregatesController;
+use App\Http\Controllers\JoinController;
+use App\Http\Controllers\AccessorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,3 +105,32 @@ Route::post('add',[AddstudentController::class,'addStudent']);
 // Pegination list
 
 Route::get('pegination',[PeginationController::class,'index']);
+
+// delete data from database
+Route::get('delete_data',[DeletestudentController::class,'list']);
+Route::get('delete/{id}',[DeletestudentController::class,'delete']);
+
+// update data in database
+Route::get('edit/{id}',[EditstudentController::class,'showdata']);
+Route::post('update',[EditstudentController::class,'updatedata']);
+
+// Query Builder 
+Route::get('fetch',[QuerybuilderController::class,'showData']);
+Route::get('where',[QuerybuilderController::class,'where']);
+Route::get('find',[QuerybuilderController::class,'find']);
+Route::get('count',[QuerybuilderController::class,'count']);
+Route::get('insert',[QuerybuilderController::class,'insert']);
+Route::get('update',[QuerybuilderController::class,'update']);
+Route::get('delete',[QuerybuilderController::class,'delete']);
+
+// Aggregates Controller
+Route::get('sum',[AggregatesController::class,'sum']);
+Route::get('max',[AggregatesController::class,'max']);
+Route::get('min',[AggregatesController::class,'min']);
+Route::get('avg',[AggregatesController::class,'avg']);
+
+//join two tables
+Route::get('join',[JoinController::class,'join']);
+
+// Accessor 
+Route::get('accessor',[AccessorController::class,'index']);
