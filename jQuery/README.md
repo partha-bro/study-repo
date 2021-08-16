@@ -117,3 +117,23 @@
 	Removed in version 3.0
 	- load()
 	- unload()
+
+## GET Methods
+
+	- text()
+	- html()
+	- attr()
+	- val()
+
+## SET Methods
+
+	- text()
+	- html()
+	- attr()
+	- val()
+
+## CSS Class Methods
+
+	- addClass()
+	- removeClass()
+	- toggleClass()
