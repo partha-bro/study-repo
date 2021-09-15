@@ -137,3 +137,21 @@
 	- addClass()
 	- removeClass()
 	- toggleClass()
+
+## Effects Methods
+
+	- hide()/hide(speed)		like: 3000 => 3 sec.
+	- show()
+	- toggle()					it means if object is hide then show or vice versal.
+
+	- fadeIn()/fadein(speed)		like: 3000 => 3 sec.
+	- fadeOut()
+	- fadeToggle()					it means if object is fadeIn then fadeOut or vice versal.
+
+	The diffent between hide vs fadeOut / show vs fadeIn is work is in diffent style.
+	hide 	- It hide the element moving from down corner to up corner.
+	fadeOut - It hide the element in same position by fade out.
+
+	- slideUp()/slideUp(speed)		like: 3000 => 3 sec.
+	- slideDown()
+	- slideToggle()					it means if object is slideUp then slideDown or vice versal.

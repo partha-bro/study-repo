@@ -16,7 +16,7 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#btn').click(function(){
-			$('#box').slideUp(5000);
+			$('#box').slideUp(5000); // 5000 means 5 sec
 		});
 	});
 	
