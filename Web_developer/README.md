@@ -10,3 +10,6 @@
 	5. Unordered Lists
 	6. Ordered Lists
 	7. Forms
+	8. Tables
+	9. Links
+	10.
