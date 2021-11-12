@@ -2,24 +2,12 @@
 
 ## HTML
 
-	Hypertext Markup Language, a standardized system for tagging text files to achieve font, colour, graphic, and hyperlink effects on World Wide Web pages.
-
-	1. Web Page Structure
-	2. Images
-	3. Heading Tag
-	4. Formatting Text
-	5. Unordered Lists
-	6. Ordered Lists
-	7. Forms
-	8. Tables
-	9. Links
-	10. Html Entities
-	11. Iframes
-
 ## CSS
 
-	Cascading Style Sheet (CSS) is the language we use to style an HTML document.
+### Project BBC news Website
 
-	CSS describes how HTML elements should be displayed.
+## Javascript
 
-	1. 
+### Challenge: Test your Reaction! Click on the boxes and circle as quickly as you can!	
+
+## jQuery
