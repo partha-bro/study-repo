@@ -89,6 +89,8 @@
         |
     git remote -v                                                       ==> check the origin set in correct/working repo
     git remote add origin https://github.com/partha-bro/study-repo.git  ==> add remote working repo to origin for short hand
+    OR
+    git remote set-url origin http://user_name:password-token@github.com/user_name/repo_name.git                                             ==> add remote working repo to origin for short hand
     git push origin master                                              ==> upload the local repo to remote repo
         |
         |
