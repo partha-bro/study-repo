@@ -94,10 +94,12 @@
     NOTE: The special . symbol points to the current directory, 
             as .. points to the parent directory
 
-    $ open <foldername>
-    $ open <filename>
-    $ open .
-    $ open ..
+        In Ubuntu <open> command is not working instead of <xdg-open> command
+
+    $ open <foldername>     or      xdg-open <foldername>
+    $ open <filename>       or      xdg-open <filename>
+    $ open .                or      xdg-open .
+    $ open ..               or      xdg-open ..
 
 #### The Linux touch command
 
@@ -158,6 +160,12 @@
     -tf: for show the file in archive
     -xf: for extract the archive
 
+#### The Linux unzip command
+
+    This command is used to unzip the zip file.
+
+    $ unzip filename.zip
+    
 #### The Linux cat command
 
     $ cat file          => Print the data of inside file
@@ -265,7 +273,8 @@
 
     The du command will calculate the size of a directory as a whole:
 
-    $ du -h
+    $ du -h             => -h means readable siz of all folder
+    $ du -sh 'folder'   => -h means readable siz of folder & -s for sepecific folder
 
 #### The Linux df command
 
