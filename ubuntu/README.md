@@ -143,7 +143,7 @@
 
     To prevent this, you can use the -c option and use output redirection to write the output to the filename.gz file:
 
-    $ gzip -c filename > filename.gz
+    $ gzip -c filename > <filename.gz>
 
         The -c option specifies that the output will go to the standard output stream, leaving the original file intact.
 
@@ -160,19 +160,25 @@
     -tf: for show the file in archive
     -xf: for extract the archive
 
+#### The Linux zip command
+
+    This command is used to zip/archive the more than one files into zipfiles.
+
+    $ zip -r <filename.zip> file_1 file_2 file_3
+
 #### The Linux unzip command
 
     This command is used to unzip the zip file.
 
     $ unzip filename.zip
-    
+
 #### The Linux cat command
 
-    $ cat file          => Print the data of inside file
-    $ cat > file        => Input new data of inside file and old data was removed
-    $ cat >> file       => Input new data of inside file and that data paste in new line at the end
+    $ cat file                  => Print the data of inside file
+    $ cat > file                => Input new data of inside file and old data was removed
+    $ cat >> file               => Input new data of inside file and that data paste in new line at the end
     $ cat file_1 > file_2       => Copy and paste content of file_1 to file_2, old file will be override.
-    $ cat file_1 >> file_2       => Copy and paste content of file_1 to file_2, old file will not be override, paste in new line.
+    $ cat file_1 >> file_2      => Copy and paste content of file_1 to file_2, old file will not be override, paste in new line.
 
     NOTE: File save by pressing CTRL+D
 
@@ -305,6 +311,12 @@
 
     $ htop
 
+####  The Linux free command
+
+    This command is use to check the free memory of system.
+
+    $ free -mh
+
 #### The Linux kill command
 
     The kill program can send a variety of signals to a program.
@@ -362,8 +374,16 @@
 
     $ fg
 
-#### The Linux type command
 #### The Linux which command
+
+    Suppose you have a command you can execute, because it's in the shell path, but you want to know where it is located.
+
+    $ which zip
+    output:- /usr/bin/zip
+
+    $ which git
+    output:- /usr/bin/git
+
 #### The Linux nohup command
 #### The Linux xargs command
 #### The Linux whoami command
