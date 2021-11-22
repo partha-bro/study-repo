@@ -401,7 +401,6 @@
 
     $ tail -f nohup.out
 
-
 - **The Linux xargs command**
 - **The Linux whoami command**
 - **The Linux who command**

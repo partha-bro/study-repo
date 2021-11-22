@@ -15,6 +15,15 @@
 | ``        |  |
 | ``        |  |
 
+## Vs Code Extensions for better experience:
+
+    - **Auto rename tag Extn.**
+    - **Bracket pair colorizer Extn.**
+    - **Live Server Extn.**
+    - **Markdown readme github style Extn.**
+    - **Live Share Extn.**
+    - **Dracula Theme Extn.**
+
 
 ## Extra content For study
 
