@@ -384,6 +384,24 @@
     output:- /usr/bin/git
 
 - **The Linux nohup command**
+
+    nohup (No Hang Up) is a command in Linux systems that runs the process even after logging out from the shell/terminal. 
+
+    Sometimes you have to run a long-lived process on a remote machine, and then you need to disconnect.
+
+    Or you simply want to prevent the command from being halted if there's any network issue between you and the server.
+
+    The way to make a command run even after you log out or close the session to a server is to use the nohup command.
+
+    Use nohup <command> to let the process continue working even after you log out.
+
+    $ nohup <command>
+
+    All the process is save in 'nohup.out' file, you can check using 
+
+    $ tail -f nohup.out
+
+
 - **The Linux xargs command**
 - **The Linux whoami command**
 - **The Linux who command**
