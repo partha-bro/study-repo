@@ -401,23 +401,64 @@
 
     $ tail -f nohup.out
 
-- **The Linux xargs command**
 - **The Linux whoami command**
+
+    Type whoami to print the user name currently logged in to the terminal session:
+
+    $ whoami
+
 - **The Linux who command**
+
+    Type whoami to print the user name currently logged in to the terminal session:
+
+    $who
+
 - **The Linux su command**
+
+    While you're logged in to the terminal shell with one user, you might need to switch to another user.
+
+    su for switch user...
+
+    $ su <username>
+
 - **The Linux sudo command**
+
+    sudo is commonly used to run a command as root.
+
+    You must be enabled to use sudo, and once you are, you can run commands as root by entering your user's password (not the root user password).
+
+    $ sudo <command>
+
 - **The Linux passwd command**
+
+    Users in Linux have a password assigned. You can change the password using the passwd command.
+
+    There are two situations here.
+
+    The first is when you want to change your password for normal user. In this case you type:
+
+    $ passwd
+
+    and an interactive prompt will ask you for the old password, then it will ask you for the new one.
+
+    When you're root (or have superuser privileges) you can set the username for which you want to change the password:
+
+    $ passwd <username> <new password>
+
+    In this case you don't need to enter the old one.
+
 - **The Linux ping command**
 
-    It check connection between of server
+    The ping command pings a specific network host, on the local network or on the Internet.
 
     $ ping IP
     $ ping website
     
-- **The Linux traceroute command**
 - **The Linux clear command**
 
-    It clears the content of screen/terminal.
+    Type clear to clear all the previous commands that were run in the current terminal.
+
+    The screen will clear and you will just see the prompt at the top:
 
     $ clear
 
@@ -443,11 +484,24 @@
     C. Below command is use to delete the history records from terminal
         $ history -c
 
-- **The Linux export command
-- **The Linux crontab command
-- **The Linux uname command
-- **The Linux env command
-- **The Linux printenv command
+- **The Linux crontab command**
+
+    Cron jobs are jobs that are scheduled to run at specific intervals. You might have a command perform something every hour, or every day, or every 2 weeks. Or on weekends.
+
+    They are very powerful, especially when used on servers to perform maintenance and automations.
+
+    $ crontab -e        // to open crontab file for create jobs
+    $ crontab -l        // displays all list of cron jobs
+
+    for Generate cron jobs best website is : https://crontab-generator.org/
+
+- **The Linux uname command**
+
+    This command is use for print all imformation about your syatem
+
+    $uname -a
+
+    output: os_name device_name version release_date hardware_name processor_architecture 
 
 ### 16 Things You MUST DO After Installing Any Linux Distro:-
 
@@ -564,5 +618,3 @@
             fi
             unset color_prompt force_color_prompt
     Step 3: source ~/.bashrc
-
-###

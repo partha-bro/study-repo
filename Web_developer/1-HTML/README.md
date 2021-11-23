@@ -2,7 +2,7 @@
 
 ## HTML
 
-	Hypertext Markup Language, a standardized system for tagging text files to achieve font, colour, graphic, and hyperlink effects on World Wide Web pages.
+	**Hypertext Markup Language, a standardized system for tagging text files to achieve font, colour, graphic, and hyperlink effects on World Wide Web pages.**
 
 	1. Web Page Structure
 	2. Images
