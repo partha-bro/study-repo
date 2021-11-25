@@ -14,6 +14,12 @@
 			c. External style CSS
 				Allow external css style pages in HTML page using link tag in head tag
 				<link rel='stylesheet' type='text/css' href='PATH'>
+	
+	Q. What is Difference between 'src' and 'href' attribute?
+		A simple definition
+
+			SRC: If a resource can be placed inside the body tag (for image, script, iframe, frame)
+			HREF: If a resource cannot be placed inside the body tag and can only be linked (for html, css, a)
 
 	2. Classes and ids
 	3. Height and width
@@ -38,28 +44,36 @@
 
 	5. Position
 		It simply change the position of elements
-			a. value is fixed
-				this is fixed the position of that element and it is consider whole page as a position, it can not change while scrolling the page.
-			b. value is absolute
+			a. value is static
+				HTML elements are positioned static by default.
+				Static positioned elements are not affected by the top, bottom, left, and right properties.
+			b. value is fixed
+				this is fixed the position of that element and it is consider whole page as a position, 
+				it can not change while scrolling the page.
+			c. value is absolute
 				this is same as fixed value but it can scroll and it is consider whole page as a position
-			c. value is relative
+			d. value is relative
 				this is use for change position by original position
-			d. value is sticky
-				this is same as fixed but it active when scroll hit the element and it is not consider whole page as a position it remeber the parent tag, it can not change the position but it return the original position when scroll is top of page.
+			e. value is sticky
+				this is same as fixed but it active when scroll hit the element and it is not consider whole page 
+				as a position it remeber the parent tag, it can not change the position but it return the original 
+				position when scroll is top of page.
 					Example: 'up' button position in page
 	
 	6. Position dependent properties
 			a. left 
-				we can use positive value for move right side element
-				we can use negative value for move left side element
+				positive value [left side] 
+				negative value [right right]
 			b. top
-				we can use positive value for move button side element
-				we can use negative value for move top side element
+				positive value [top side] 
+				negative value [button right]
 
-			NOTE: we can not use both left or right similarly top or button, instead of we can put value positive or negative
+			NOTE: we can not use both left or right as well as top or button, 
+			instead of we can put value positive or negative
 
 			c. z-index
-				This property is use to indetify the priority of visible, those element has higher number that priority is higher.
+				This property is use to indetify the priority of visible, 
+				those element has higher number that priority is higher.
 
 			d. opacity
 				this is used for hide/tranparent/clear etc.
@@ -80,7 +94,7 @@
 		Shortcut property use:- 
 		margin: top right button left; 	=> It apply all respective direction 
 		margin: top right;				=> It apply top value in both top and button / right value in both left and right
-		margin: top;					=> It apply all the direction
+		margin: value;					=> It apply all the direction
 
 	8. Padding
 		The distance between data to element border inside the element.
@@ -92,7 +106,7 @@
 		Shortcut property use:- 
 		padding: top right button left; 	=> It apply all respective direction 
 		padding: top right;					=> It apply top value in both top and button / right value in both left and right
-		padding: top;						=> It apply all the direction
+		padding: value;						=> It apply all the direction
 
 	9. Borders
 		this is use for make border of any element
@@ -102,10 +116,10 @@
 		a. border: size color style;				=> for all property use in all direction
 		b. border-width: top right button left;		=> use indivisually
 		c. border-color: top right button left;
-		d. border-style: top right button left;
+		d. border-style: top right button left;		=> value is [ dotted/dashed/solid/double/none/hidden ]
 		e. border-radius: top right button left;
 
-		Note: We can convert square box to circle using 50% of square width.
+		Note: We can convert square box to circle using 50% of border-radius.
 
 	10. Fonts
 			Some property of font we can use to style the fonts.
@@ -129,7 +143,8 @@
 		c. a:visted{ }
 		d. a:active{ }
 
-	NOTE:: If you want to most priority css is apply ignore all the extra style we can denote this using "!important" value of property.
+	NOTE:: If you want to most priority css is apply ignore all the extra style 
+	we can denote this using "!important" value of property.
 	Example: 
 				.c a{
 					border-left: 1px #cccccc solid;

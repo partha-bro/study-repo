@@ -115,8 +115,21 @@
 			</table>
 		<hr><hr>
 		<p><b>Link Tag</b></p>
-			<a href="https://www.google.com"><button>Google</button></a>
-			<a href="#saitama"><button>One Punch Man</button></a>
+			<a href="https://www.google.com">
+				<button>Google</button>
+			</a>
+			<a href="https://images7.alphacoders.com/100/thumb-1920-1009607.png" download>
+				<button>One Punch Man</button>
+			</a>
+			<!-- Links Atrributes
+					target = '_blank/_parent/_self/_top/frame_name'
+					title = 'tatle name'
+					href = 'absolute/relative link'
+					name = 'give a name'
+					id/class = 'value'
+					download 
+			
+			-->
 
 		<hr><hr>
 		<p><b>Html Entities</b></p>
@@ -127,5 +140,31 @@
 		<hr><hr>
 		<p><b>IFrames</b></p>
 			<iframe src="http://localhost/test/personal/"></iframe>
+			<!-- Iframe 
+					The HTML <iframe> tag specifies an inline frame.
+
+					An inline frame is used to embed another document within the current HTML document.
+
+				Atrributes
+					height = 'value'
+					width = 'value'
+					style = 'value of style of css'
+					title = 'tatle name'
+					name = 'give a name'
+					id/class = 'value'
+			
+			-->
+
+			<!-- Q. How to target a frame in link?  -->
+			<h2>Iframe - Target for a Link</h2>
+
+			<iframe src="demo_iframe.html" name="iframe_a" height="300px" width="100%" title="Iframe Example"></iframe>
+
+			<a href="/study-repo/Web_developer/1-HTML/index.html" target="iframe_a">
+				<button>Main Page</button>
+			</a>
+
+			<p>When the target attribute of a link matches the name of an iframe, the link will open in the iframe.</p>
+
 	</body>
 </html>
