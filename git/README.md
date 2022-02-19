@@ -15,12 +15,50 @@
 ---------------------------------------------
 
 ## What is GIT?
-    -> Free and open source version control system.
+    -> Free and open source version control tool.
+    -> Git is a Distributed Version Control tool that supports distributed non-linear workflows by providing data assurance for developing quality software.
 
 ## What is version control system?
-    -> The management of changes to documents,computer programs, large web sites and 
-    others collections of information.
+    -> The management of changes to documents,computer programs, large web sites and others collections of information.
     We track our code changes in GIT.
+
+## There are two type of VCS?
+
+    -> Centralized version control system [ Remote Repository ]
+        SVN
+    -> Distributed version control system [ Local Repository ]
+        GITHUB / GITLAB
+
+## Why we can use VCS?
+    -> It helps you to analyze the code or program in such a way that 
+        --> VCS provides you with proper description
+        --> What exactly was changed 
+        --> When it was changed
+        And hence, you can analyze how your project evolved between versions. 
+
+## Different types of Vcs tools.
+    -> GIT
+    -> SVN : Subversion control system
+    -> CVS
+    -> mercurial
+
+## Features of GIT:
+    -> Distributed
+    -> Compatible
+    -> Non-linear
+    -> Branching
+    -> Lightweight
+    -> Speed
+    -> Open source
+    -> Reliable
+    -> Secure
+
+## What is Repository?
+    -> A directory or storage space where your project can live. it can be local to a folder on your computer, or it can be a storage space on GITHUB or another online host. You can keep code files, text files, image files, you name it, inside a repo.
+
+    Two types:
+        Central/Remote Repo
+        Local Repo
 
 ## TERMS:-
 
@@ -36,8 +74,12 @@
     git clone                       -> Bring a repository, that is hosted somewhere like github into a folder 
                                         on your local machine
     git status                      -> check your status of ypur changes
+    git restore 'file nmae'         -> restore file from previous commit and this command use in untracked/working area [ Not Staging Area ] For one file
     git add                         -> Track your files and changes your files
+    git diff                        -> Show all changes from current work to staging area work in file
     git commit                      -> save your files in git
+    git remote add <repo_name> <url>-> add repository url
+    git remote -v                   -> display the set url to origin
     git push                        -> Upload git commit to a remote repo like github
     git pull                        -> Download changes from remote repo to your local machine
     git log                         -> check the all commit changes log file
@@ -83,14 +125,17 @@
     git add file_name [staging area]
         |
         |
+    git diff
+        |
+        |
     git commit -m "heading message" -m "description(option)"            ==> save the changes in local repo
     git commit -am "heading message" -m "description(option)"           ==> shorthand for add and commit the code
         |
         |
     git remote -v                                                       ==> check the origin set in correct/working repo
-    git remote add origin https://github.com/partha-bro/study-repo.git  ==> add remote working repo to origin for short hand
+    git remote add Repository_name https://github.com/partha-bro/study-repo.git  ==> add remote working repo to origin for short hand
     OR
-    git remote set-url origin http://user_name:password-token@github.com/user_name/repo_name.git                                             ==> add remote working repo to origin for short hand
+    git remote set-url Repository_name http://user_name:password-token@github.com/user_name/repo_name.git                                             ==> add remote working repo to origin for short hand
     git push origin master                                              ==> upload the local repo to remote repo
         |
         |
@@ -105,10 +150,13 @@
     git branch                                          ==> list all the branches
         |
         |
+    git branch -v                                       ==> list all the branches with last commited message 
+        |
+        |
     git branch "branch_name"                            ==> create new branch
         |
         |
-    git checkout "branch_name" or master                ==> goto the specific branch
+    git checkout "branch_name"                          ==> goto the specific branch
         |
         |
     git checkout -b "branch_name"                       ==> create and goto the same branch at same command(shorthand)
@@ -120,13 +168,19 @@
     git merge "branch_name" master                      ==> merge branch to master
         |
         |
+    git branch --merged                                 ==> Only Show all merged branch
+        |
+        |
+    git branch --no-merged                              ==> Only Show unmerged branch 
+        |
+        |
     git push origin "branch_name"                       ==> upload branch changes to github repo
         |
         | 
     git branch -d "branch_name"                         ==> delete the branch after merging is complete
         |                                                   if not then show error 
         |
-    git branch -D "branch_name"                         ==> if you want to delete the branch without merging
+    git branch -D "branch_name"                         ==> if you want to delete the branch without merging [ It may loss your code ]
 
 ## How to undoing my changes in git?
 
@@ -136,6 +190,13 @@
                                                             ( it's work: add changes to untracked area)
     git reset --hard 'commit no'                        ==> it's roll back to given commit number 
                                                             from git log forcefully delete extra codes.
+
+## What is Git merge conflict?
+    -> Git can handle most merges on its own with automatic merging features. A conflict arises when two separate branches have made edits to the same line in a file, or when a file has been deleted in one branch but edited in the other. Conflicts will most likely happen when working in a team environment.
+
+    Resolving the conflit file, please goto the respective file you can change to what you want to changed, then add to staging area after that commit.
+
+    for reference: https://www.youtube.com/watch?v=nfOxUaA2trY
 
 ## What is fork in Github?
     when we click fork button in any repository of github, that repo's copy is created in my github profile.
