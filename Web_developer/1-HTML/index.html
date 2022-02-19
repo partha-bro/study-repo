@@ -1,7 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<meta charset="utf-8">
+		<!--
+				meta tag use to give some extra information about this website
+				charset='UTF-8' means this site contains UTF-8 encoding charset.
+			-->
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>HTML | Web Developer</title>
 		<style type="text/css">
 			body{
@@ -10,161 +16,180 @@
 		</style>
 	</head>
 	<body>
-		<img id='saitama' src="https://images7.alphacoders.com/100/thumb-1920-1009607.png" height="200px" width="500px" align="right">
+			<!--
+				center tag use to center the page
+			-->
+		<center> 
+				<img id='saitama' src="https://images7.alphacoders.com/100/thumb-1920-1009607.png" height="200px" width="500px">	
+			<!--
+				Header
+			-->
+			<h1>Header 1</h1>
+			<h2>Header 2</h2>
+			<h3>Header 3</h3>
+			<h4>Header 4</h4>
+			<h5>Header 5</h5>
+			<h6>Header 6</h6>
+			<!--
+				<hr> Horizental rule attrubutes
+					align
+					color
+					noshade
+					size
+					width
+			-->
+			<hr>
+			<hr color="red">
+			<hr size="10px">
+			<hr size="10px" noshade>
+			<hr width="100px" align="right" color="blue">
+		</center>
+			<p><b>Formatting Text</b></p>
+				<p>Here is some <strong>bold</strong> text.</p>
+				<p>Here is some <em>italic</em> text.</p>
+				<p>Here is some <ins>Underline</ins> <u>text</u>.</p>
+				<p>Here is some <del>Delete</del> text.</p>
+				<p>Here is some <sup>Superscript</sup> text.</p>
+				<p>Here is some <sub>Subscript</sub> text.</p>
+				<p>Here is some <mark>Marked</mark> text.</p>
+				<p>Here is some <small>Small</small> text.</p>
+			<hr><hr>
+			<p><b>Unordered Lists</b></p>
+			<!--
+				Attributes:
+				disc: 	Sets the list item marker to a bullet (default)
+				circle: 	Sets the list item marker to a circle
+				square: 	Sets the list item marker to a square
+				none: 	The list items will not be marked
+			-->
+				<ul type="square">
+					<li>HTML</li>
+					<li>CSS</li>
+					<li>JS</li>
+					<li>PHP</li>
+					<li>MySQL</li>
+				</ul>
+			<p><b>Ordered Lists</b></p>
+			<!--
+				Attributes:
+				start
+				type="1": 	The list items will be numbered with numbers (default)
+				type="A": 	The list items will be numbered with uppercase letters
+				type="a": 	The list items will be numbered with lowercase letters
+				type="I": 	The list items will be numbered with uppercase roman numbers
+				type="i": 	The list items will be numbered with lowercase roman numbers
+			-->
+				<ol start=10 type="A">
+					<li>HTML</li>
+					<li>CSS</li>
+					<li>JS</li>
+					<li>PHP</li>
+					<li>MySQL</li>
+				</ol>
+			<hr><hr>
+			<p><b>Forms</b></p>
+				<form action="" method="get" enctype="multipart/form-data">
+					<label for="username">Username:</label>
+					<input type="text" id='username' name="username" value="" placeholder="Username">
+					<br>
+					<label for="password">Password:</label>
+					<input type="password" id='password' name="password" value="" placeholder="Password">
+					<br>
+					<label for="number">Number:</label>
+					<input type="number" id='number' name="number" value="" placeholder="number">
+					<p>Drop Down:
+					<select>
+						<option>Delhi</option>
+						<option selected>Odisha</option>
+						<option>Pune</option>
+					</select></p>
+					<p><input type="radio" name="gender" value="male" checked>Male
+					<input type="radio" name="gender" value="female">Female</p>
+					<p><input type="checkbox" name="material">PC
+					<input type="checkbox" name="material" checked>Laptop</p>
+					
+					<label for="avatar">Choose a profile picture:</label>
+						<!-- single file select to upload -->
+					<input type="file" id="avatar" name="avatar">
+					<br>	<!-- only png/ jpeg single file select to upload  -->
+					<input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+					<br>	<!-- more than one files select to upload -->
+					<input type="file" id="avatar" name="avatar" multiple>
+					<input type="button" name="btn_info" value="Upload">
+					<br><br>
+					<input type="reset" name="btn_reset" value="Reset">
+					<input type="submit" name="btn_submit" value="Submit">
+				</form>
+			<hr><hr>
+			<p><b>Tables</b></p>
+				<table border="5px" cellpadding="5px" cellspacing="0px">
+					<thead>
+						<tr>
+							<th>No</th>
+							<th colspan="2">Name</th>
 
-		<h1>Header 1</h1>
-		<h2>Header 2</h2>
-		<h3>Header 3</h3>
-		<h4>Header 4</h4>
-		<h5>Header 5</h5>
-		<h6>Header 6</h6>
-		<hr><hr>
-		<p><b>Formatting Text</b></p>
-			<p>Here is some <strong>bold</strong> text.</p>
-			<p>Here is some <em>italic</em> text.</p>
-			<p>Here is some <ins>Underline</ins> <u>text</u>.</p>
-			<p>Here is some <del>Delete</del> text.</p>
-			<p>Here is some <sup>Superscript</sup> text.</p>
-			<p>Here is some <sub>Subscript</sub> text.</p>
-			<p>Here is some <mark>Marked</mark> text.</p>
-			<p>Here is some <small>Small</small> text.</p>
-		<hr><hr>
-		<p><b>Unordered Lists</b></p>
-		<!--
-			Attributes:
-			disc: 	Sets the list item marker to a bullet (default)
-			circle: 	Sets the list item marker to a circle
-			square: 	Sets the list item marker to a square
-			none: 	The list items will not be marked
-		-->
-			<ul type="square">
-				<li>HTML</li>
-				<li>CSS</li>
-				<li>JS</li>
-				<li>PHP</li>
-				<li>MySQL</li>
-			</ul>
-		<p><b>Ordered Lists</b></p>
-		<!--
-			Attributes:
-			start
-			type="1": 	The list items will be numbered with numbers (default)
-			type="A": 	The list items will be numbered with uppercase letters
-			type="a": 	The list items will be numbered with lowercase letters
-			type="I": 	The list items will be numbered with uppercase roman numbers
-			type="i": 	The list items will be numbered with lowercase roman numbers
-		-->
-			<ol start=10 type="A">
-				<li>HTML</li>
-				<li>CSS</li>
-				<li>JS</li>
-				<li>PHP</li>
-				<li>MySQL</li>
-			</ol>
-		<hr><hr>
-		<p><b>Forms</b></p>
-			<form action="" method="get" enctype="multipart/form-data">
-				<label for="username">Username:</label>
-				<input type="text" id='username' name="username" value="" placeholder="Username">
-				<br>
-				<label for="password">Password:</label>
-				<input type="password" id='password' name="password" value="" placeholder="Password">
-				<br>
-				<label for="number">Number:</label>
-				<input type="number" id='number' name="number" value="" placeholder="number">
-				<p>Drop Down:
-				<select>
-					<option>Delhi</option>
-					<option selected>Odisha</option>
-					<option>Pune</option>
-				</select></p>
-				<p><input type="radio" name="gender" value="male" checked>Male
-				<input type="radio" name="gender" value="female">Female</p>
-				<p><input type="checkbox" name="material">PC
-				<input type="checkbox" name="material" checked>Laptop</p>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>Arjun</td>
+							<td>Bro</td>
+						</tr>
+					</tbody>
+				</table>
+			<hr><hr>
+			<p><b>Link Tag</b></p>
+				<a href="https://www.google.com">
+					<button>Google</button>
+				</a>
+				<a href="https://images7.alphacoders.com/100/thumb-1920-1009607.png" download>
+					<button>One Punch Man</button>
+				</a>
+				<!-- Links Atrributes
+						target = '_blank/_parent/_self/_top/frame_name'
+						title = 'tatle name'
+						href = 'absolute/relative link'
+						name = 'give a name'
+						id/class = 'value'
+						download 
 				
-				<label for="avatar">Choose a profile picture:</label>
-					<!-- single file select to upload -->
-				<input type="file" id="avatar" name="avatar">
-				<br>	<!-- only png/ jpeg single file select to upload  -->
-				<input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
-				<br>	<!-- more than one files select to upload -->
-				<input type="file" id="avatar" name="avatar" multiple>
-				<input type="button" name="btn_info" value="Upload">
-				<br><br>
-				<input type="reset" name="btn_reset" value="Reset">
-				<input type="submit" name="btn_submit" value="Submit">
-			</form>
-		<hr><hr>
-		<p><b>Tables</b></p>
-			<table border="5px" cellpadding="5px" cellspacing="0px">
-				<thead>
-					<tr>
-						<th>No</th>
-						<th colspan="2">Name</th>
+				-->
 
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td>Arjun</td>
-						<td>Bro</td>
-					</tr>
-				</tbody>
-			</table>
-		<hr><hr>
-		<p><b>Link Tag</b></p>
-			<a href="https://www.google.com">
-				<button>Google</button>
-			</a>
-			<a href="https://images7.alphacoders.com/100/thumb-1920-1009607.png" download>
-				<button>One Punch Man</button>
-			</a>
-			<!-- Links Atrributes
-					target = '_blank/_parent/_self/_top/frame_name'
-					title = 'tatle name'
-					href = 'absolute/relative link'
-					name = 'give a name'
-					id/class = 'value'
-					download 
-			
-			-->
+			<hr><hr>
+			<p><b>Html Entities</b></p>
+				<p> Rserved Chars in HTML must be replaced with char entites.</p>
 
-		<hr><hr>
-		<p><b>Html Entities</b></p>
-			<p> Rserved Chars in HTML must be replaced with char entites.</p>
+				<p>space HTML Entities:- &amp;nbsp;</p>
 
-			<p>space HTML Entities:- &amp;nbsp;</p>
+			<hr><hr>
+			<p><b>IFrames</b></p>
+				<iframe src="http://localhost/test/personal/"></iframe>
+				<!-- Iframe 
+						The HTML <iframe> tag specifies an inline frame.
 
-		<hr><hr>
-		<p><b>IFrames</b></p>
-			<iframe src="http://localhost/test/personal/"></iframe>
-			<!-- Iframe 
-					The HTML <iframe> tag specifies an inline frame.
+						An inline frame is used to embed another document within the current HTML document.
 
-					An inline frame is used to embed another document within the current HTML document.
+					Atrributes
+						height = 'value'
+						width = 'value'
+						style = 'value of style of css'
+						title = 'tatle name'
+						name = 'give a name'
+						id/class = 'value'
+				
+				-->
 
-				Atrributes
-					height = 'value'
-					width = 'value'
-					style = 'value of style of css'
-					title = 'tatle name'
-					name = 'give a name'
-					id/class = 'value'
-			
-			-->
+				<!-- Q. How to target a frame in link?  -->
+				<h2>Iframe - Target for a Link</h2>
 
-			<!-- Q. How to target a frame in link?  -->
-			<h2>Iframe - Target for a Link</h2>
+				<iframe src="demo_iframe.html" name="iframe_a" height="300px" width="100%" title="Iframe Example"></iframe>
 
-			<iframe src="demo_iframe.html" name="iframe_a" height="300px" width="100%" title="Iframe Example"></iframe>
+				<a href="/study-repo/Web_developer/1-HTML/index.html" target="iframe_a">
+					<button>Main Page</button>
+				</a>
 
-			<a href="/study-repo/Web_developer/1-HTML/index.html" target="iframe_a">
-				<button>Main Page</button>
-			</a>
-
-			<p>When the target attribute of a link matches the name of an iframe, the link will open in the iframe.</p>
+				<p>When the target attribute of a link matches the name of an iframe, the link will open in the iframe.</p>
 
 	</body>
 </html>

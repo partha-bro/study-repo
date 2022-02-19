@@ -1,9 +1,0 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-	<h1>Access Denied!</h1>
-</body>
-</html>

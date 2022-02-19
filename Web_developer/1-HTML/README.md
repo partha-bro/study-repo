@@ -1,17 +1,18 @@
-# Course Name: The Complete Web Developer Course 2.0
+# Course Name: Web Development Bootcamp 2.0
 
 ## HTML
 
 	**Hypertext Markup Language, a standardized system for tagging text files to achieve font, colour, graphic, and hyperlink effects on World Wide Web pages.**
 
 	1.  Web Page Structure
-	2.  Images
-	3.  Heading Tag
-	4.  Formatting Text
-	5.  Unordered Lists
-	6.  Ordered Lists
-	7.  Forms
-	8.  Tables
-	9.  Links
-	10. Html Entities
-	11. Iframes
+	2.  center tag
+	3.  Images
+	4.  Heading Tag
+	5.  Formatting Text
+	6.  Unordered Lists
+	7.  Ordered Lists
+	8.  Forms
+	9.  Tables
+	10.  Links
+	11. Html Entities
+	12. Iframes

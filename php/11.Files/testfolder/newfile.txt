@@ -1,4 +1,0 @@
-this in write some data
-this in write some data part 2
-Added some extra data in last line
-This is the last sentence in new file using fopen() in append.
