@@ -6,6 +6,8 @@
 
 - **Project BBC news Website**
 
+- **Bootstrap**
+
 - **Javascript**
 
 - **Challenge: Test your Reaction! Click on the boxes and circle as quickly as you can!**	
