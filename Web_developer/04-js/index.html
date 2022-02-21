@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript | Web Developer</title>
+        <style>
+            .circle{
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                float: left;
+                margin: 20px;
+            }
+            #red{
+                background-color: red;
+            }
+            #yellow{
+                background-color: yellow;
+            }
+            #green{
+                background-color: green;
+            }
+            .clear{
+                clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        <p id='partha' class='arjun'>Hello Bro</p>
+        <button onclick="textChangebyId()">id</button>
+        <p class='arjun'>Hello Bro</p>
+        <button onclick="textChangeByClass()">class</button>
+        <p>Hello Bro</p>
+        <button onclick="textChangeByTagName()">p</button>
+
+
+        <!-- Chage text using js-->
+        <p id='myText'>Javascript is </p>
+        <button id='myButton'>more</button>
+
+        <!-- changing style -->
+        
+        <p id="styleText">JAVASCRIPT</p>
+        <button id='myStyleButton'>Change Style</button>
+
+        <!-- Challenge: make three circle with different color and when we click that is disapear -->
+        <hr>
+        <div id="red" class="circle"></div>
+        <div id="yellow" class="circle"></div>
+        <div id="green" class="circle"></div>
+
+        <div class="clear"></div>
+        <hr>
+        <!-- Variables -->
+        <input type="text" id="inputText">
+        <button id="submit">Submit</button>
+        <p id="textResult">Please Enter your Name.</p>
+
+        <!-- Challenge: How many fingers am i holding up? -->
+        <h3>How many fingers am i holding up?</h3>
+        <input type="text" id="guess_input" placeholder="Guess your number">
+        <button id="guess_btn">Guess</button>
+
+        <h3>Challenge: Test your Reaction! Click on the boxes and circle as quickly as you can!	</h3>
+        <button><a href="project/index.html">Click</a></button>
+
+    <!-- External javascript code -->
+    <script type="text/javascript" src="js/script.js"></script>
+    
+    </body>
+</html>

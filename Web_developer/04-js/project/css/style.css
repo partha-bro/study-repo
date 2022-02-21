@@ -1,0 +1,11 @@
+body{
+    background-color:lightblue;
+    color: black;
+    font-weight: bold;
+}
+#shape{
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    display: none;
+}
