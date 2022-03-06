@@ -59,7 +59,11 @@
 ## How to add external font icons to website?
     use this CDN for bootstarp: <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     
-    copy the code : <i class="fa fa-apple"></i>
+    syntax: <i class='fa fa-object-name fa-size'></i>
+
+    fa-size : fa-1x / fa-2x / fa-3x / fa-4x / fa-5x
+    
+    copy the code : <i class="fa fa-apple fa-4x"></i>
 
 ## Buttons
 
@@ -94,6 +98,9 @@
             btn btn-lg btn-primary
             btn btn-sm btn-primary
 
+        Full width of 100% use:
+            btn-block
+
 ## Text color:
     classes
         text-primary
@@ -105,6 +112,113 @@
         text-light
         text-dark
 
+## Carousel Components
+
+    Meaning of Carousel: A roating machice or device, in particular a converyor system at an airport from which arriving passengers collect their luggage.
+
+    A slideshow component for cycling through elements - images or slides of texts - like a carousel.
+
+    options: Options can be passed via data attributes or javascript.
+    append option name to data-, as in data-interval=""
+
+        interval : 5000     => The amount of time to delay between automattically cycling in 5sec = 5000 millisec
+        keyboard : true     => Whether the carousel should react to keyboard events
+        pause    : "hover"  => if set hover, pause the cycling of the carousel on mouse enter and resumes the cycle when mouse leave 
+                 :  false   => if set false, mouse hover won't work
+        ride     : false    => Autoplays the carousel after the user manually cycles the first items. 
+                 : "carousel" => if carousel autoplays the carousel on load.
+        wrap     : true     => Whether the carousel should cycle continuously or have hard stops.
+
+    CODE:
+
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img class="d-block w-100" src="..." alt="First slide">
+                </div>
+                <div class="carousel-item">
+                <img class="d-block w-100" src="..." alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                <img class="d-block w-100" src="..." alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+ 
+## Cards 
+
+        Botstrap's cards provide a flexible and extensible content container with multiple variants and options.
+
+        syntax:
+        <div class='cards'>
+            <div class='card-header'>
+            </div>
+            <div class='card-body'>
+            </div>
+            <div class='card-footer>
+            </div>
+        <div>
+
+## Media query Breakpoints
+    The @media query is 1/3 of the recipe for responsive design. It is the key ingredient that, in it’s simplest form, allows specified CSS to be applied depending on the device and whether it matches the media query criteria.
+
+    Syntax:
+        @media <type> <feature>
+
+    Example:
+        @media (max-width:900px) and (max-width:1000px) {
+            // css style code
+        }
+
+    Min-width:
+        // Small devices (landscape phones, 576px and up)
+        @media (min-width: 576px) { ... }
+
+        // Medium devices (tablets, 768px and up)
+        @media (min-width: 768px) { ... }
+
+        // Large devices (desktops, 992px and up)
+        @media (min-width: 992px) { ... }
+
+        // X-Large devices (large desktops, 1200px and up)
+        @media (min-width: 1200px) { ... }
+
+        // XX-Large devices (larger desktops, 1400px and up)
+        @media (min-width: 1400px) { ... }
+
+    Max-width:
+        // X-Small devices (portrait phones, less than 576px)
+        @media (max-width: 575.98px) { ... }
+
+        // Small devices (landscape phones, less than 768px)
+        @media (max-width: 767.98px) { ... }
+
+        // Medium devices (tablets, less than 992px)
+        @media (max-width: 991.98px) { ... }
+
+        // Large devices (desktops, less than 1200px)
+        @media (max-width: 1199.98px) { ... }
+
+        // X-Large devices (large desktops, less than 1400px)
+        @media (max-width: 1399.98px) { ... }
+
+        // XX-Large devices (larger desktops)
+        // No media query since the xxl breakpoint has no upper bound on its width
+
+    Single breakpoint:
+        @media (min-width: 768px) and (max-width: 991.98px) { ... }
+
+    Between breakpoints:
+        // Apply styles starting from medium devices and up to extra large devices
+        @media (min-width: 768px) and (max-width: 1199.98px) { ... }
 ## Margin
 
     ml-auto     => margin-left:auto;

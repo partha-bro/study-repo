@@ -9,6 +9,51 @@
 		E.g. h1 tag margin style by default 21.440; 
 			if we can not assign any margin then it will take above style, so we use margin:0; to avoid such style. 
 
+### Multiple Selectrs
+		syntax:
+			selector1, selector2 {
+				// style...
+			}
+		example:
+			h1, h2 {
+				color: red;
+			}
+### Hierarchical Selectors
+
+		systax:
+			Selector1 Selector2{
+				// style...
+			}
+		
+		example:
+			#title .container{
+				color:red;
+			}
+
+		NOTE: All .container class element of parent [#title id] element have color red.
+		This is allowed to use in child-parent element style.
+
+### Combined Selectors
+
+		systax:
+			selector1.selector2{
+				// style...
+			}
+		#title.container{
+			// style...
+		}
+
+		NOTE: the element has both title id with container class has color red.
+		This is pointing same element that has both id and class.
+		
+### Priority of css selector
+
+		inline style > id selector > class selector > tag selector
+
+		inline selector has highest priority.
+		tag selector has lowest priority.
+
+
 	1. 3 Types of method to apply in HTML pages 
 			a. Inline style CSS
 				Use css style within the tags with style attribute
@@ -25,6 +70,10 @@
 			HREF: If a resource cannot be placed inside the body tag and can only be linked (for html, css, a)
 
 	2. Classes and ids
+
+		ID uses in single element to select.
+		Classes use in multiple element to select.
+
 	3. Height and width
 			a. value is pixel like 100px
 			b. value is percentage like 100%
@@ -76,6 +125,7 @@
 			NOTE: we can not use both left or right as well as top or bottom.
 
 			c. z-index
+				All element are default value 0 of z index with position:static.
 				This property is use to indetify the priority of visible, 
 				those element has higher number that priority is higher.
 
@@ -145,6 +195,21 @@
 	11. Align Text
 		a. text-align: left/center/right;
 		b. text-align: justify;				=> this is proper look of paragraph 
+
+	11.1: Shadow 
+			a. text-shadow: it gives shadow to text.
+				syntax: 
+					text-shadow: x-axis y-axis blur-radius spred-radius color;
+				example:
+					text-shadow: 10px 10px red;	//positive value for appear shadow in right and buttom.
+					text-shadow: -10px -10px red;	//negative value for appear shadow in top and left.
+
+			b. box-shadow: it gives shadow to box.
+				syntax:
+					box-shadow: x-axis y-axis blur-radius spred-radius color;
+				example:
+					box-shadow: 10px 10px red;	//positive value for appear shadow in right and buttom.
+					box-shadow: -10px -10px red;	//negative value for appear shadow in top and left.
 
 	12. Styling Links
 		a. a:link{ }

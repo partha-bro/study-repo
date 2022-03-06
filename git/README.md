@@ -115,31 +115,32 @@
     touch README.md                                                     ==> Before create a repo make a README.md file
         |               
         |                   
-    git init                                                            ==> initializaion of repository
+    git init                                  ==> initializaion of repository
         |
         |
-    git status [untracked area]                                         ==> check the status of your new and modified files
+    git status [untracked area]               ==> check the status of your new and modified files
         |
         |
-    git add . (for all new and modified files)                          ==> changes files to ready to commit
+    git add . (for all new and modified files)==> changes files to ready to commit
     git add file_name [staging area]
         |
         |
     git diff
         |
         |
-    git commit -m "heading message" -m "description(option)"            ==> save the changes in local repo
-    git commit -am "heading message" -m "description(option)"           ==> shorthand for add and commit the code
+    git commit -m "heading message" -m "description(option)" ==> save the changes in local repo
+    git commit -am "heading message" -m "description(option)"==> shorthand for add and commit the code
         |
         |
-    git remote -v                                                       ==> check the origin set in correct/working repo
+    git remote -v                              ==> check the origin set in correct/working repo
     git remote add Repository_name https://github.com/partha-bro/study-repo.git  ==> add remote working repo to origin for short hand
     OR
-    git remote set-url Repository_name http://user_name:password-token@github.com/user_name/repo_name.git                                             ==> add remote working repo to origin for short hand
-    git push origin master                                              ==> upload the local repo to remote repo
+    git remote set-url Repository_name http://user_name:password-token@github.com/user_name/repo_name.git                                             
+                                               ==> add remote working repo to origin for short hand
+    git push origin master                     ==> upload the local repo to remote repo
         |
         |
-    git pull https://github.com/partha-bro/study-repo.git               ==> download the changes of the remote repo
+    git pull https://github.com/partha-bro/study-repo.git ==> download the changes of the remote repo
 </pre>
 ## What is Git branch?
     A branch represents an independent line of development. 
@@ -147,48 +148,48 @@
 
 ## Common options:-
 
-    git branch                                          ==> list all the branches
+    git branch                                 ==> list all the branches
         |
         |
-    git branch -v                                       ==> list all the branches with last commited message 
+    git branch -v                              ==> list all the branches with last commited message 
         |
         |
-    git branch "branch_name"                            ==> create new branch
+    git branch "branch_name"                   ==> create new branch
         |
         |
-    git checkout "branch_name"                          ==> goto the specific branch
+    git checkout "branch_name"                 ==> goto the specific branch
         |
         |
-    git checkout -b "branch_name"                       ==> create and goto the same branch at same command(shorthand)
+    git checkout -b "branch_name"              ==> create and goto the same branch at same command(shorthand)
         |
         |
-    git diff "branch_name"                              ==> code difference/modified between two branches
+    git diff "branch_name"                     ==> code difference/modified between two branches
         |
         |
-    git merge "branch_name" master                      ==> merge branch to master
+    git merge "branch_name" master             ==> merge branch to master
         |
         |
-    git branch --merged                                 ==> Only Show all merged branch
+    git branch --merged                        ==> Only Show all merged branch
         |
         |
-    git branch --no-merged                              ==> Only Show unmerged branch 
+    git branch --no-merged                     ==> Only Show unmerged branch 
         |
         |
-    git push origin "branch_name"                       ==> upload branch changes to github repo
+    git push origin "branch_name"              ==> upload branch changes to github repo
         |
         | 
-    git branch -d "branch_name"                         ==> delete the branch after merging is complete
+    git branch -d "branch_name"                ==> delete the branch after merging is complete
         |                                                   if not then show error 
         |
-    git branch -D "branch_name"                         ==> if you want to delete the branch without merging [ It may loss your code ]
+    git branch -D "branch_name"                ==> if you want to delete the branch without merging [ It may loss your code ]
 
 ## How to undoing my changes in git?
 
-    git log                                             ==> check the all commit changes log file like history
-    git reset 'file_name'                               ==> it's roll back staging area to untracked area
-    git reset 'commit no'                               ==> it's roll back to given commit number from git log
+    git log                                    ==> check the all commit changes log file like history
+    git reset 'file_name'                      ==> it's roll back staging area to untracked area
+    git reset 'commit no'                      ==> it's roll back to given commit number from git log
                                                             ( it's work: add changes to untracked area)
-    git reset --hard 'commit no'                        ==> it's roll back to given commit number 
+    git reset --hard 'commit no'               ==> it's roll back to given commit number 
                                                             from git log forcefully delete extra codes.
 
 ## What is Git merge conflict?
