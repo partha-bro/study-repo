@@ -1,0 +1,39 @@
+#bodyPart{
+    background-color: #283149;
+    color: whitesmoke;
+    font-family: 'Arvo', serif;
+    text-align: center;
+}
+#headTitle{
+    font-size: 6.5em;
+    font-weight: bolder;
+    text-shadow: 3px 0 #DA0463;
+    color: #DBEDF3;
+}
+.container{
+    margin: 5% 15% 10% 15%;
+}
+
+/* Play Ground */
+.box{
+    display: inline-block;
+    height:150px;
+    width: 150px;
+    background-color: white;
+    color: #DA0463;
+    font-size: 6em;
+    font-weight: bolder;
+    margin: 2px 5px;
+    text-align: center;
+    border: 10px #404B69 solid;
+    border-radius: 5%;
+    text-shadow: 2px 0px rgb(208, 206, 206);
+}
+
+/* footer */
+.footer{
+    color: white;
+}
+.heart{
+    color: red;
+}
