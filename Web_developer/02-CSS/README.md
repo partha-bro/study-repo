@@ -79,10 +79,13 @@
 			b. value is percentage like 100%
 			c. value is em like 100em
 
-	4. color and background-color
+	4. color and background-color and background-image
 			a. value is colour name like red
 			b. value is colour code like #4A8CF6
 			c. value is rgb() function of colour like rgb(74,140,246)
+
+			d. background-color: 'color';
+			e. background-image: url('images location');
 
 	5. Floating
 		Changing the position of element in page.

@@ -17,7 +17,12 @@
 	Note: Always use internal or external js code last of html body.
 
 	2. Debug and error find out using browser console
-		we can send some message to console using console.log('message');
+		console.log('message'): we can send some message to console using console.log('message');
+		debugger: 				we can debug any function or code in chrome developer tool console tab
+			type 	debugger
+					shift+enter	// goto the next line
+					functionName(parm,parm);
+					hit enter
 
 	3. comments
 		There are two types of comment denominator
@@ -143,6 +148,30 @@
 				//..code
 				return()
 			}
+	
+	9.1 Higher Order functions
+		Higher order functions are functions that can take other functions as inputs.
+
+		syntax: 
+			function functionName( parm1, parm2, ..., etc, anotherFunction_without_parathesis){
+				//code
+			}
+		
+		example:
+			function add(num1, num2) {
+				return "Add result: " + (num1+num2);
+			}
+
+			function multiply(num1, num2) {
+				return "multiply result: " + (num1*num2);
+			}
+
+			function calculator(num1, num2, oprator) {
+				return oprator(num1,num2);
+			}
+
+			calculator(3,4,add);
+			calculator(3,4,multiply);
 			
 	10. Math functions
 
@@ -242,6 +271,18 @@
 			statement;
 			increment;
 		}While( condition )
+
+		
+	15.1 Switch statement
+
+		switch (key) {
+            case value:
+                
+                break;
+        
+            default:
+                break;
+        }
 
 ## Fibonacci series: // 0,1,1,2,3,5,8,13,21,...
 		var fibboNumber = [];
@@ -360,5 +401,144 @@
 				document.querySelector('button').addEventListener('click',function (){
 					alert('i got clicked.');
 				});
+
+	2. How to play audio file in javascript?
+
+		create an object of Audio Constructor function, that can have audio file location and call play method to play it.
+
+		syntax: 
+			var object = new Audio('location of audio file');
+			object.play();
+
+		example:
+			var audio = new Audio('sounds/tom-1.mp3');
+        	audio.play();
+
+	3. this keyword
+
+		In JavaScript, the this keyword refers to an object.
+		Which object depends on how this is being invoked (used or called).
+
+	4. Objects
+
+		JavaScript variables can also contain many values.
+		Objects are variables too. But objects can contain many values.
+		Object values are written as name : value pairs (name and value separated by a colon).
+
+		example:
+			let person = {
+				firstName:"John", 
+				lastName:"Doe", 
+				age:50, 
+				eyeColor:"blue"
+			};
+
+			console.log(person.firstName);
+
+	5. Constructor Function
+
+		This function is constructor function, it means it automatically call when an object is declare.
+		this function name is always capitalize, not camel/lower case/upper case
+
+		Example:
+			// constructor function
+			function Person ( Name, Age) {
+				this.name = Name,
+				this.age = age
+			}
+
+			// create an object
+			const person1 = new Person('John',23); 
+			const person2 = new Person('Partha',27); 
+
+	5.1 Adding Properties And Methods in an Object
+
+		You can add properties or methods in an object like this:
+
+		// constructor function
+		function Person () {
+			this.name = 'John',
+			this.age = 23
+		}
+
+		// creating objects
+		let person1 = new Person();
+		let person2 = new Person();
+
+		// adding property to person1 object
+		person1.gender = 'male';
+
+		// adding method to person1 object
+		person1.greet = function () {
+			console.log('hello');
+		}
+
+		person1.greet();   // hello
+
+		// Error code
+		// person2 doesn't have greet() method
+		person2.greet();
+
+	5.2 Create Objects: Constructor Function Vs Object Literal
+
+			Object Literal is generally used to create a single object. The constructor function is useful if you want to create multiple objects. 
+
+			For example,
+			// using object literal
+			let person = {
+				name: 'Sam'
+			}
+			// using constructor function
+			function Person () {
+				this.name = 'Sam'
+			}
+
+			let person1 = new Person();
+			let person2 = new Person();
+
+	6. JavaScript keyboard events
+
+		There are three different keyboard events in JavaScript:
+
+		keydown		: Keydown happens when the key is pressed down, and auto repeats if the key is pressed down for long.
+		keypress	: This event is fired when an alphabetic, numeric, or punctuation key is pressed down.
+		keyup		: Keyup happens when the key is released.
+
+		example: 
+			document.addEventListener('keypress', function(event){
+				//code
+				console.log(event);
+				console.log(event.key);
+			});
+
+			The above syntax says: keypress event is on entrire document with anonymous function with event object. However we can know about which key is press then simple use event.key property.
+
+	7. Timeout 
+
+		To use some time to execute specific code then we can use
+			setTimeout( function_name/anonymous function, milisecond);
+
+		example: 
+			setTimeout(function (){
+        		document.querySelector('.'+buttonClicked).classList.remove('pressed');
+    		}, 500);
+
+		Notes
+			The setTimeout() is executed only once.
+
+			If you need repeated executions, use setInterval() instead.
+
+				setInterval(function () {
+					element.innerHTML += "Hello"
+					}, 1000);
+
+			Use the clearTimeout() method to prevent the function from starting.
+
+			To clear a timeout, use the id returned from setTimeout():
+
+			myTimeout = setTimeout(function, milliseconds);
+			Then you can to stop the execution by calling clearTimeout():
+
+			clearTimeout(myTimeout);
 
 ### Challenge: Test your Reaction! Click on the boxes and circle as quickly as you can!	
