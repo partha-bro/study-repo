@@ -4,6 +4,7 @@
 
 	1.  Web Page Structure
 	2.  Favicon
+			<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 	3.  center tag
 	4.  Images
 	5.  Heading Tag

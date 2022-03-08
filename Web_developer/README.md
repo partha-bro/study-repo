@@ -4,12 +4,20 @@
 
 - **CSS**
 
-- **Project BBC news Website**
+- **Project - BBC news Website**
 
 - **Bootstrap**
 
+- **Project - TinDog : Tinder For Dog**
+
 - **Javascript**
 
-- **Challenge: Test your Reaction! Click on the boxes and circle as quickly as you can!**	
+- **Project - Challenge: Test your Reaction! Click on the boxes and circle as quickly as you can!**	
+
+- **Project - Dice Game**
+
+- **Project - Drum Kit Music System**
 
 - **jQuery**
+
+- **Project - The Simon Game**

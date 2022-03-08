@@ -9,41 +9,37 @@
 ### Latest version of jQuery: v3.6.0
 	syntax: 
 		$("selector").event(function(){
-			code...;
+			// code...;
 		});
 
-### How to know jQuery file is loaded.
-	a. This condion is used for knowing that jQuery is attached successfully or not
-	b. jQuery is a variable in "jquery-3.6.0.min.js" file
-	eg.
-		if( typeof jQuery == 'undefined' ){
-			alert('jQuery is not installed.')
-		}else{
-			console.log('jQuery is installed correctly.');
-		}
+### what is $(document)?
 
-### Detecting a click
-	syntax: 
-		$("selector").click(function(){
-			code...;
-		});
+	$(document) means the jQuery is select entire document of the html page.
 
-### Content change
-	syntax:
-		$("selector").html('Value');
+### How to use jQuery CDN and where to paste it?
 
-### Hover any element
-	$('button').hover(function(){
-		$("#text").html('Button is hover.');
+	jQuery CDN paste last of html page but above in all custom javascript <script> tags.
 
-	});
+	CDN URL: 	<!-- jquery plugin -->
+    			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-### Change any attibute content
-	$('button').click(function(){        
-		$('iframe').attr('src','http://dsdigital.com/');
-	});
+	NOTE: Always use jQuery script/CDN in last html page.
+		if we are trying to use jQuery file or CDN in <head> tag then we should use below syntax to run jQuery code:
 
-### Change color
+			$(document).ready(function() {
+				$("selector").event(function(){
+					// code...;
+				});
+			});
+
+### $ symbole is use to select the element using id/class/tag.
+
+	document.querySelector('') and document.querySelectorAll('') both are replaced by $('') or jQuery('') method.
+
+### Use style in html dom 
+	
+		then call css('proprty','value') method
+
 	$("selector").css('property','value');
 	$("#text").css('color','red');
 	$("#text").css('background-color','yellow');
@@ -51,127 +47,149 @@
 NOTE: $("#text").css('background-color','yellow'); => In this command we can set a color to text id.
 		$("#text").css('background-color'); => In this command we can Get a color from text id.
 
-### "this" keyword
-	this keyword is represent current event
+### Change any attibute content     
+		$('iframe').attr('src','http://dsdigital.com/');
 
-### Fading Content
-		fadeOut()
-		fadeIn()
-		fadeToggle()	: this is use as fadeIn and fadeOut method
+### How to add class and remove class in Dom using jQuery?
 
-		syntax: $('selector').fadeIn('value',callback function(){
+	$('selector').addClass('className');
 
-		});
+	$('selector').removeClass('className');
 
-### Animating Content
-	animate({array of css properties},time in millisecond,callback function);
-	syntax:
-		// Animate Content
-			$('#div_animate').click(function(){
-				$(this).animate({
-					width:"200px",
-					height:"200px",
-					margin:"10px"
-				},2000, function(){
-					$(this).css('backgroundColor','blue');
-				});
-			});
-	
-### Regular Exprestion
-	A regular expresion is denoted as 
-	syntax: /any input/parameter
-	eg:		/is/	=>	is word/char of regular expresion
-			/IS/i	=> i for non-casesensitive of IS word
-			/IS/g	=> All the IS present in the string
+### How to change simple text and html code in DOM?
 
-	match() method use to find the correct regular expresion.
-	e.g. 	var regex = /E/ig;
-			var string = $('#regex_text').html();
-			var result = string.match(regex);
-			$('#result').html(result);
-	
-	NOTE: the method return regular expreson from matched string if true.
-		or null return if false.
+	text() method use to change only text of that Dom.
 
-### jQuery Inbuild Methods
-	13. How to find numeric value in jQuery function?
-		$.isNumeric()
-	14. How to find ajax in jQuery function?
-		$.ajax()
-
-
-## jQuery-UI
-
-	jQuery UI is a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library.
-
-### Draggable 
-	Enable draggable functionality on any DOM element. Move the draggable object by clicking on it with the mouse and dragging it anywhere within the viewport.
-
-	draggable() method.
-
-	1.1 Constrain movement along an axis: x [vertically]
-		draggable({ axis:"x" })
-	1.2 Constrain movement along an axis: y [horizentaly]
-		draggable({ axis:"y" })
-
-	1.3 Constrain movement inside the parent DOM Element
-		draggable({ containment: "parent" })
-	1.4 Constrain movement inside any DOM Element
-		draggable({ containment: "any_ids_of_DOM_element" })
-
-### Resizable
-	This method allows to resize the element freely.
-
-	resizable() method.
-
-### Droppable
-	This method allows to other DOM element drop in respective element
-
-	$('selector').droppable({
-		drop: function( event,ui ){
-			// after drop complete...CODE
-		}
-	});
-
-### Accordion
-	Displays collapsible content panels for presenting information in a limited amount of space.
-
-	accordion() method
-
-	NOTE: this method call by div and that div contain tittle in <h3> tag and content in anathor <div> with <p> tag
+	html() method use to change text with html tag to interpreter of that Dom.
 
 	example:
-			HTML:
-				<div id="accordion">
-					<h3>title 1</h3>
-					<div>
-						<p>content 1</p>
-					</div>
-					<h3>title 2</h3>
-					<div>
-						<p>content 2</p>
-					</div>
-				</div>
+		$('h3').text('text changes using text() method');
 
-			JS:
-				$('#accordion').accordion();
+		$('h4').html('<em>html code with text</em>');
 
+### Add Event Listener
 
-### Sortables
-	Reorder elements in a list or grid using the mouse.
+	Syntax:
+		$("selector").event(function(){
+			// code...;
+		});
 
-	sortable() method
+	Event:
+		.click( function(){
+			// code
+		});
 
-	systax:
-			HTML:
-				<ol/ui id="sortable">
-					<li>option 1</li>
-					<li>option 2</li>
-					<li>option 3</li>
-					<li>option 4</li>
-				</div>
+		.keypress( function(event){
+			//code
+		});
 
-			JS:
-				$('#sortable').sortable();
+	NOTE: To avoid this event method and use general method for event,
 
-# Project: 
+		use on( 'eventName' , anonymous function);
+
+		example:
+			$('h2').on('mouseover', function(){
+				$('h2').attr('align','right');
+			});
+
+### Adding and removing DOM element 
+
+	add a new element using jQuery in below methods
+
+	before(): add new element before targeting selector
+
+			syntax: 	$('selector').before('<tag>new html code</tag>');
+
+			result on html page like
+					<tag>new html code</tag> //next line selector code
+					selector code
+
+	after(): add new element after targeting selector
+
+			syntax: 	$('selector').after('<tag>new html code</tag>');
+
+			result on html page like
+					selector code				//next line new add element
+					<tag>new html code</tag>
+
+	prepend(): add new element after opening tag of selector
+
+			syntax: 	$('selector').prepend('<tag>new html code</tag>');
+
+			result on html page like
+					opening tag selector code<tag>new html code</tag> text content
+
+	append(): add new element before closing tag of selector
+
+			syntax: 	$('selector').append('<tag>new html code</tag>');
+
+			result on html page like
+					opening tag selector code text content<tag>new html code</tag>closing tag
+
+	
+	removing DOM element using remove() method:
+
+	Example:
+		$('h5').before('<button>before element</button>');
+		$('h5').after('<button>after element</button>');
+		$('h5').prepend('<button>prepend element</button>');
+		$('h5').append('<button>append element</button>');
+		$('#remove').remove();
+
+### jQuery Effect
+
+	animate()		Runs a custom animation on the selected elements
+		NOTE: only use number value to css property to animate the element
+
+	syntax:
+		$('selector').animate({ property:numberValue });
+
+	Example:
+		$('#animate').click(function(){
+			$('img').animate({
+				'margin-top' : '50px',
+				'height' : '500px',
+				'width' : '800px'
+			});
+		});
+
+	fadeIn()		Fades in the selected elements
+	fadeOut()		Fades out the selected elements
+	fadeToggle()	Toggles between the fadeIn() and fadeOut() methods
+
+	slideDown()		Slides-down (shows) the selected elements
+	slideToggle()	Toggles between the slideUp() and slideDown() methods
+	slideUp()		Slides-up (hides) the selected elements
+
+	stop()			Stops the currently running animation for the selected elements
+
+	hide()			Hides the selected elements
+	show()			Shows the selected elements
+	toggle()		Toggles between the hide() and show() methods
+
+	Example:
+		$('body').append('<img src="https://cdn.pixabay.com/photo/2015/12/12/22/35/snowman-1090261__340.jpg" />');
+		$('#hide').on('click',function(){
+			$('img').hide();
+		});
+		$('#show').on('click',function(){
+			$('img').show();
+		});
+		$('#toggle').click(function(){
+			$('img').toggle();
+		});
+		$('#slideUp').on('click',function(){
+			$('img').slideUp();
+		});
+		$('#slideDown').on('click',function(){
+			$('img').slideDown();
+		});
+		$('#slideToggle').click(function(){
+			$('img').slideToggle();
+		});
+		$('#fadeOut').on('click',function(){
+			$('img').fadeOut();
+		});
+		$('#fadeIn').click(function(){
+			$('img').fadeIn();
+		});
