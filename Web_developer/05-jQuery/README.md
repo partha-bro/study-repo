@@ -44,8 +44,8 @@
 	$("#text").css('color','red');
 	$("#text").css('background-color','yellow');
 
-NOTE: $("#text").css('background-color','yellow'); => In this command we can set a color to text id.
-		$("#text").css('background-color'); => In this command we can Get a color from text id.
+NOTE: $("#text").css('background-color','yellow'); => In command we can set a color to text id.
+		$("#text").css('background-color'); => In command we can Get a color from text id.
 
 ### Change any attibute content     
 		$('iframe').attr('src','http://dsdigital.com/');
@@ -83,7 +83,7 @@ NOTE: $("#text").css('background-color','yellow'); => In this command we can set
 			//code
 		});
 
-	NOTE: To avoid this event method and use general method for event,
+	NOTE: To avoid perticular event method and use general method for event is on(),
 
 		use on( 'eventName' , anonymous function);
 
@@ -167,6 +167,8 @@ NOTE: $("#text").css('background-color','yellow'); => In this command we can set
 	show()			Shows the selected elements
 	toggle()		Toggles between the hide() and show() methods
 
+	
+
 	Example:
 		$('body').append('<img src="https://cdn.pixabay.com/photo/2015/12/12/22/35/snowman-1090261__340.jpg" />');
 		$('#hide').on('click',function(){
@@ -193,3 +195,13 @@ NOTE: $("#text").css('background-color','yellow'); => In this command we can set
 		$('#fadeIn').click(function(){
 			$('img').fadeIn();
 		});
+
+		animation any element using nested methods:
+			$('selector').fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+
+		
+		delay(100) to delay 100 miliseconds
+			$('#'+color).addClass('pressed').delay(100).queue(function(next){
+					$(this).removeClass('pressed');
+					next();
+			});

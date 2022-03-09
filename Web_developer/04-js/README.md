@@ -42,7 +42,7 @@
 				true or false
 	
 	3.3 typeof()
-			This method use to find out the datatype of variables.
+			Method use to find out the datatype of variables.
 
 			typeof(123);		=> 'number'
 			typeof("partha")	=> 'string'
@@ -209,6 +209,8 @@
 			array_name.pop();
 
 		Delete/add in any index an item from an array:
+			empty the entire array: array_name.splice(0); 
+
 			array_name.splice(start_index_position,no_of_values,content);
 			ex:- array_name.splice(1,2);	delete 2 data and starting from index 1
 			ex:- array_name.splice(1,0,"value_4");	no delete data and adding new value in index 1
@@ -419,6 +421,12 @@
 		In JavaScript, the this keyword refers to an object.
 		Which object depends on how this is being invoked (used or called).
 
+		How to multiple button have same class and how to use it in perticular button of element is seleceted.
+
+		document.querySelectorAll('button').addEventListener('click',function(){
+			document.querySelector(this).style.color = 'red';
+		});
+
 	4. Objects
 
 		JavaScript variables can also contain many values.
@@ -542,3 +550,185 @@
 			clearTimeout(myTimeout);
 
 ### Challenge: Test your Reaction! Click on the boxes and circle as quickly as you can!	
+
+## ECMAScript
+
+	ECMAScript is a JavaScript standard meant to ensure the interoperability of web pages across different web browsers.
+	It is standardized by Ecma International according to the document ECMA-262. 
+	ECMAScript is commonly used for client-side scripting on the World Wide Web, and it is increasingly being used for writing server applications and services using Node.js.
+
+	1. What's the difference between JavaScript and ECMAScript?
+
+		“ECMAScript is a standard.”
+
+		“JavaScript is a standard.”
+
+		“ECMAScript is a specification.”
+
+		“JavaScript is an implementation of the ECMAScript standard.”
+
+		“ECMAScript is standardized JavaScript.”
+
+		“ECMAScript is a language.”
+
+		“JavaScript is a dialect of ECMAScript.”
+
+		“ECMAScript is JavaScript.”
+	
+	2. let and const
+
+		LET
+			Let statement is block-scoped and not a Global scope local variable used for initializing a statement. This statement can be used in function as it is function-scoped and one of the main character of let statement is that it can be reassigned.
+			let name = "Sankalp";
+			name = "Sankee";
+			console.log(name); // will print: Sankee
+		
+		CONST
+			When we declare a variable with let, we can reassign its value later on. Thats great but what if we dont want to reassign its value, for those, we have const. Const is function-scoped and block-scoped and it is not defined throughout the program as it is not global-scoped. If you try to reassign const variable it will throw a type error.
+			const pi = 3.141;
+
+	3. Destructuring
+
+		The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+
+		syntax:
+			// Array
+				let a, b, rest;
+				[a, b] = [10, 20];
+				console.log(a); // 10
+				console.log(b); // 20
+
+				[a, b, ...rest] = [10, 20, 30, 40, 50];
+				console.log(a); // 10
+				console.log(b); // 20
+				console.log(rest); // [30, 40, 50]
+
+				({ a, b } = { a: 10, b: 20 });
+				console.log(a); // 10
+				console.log(b); // 20
+
+				// Stage 4(finished) proposal
+				({a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40});
+				console.log(a); // 10
+				console.log(b); // 20
+				console.log(rest); // {c: 30, d: 40}
+
+			//Object destructuring
+				const user = {
+					id: 42,
+					isVerified: true
+				};
+
+				const {id, isVerified} = user;
+
+				console.log(id); // 42
+				console.log(isVerified); // true
+
+	4. Template Strings
+
+		Template literals are enclosed by the backtick (` `) character instead of double or single quotes.
+		The default function just concatenates the parts into a single string. If there is an expression preceding the template literal, this is called a tagged template.
+
+		Example:
+			let name = `partha`;
+			let name2 = 'partha';
+			console.log(`hi i am ${name}`);		// hi i am partha
+			console.log(`hi i am ${name2}`);	// hi i am partha
+
+		NOTE: If we use single/double quotation then it takes as a string.
+
+	5. Default Arguments
+
+		It means we cann't pass any value as an argument then it assign default value;
+		Example:
+			function functionName( pram_1 = 'value'){
+				// code
+			}
+
+	6. Object Properties
+
+		New in JavaScript with ES6/ES2015, if you want to define an object who's keys have the same name as the variables passed-in as properties, you can use the shorthand and simply pass the key name.
+
+		Here’s how you can declare an object with the new ES6 / ES2015 syntax:
+
+			let cat = 'Miaow';
+			let dog = 'Woof';
+			let bird = 'Peet peet';
+
+			let someObject = {
+			cat,
+			dog,
+			bird
+			}
+
+			console.log(someObject);
+
+			//{
+			//  cat: "Miaow",
+			//  dog: "Woof",
+			//  bird: "Peet peet"
+			//}
+			And here’s how to do the same thing with the older ES5 syntax:
+
+			var cat = 'Miaow';
+			var dog = 'Woof';
+			var bird = 'Peet peet';
+
+			var someObject = {
+			cat: cat,
+			dog: dog,
+			bird: bird
+			}``
+
+
+	7. Arrow Function
+
+		An arrow function expression is a compact alternative to a traditional function expression, but is limited and can't be used in all situations.
+
+		Differences & Limitations:
+
+			Does not have its own bindings to this or super, and should not be used as methods.
+			Does not have new.target keyword.
+			Not suitable for call, apply and bind methods, which generally rely on establishing a scope.
+			Can not be used as constructors.
+			Can not use yield, within its body.
+
+		Comparing traditional functions to arrow functions:
+
+			// Traditional Anonymous Function
+			function (a){
+				return a + 100;
+			}
+
+			// Arrow Function Break Down
+
+			// 1. Remove the word "function" and place arrow between the argument and opening body bracket
+			(a) => {
+				return a + 100;
+			}
+
+			// 2. Remove the body braces and word "return" -- the return is implied.
+			(a) => a + 100;
+
+			// 3. Remove the argument parentheses
+			a => a + 100;
+
+			// Traditional Anonymous Function
+			function (a, b){
+				return a + b + 100;
+			}
+
+			// Arrow Function (arguments & no return)
+			(a, b) => a + b + 100;
+
+			// Traditional Anonymous Function (no arguments)
+			let a = 4;
+			let b = 2;
+			function (){
+				return a + b + 100;
+			}
+
+			// Arrow Function (no arguments & no return)
+			let a = 4;
+			let b = 2;
+			() => a + b + 100;

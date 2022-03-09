@@ -1,0 +1,38 @@
+.bodyBackground{
+    background-color: #011F3F;
+}
+#level{
+    text-align: center;
+    color: blanchedalmond;
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 2px 2px red;
+    margin-top: 5%;
+}
+.box{
+    height: 10em;
+    width: 10em;
+    border: 8px black solid;
+    border-radius: 20%;
+}
+.box-left{
+    margin: 5% 2% 5% auto;
+}
+.box-right{
+    margin: 5% auto 5% 2%;
+}
+.green{
+    background-color: green;
+}
+.red{
+    background-color: red;
+}
+.yellow{
+    background-color: yellow;
+}
+.blue{
+    background-color: blue;
+}
+.pressed{
+    background-color: grey;
+    box-shadow: 2px 2px 8px 8px grey;
+}
