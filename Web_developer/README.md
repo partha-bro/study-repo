@@ -21,3 +21,7 @@
 - **jQuery**
 
 - **Project - The Simon Game**
+
+- **Node JS**
+
+- **Express JS**

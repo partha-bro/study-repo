@@ -64,3 +64,9 @@
 
     NPM: Node Package manager
     NPM is a package manager for external modules.
+
+    $ npm install external_module_name
+
+## How to initialize a project?
+
+    $ npm init  // command in project repo
