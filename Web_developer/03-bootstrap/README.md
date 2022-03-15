@@ -13,7 +13,7 @@
      class are
         .navbar             => use for nav tag
         .navbar-expand-md   => use for nav bar convert horizental to vertical
-        nabbar-light        => use for nav bar light 
+        .nabbar-light        => use for nav bar light 
         .bg-light           => nav section background color light
 
     2. use to brand name or image in navigation bar

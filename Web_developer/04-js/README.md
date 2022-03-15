@@ -1,6 +1,6 @@
 # Javascript
 
-	Javascript is a client-side programming language, which we can use making for interactive website.
+	is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else. (Okay, not everything, but it is amazing what you can achieve with a few lines of JavaScript code.)
 
 	JS describes how HTML elements should be behave.
 
@@ -592,7 +592,7 @@
 			When we declare a variable with let, we can reassign its value later on. Thats great but what if we dont want to reassign its value, for those, we have const. Const is function-scoped and block-scoped and it is not defined throughout the program as it is not global-scoped. If you try to reassign const variable it will throw a type error.
 			const pi = 3.141;
 
-	3. Destructuring
+	3. Destructuring assignment
 
 		The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
 

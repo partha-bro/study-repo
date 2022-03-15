@@ -62,12 +62,6 @@
 			c. External style CSS
 				Allow external css style pages in HTML page using link tag in head tag
 				<link rel='stylesheet' type='text/css' href='PATH'>
-	
-	Q. What is Difference between 'src' and 'href' attribute?
-		A simple definition
-
-			SRC: If a resource can be placed inside the body tag (for image, script, iframe, frame)
-			HREF: If a resource cannot be placed inside the body tag and can only be linked (for html, css, a)
 
 	2. Classes and ids
 
@@ -198,6 +192,17 @@
 	11. Align Text
 		a. text-align: left/center/right;
 		b. text-align: justify;				=> this is proper look of paragraph 
+
+		align-items
+			align-items: stretch|center|flex-start|flex-end|baseline|initial|inherit;
+
+				stretch  	: Default. Items are stretched to fit the container	
+				center		: Items are positioned at the center of the container	
+				flex-start	: Items are positioned at the beginning of the container	
+				flex-end	: Items are positioned at the end of the container	
+				baseline	: Items are positioned at the baseline of the container	
+				initial		: Sets this property to its default value. Read about initial	
+				inherit		: Inherits this property from its parent element. Read about inherit
 
 	11.1: Shadow 
 			a. text-shadow: it gives shadow to text.
