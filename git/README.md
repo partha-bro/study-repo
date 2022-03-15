@@ -186,6 +186,7 @@
 ## How to undoing my changes in git?
 
     git log                                    ==> check the all commit changes log file like history
+    git checkour 'file_name'                   ==> Before add to staging area, we want to roll back to previous commit of this file
     git reset 'file_name'                      ==> it's roll back staging area to untracked area
     git reset 'commit no'                      ==> it's roll back to given commit number from git log
                                                             ( it's work: add changes to untracked area)
@@ -199,8 +200,28 @@
 
     for reference: https://www.youtube.com/watch?v=nfOxUaA2trY
 
+## What is gitignore?
+
+    It is a file that tells about which files are not to be add to local/remote repository.
+    We can use it for no push sensitive data like password, personal info, api keys etc.
+
+    Make a file and name it .gitignore
+    $ touch .gitignore
+
+    Make a comment using # symbol
+        # comment 1
+        # comment 2
+
+    write file name or folder name using next line, more than one ignore file/folder in next line, not in a single line
+    Example:
+        node_modules/
+        apiKeys.txt
+        *.log
+
+    Website: A collection of .gitignore templates: https://github.com/github/gitignore
+
 ## What is fork in Github?
-    when we click fork button in any repository of github, that repo's copy is created in my github profile.
+    When we click fork button in any repository of github, that repo's copy is created in my github profile.
     in short, it takes ownership of any repository to mine.
 
     Example:

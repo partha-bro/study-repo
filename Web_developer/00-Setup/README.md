@@ -31,6 +31,8 @@
 #### Chrome Extension
 
         Pesticide for Chrome (without hover bar)
+        json viewer
+        enhancer for youtube
 
 #### How to know about screen resolution in chrome browser?
 

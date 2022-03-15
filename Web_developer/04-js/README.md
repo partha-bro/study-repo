@@ -261,6 +261,11 @@
 		for( intialize, condition, increment/decrement ){
 			// statement;
 		}
+
+		arrayVars.forEach( (arrayVar)=>{
+			arrayVar.key_1;
+			arrayVar.key_2;
+		});
 	
 		Initialize
 		While( condition ){
