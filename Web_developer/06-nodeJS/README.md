@@ -37,7 +37,7 @@
     Node.js files must be initiated on the server before having any effect
     Node.js files have extension ".js"
 
-## What is Nore REPL?
+## What is Node REPL?
 
     REPL means Read Evaluation Print Loop
     This mode is like console tab in chrome developer tools.
@@ -56,7 +56,7 @@
         const variableName = require('native_module');
 
     Example:
-        const fileSystem = requirw('fs);
+        const fileSystem = requirw('fs');
         fileSystem.methodName();
 
 ## The NPM Package Manager and Installing External Node Modules
@@ -74,6 +74,7 @@
 ## How to initialize a project?
 
     $ npm init  // command in project repo
+    $ npm init -y  // y flag use for yes permission
 
 ## What is nodemon?
 
@@ -110,13 +111,25 @@
     7. Inside the Procfile file write
         web: node filename.js       // filename.js that excuted using nodemon in local or default js file to run tha app
 
+    7.1 Specify the version of node in package.json
+        Inside the package.json file write node version:
+
+            after "license": property, we can write
+                "engines": {
+                    "node": "4.1.1"
+                }
+                
     8. $ git init
+
+    8.1 $ touch .gitignore
 
     9. $ git add .
 
     10. $ git commit -m 'message'
 
     11. $ git push origin master        // for github repo
+
+    11. $ heroku login
 
     12. $ heroku create
 
@@ -320,6 +333,8 @@
             var msg = require('./Log.js');
             msg.log('Hello World');
 
+    NOTE: ./ must be use for path because it represent current folder
+    
 ## Lodash module
 
     A modern JavaScript utility library delivering modularity, performance & extras.
@@ -332,3 +347,137 @@
 
     use various javascript methods like
     _.lowerCase('variable')             // return lower case of string
+
+## Hasing( md5 ) module
+
+    It is a JavaScript function for hashing messages with MD5.
+
+    Install:
+        npm install md5
+    
+    import:
+        const md5 = require('md5')
+
+    use:
+        md5(variable)
+
+    Example:
+        app.route('/register')
+        .get(
+            (req,res)=>{
+                res.render('register')
+            }
+        )
+        .post(
+            (req,res)=>{
+                const newUser = new User(
+                    {
+                        email: req.body.username,
+                        password: md5(req.body.password)
+                    }
+                )
+                newUser.save(
+                    (err)=>{
+                        if(err)
+                            console.log(err)
+                        else    
+                            res.redirect('/')
+                    }
+                )
+            }
+        )
+
+## dotenv module
+
+    Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.
+
+    This module is use for access .env file for secrect things like password, encryption key, api key etc.
+    .env file
+        - this file must be hidden file and no extension
+        - this file contain KEY_NAME=value and key name convention must be capitalize and in two/three word separated by _
+        - Like API_KEY=value, there is no space at all
+        - All key and value in next line
+        - value must not contain "" / '' / ;
+    
+    The declare variable we can access using process.env.KEY_NAME
+
+    How to import that module?
+
+        Install:
+            npm install dotenv
+        
+        Import:
+            require('dotenv').config()      // this imort must be in top of line/ 1st line
+        
+        Use:
+            process.env.KEY_NAME
+
+    NOTE: .env file must be mention in .gitignore file.
+
+## bcrypt module
+
+    Concept of bcrypt method is: user defind password + number of salt round[ it means add extra random number to strong the password] = result of encryption password to store
+
+    Install:
+        if any perticular version required
+        npm install bcrypt@compatibleVersion
+
+        npm install bcrypt
+
+    import:
+        const bcrypt = require('bcrypt')
+        const saltRound = 10 //more number means stong password and heavy use of CPU&GPU
+
+        LIKE:
+            saltRound=8 : ~40 hashes/sec
+            saltRound=9 : ~20 hashes/sec
+            saltRound=10: ~10 hashes/sec
+            saltRound=11: ~5  hashes/sec
+            saltRound=12: 2-3 hashes/sec
+            saltRound=13: ~1 sec/hash
+            saltRound=14: ~1.5 sec/hash
+            saltRound=15: ~3 sec/hash
+            saltRound=25: ~1 hour/hash
+            saltRound=31: 2-3 days/hash
+
+    Use:
+        const bcrypt = require('bcrypt');
+        const saltRounds = 10;
+
+        Encryption:
+            bcrypt.hash('plain text/password',saltRound, (err,hash)=>{
+                //code: hash is encrypted plain text/password
+            })
+
+        Decryption:
+            bcrypt.compare('plain text/password',hash password, (err,result)=>{
+                // result === true
+            })
+
+## Passport Module
+
+    Passport is Express-compatible authentication middleware for Node.js.
+
+    Modules:
+        passport    : Passport is Express-compatible authentication middleware for Node.js.
+
+## passport-local Module
+
+    passport-local  :   This module lets you authenticate using a username and password in your Node.js applications. By plugging into Passport, local authentication can be easily and unobtrusively integrated into any application or framework that supports Connect-style middleware, including Express.
+
+## passport-local-mongoose Module
+
+    passport-local-mongoose : Passport-Local Mongoose is a Mongoose plugin that simplifies building username and password login with Passport.
+
+## express-session Module
+
+    express-session NOT express-sessions : Create a session middleware with the given options.
+
+## passport-google-oauth20 Module
+
+    google authenticate module
+
+## mongoose-findorcreate Module
+
+    THis method is use to find if exists or create your data in database
+    NOTE: findOrCreate() is not a mongoose method we can access in different method: mongoose-findorcreate module

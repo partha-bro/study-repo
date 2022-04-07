@@ -30,4 +30,6 @@
 
 - **EJS**
 
--
+- **MongoDB**
+
+- **REST API**
