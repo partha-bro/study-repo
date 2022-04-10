@@ -55,13 +55,26 @@
         formulahendry.auto-close-tag
         hex-ci.stylelint-plus
         dbaeumer.vscode-eslint
-        naumovs.color-highlight
         DigitalBrainstem.javascript-ejs-support
+        sublime babel/ babel javascript
 
     ##### Optional
         erikphansen.vscode-toggle-column-selection
-        file-icons
+        VScode-icons
 
 ### Git & GitHub
 
 ### Heroku
+
+### mongoDb application
+    $ mongod
+    $ mongo
+
+### API
+    Google API
+    Facebook API
+    
+### React app
+    npx create-react-app projectName
+    cd projectName
+    npm start

@@ -33,6 +33,11 @@
         Instead of use above space link always use below link with space encode symbol %20
         http://localhost:3000/articles/Node%20Js
 
+    Questions: Difference Between PUT and PATCH Request ?
+        PUT HTTP Request: PUT is a method of modifying resources where the client sends data that updates the entire resource. PUT is similar to POST in that it can create resources, but it does so when there is a defined URL wherein PUT replaces the entire resource if it exists or creates new if it does not exist.
+
+        PATCH HTTP Request: Unlike PUT Request, PATCH does partial update e.g. Fields that need to be updated by the client, only that field is updated without modifying the other field.
+
 ## GET Method
 
     get() method + find() method

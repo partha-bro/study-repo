@@ -325,8 +325,7 @@
          passport.use(new GoogleStrategy({
                 clientID: GOOGLE_CLIENT_ID,
                 clientSecret: GOOGLE_CLIENT_SECRET,
-                callbackURL: 'http://www.example.com/auth/google/callback',
-                userProfileURL:"https://www.googleapis.com/oauth2/v3/userinfo"      // this option is use to remove an error google+ api deprecating
+                callbackURL: 'http://www.example.com/auth/google/callback'
             },
             function(accessToken, refreshToken, profile, cb) {
                 User.findOrCreate({ googleId: profile.id }, function (err, user) {
