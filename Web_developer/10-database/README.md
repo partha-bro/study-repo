@@ -234,6 +234,8 @@
                 {_id:0, name:1, address:1}      // 0 means not show and 1 means show the key:value
                 )
 
+       Note: How to projection a perticular field of data and others are supressed. use second parameter with document name and value is 1 or 0, 1 means show and 0 means hide to output like above example.
+
 ### Update:
         syntax:
             db.collection.updateOne( query, update with atomic oprator)
@@ -331,7 +333,7 @@
 
     const databaseName = "fruitsDB"
     const url = "mongodb://localhost:27017/"+databaseName       // if database is not exist then create autometically
-    mongoose.connect(url)
+    mongoose.connect(url, , {useNewUrlParser:true})
 
 ### ### How to close the connection with mongoose database?
 
@@ -404,7 +406,7 @@
         let arrayName = [fruitData_1,fruitData_1,fruitData_1]
         fruitModel.insertMany( arrayName , (err)=>{
             if(err){
-                console.log(err)
+                res.json( {error: err} )
             }else{
                 console.log('success')
             }
@@ -423,7 +425,7 @@
     Example:
         fruitModel.find( (err,fruits)=>{
             if(err) 
-                console.log(err)
+                res.json( {error: err} )
             else
                 console.log(fruits)
         })
@@ -466,6 +468,7 @@
                 },
                 rating: {
                     type:Number,
+                    default: 5,
                     min: 1,
                     max: 10
                 },
@@ -505,7 +508,7 @@
                 // callback function
                 (err) =>{
                     if(err)
-                        console.log(err)
+                        res.json( {error: err} )
                     else
                         console.log('Successfully update!')
                 }
@@ -529,7 +532,7 @@
                     name: 'Cucumber'
                 },
                 (err)=>{
-                    if(err) console.log(err);
+                    if(err) res.json( {error: err} )
                     else console.log('1 record deleted!');
                 }
             )
@@ -540,14 +543,31 @@
                     name: 'Arjun'
                 },
                 (err)=>{
-                    if(err) console.log(err);
+                    if(err) res.json( {error: err} )
                     else console.log('All records deleted having name arjun!');
                 }
             )
 
+### Search from documets
+
+    Example:
+        fruitModel.find( {
+            // here $or is a oprator that find between array of collection fields
+            "$or":[
+                { "field_1":{$regex:req.params.key}},
+                { "field_2":{$regex:req.params.key}},
+                { "field_3":{$regex:req.params.key}},
+            ]
+        }, (err,fruits)=>{
+            if(err) 
+                res.json( {error: err} )
+            else
+                console.log(fruits)
+        })
+
 ### Establishing Relationships and Embedding Documents using Mongoose
 
-    This relasionship use/embedd one collection ofdata is assign to another collection data in terms of Object. like
+    This relasionship use/embedd one collection of data is assign to another collection data in terms of Object. like
 
     const pinapple = new fruitModel(        // make a fruit data
         {
@@ -604,3 +624,32 @@
     6. Click Connect button and choose connect your application for connection then it gives you a url and use that url for connect, 
     you can copy the url and paste it in app.js mongoose.connect(url/database)
     mention user and password for authetication.
+
+## Other Mongoose Query
+
+    count()
+        It is used to count the number of documents in a collection.
+        syntax:
+            modelDatabaseName.find({}).count().exec( (err,result)=>{} )
+    
+    sort()
+        It is used to sort the documents in a collection.
+            // ascending order
+                modelDatabaseName.find({}).sort("age name").exec( (err,result)=>{} )  
+            // descending order
+                modelDatabaseName.find({}).sort("-age -name").exec( (err,result)=>{} )  
+    limit()
+        It is used to specify the number or a maximum number of documents to return from a query.
+        syntax:
+            modelDatabaseName.find({}).limit(5).exec( (err,result)=>{} )
+
+    skip()
+        The skip() method is used to specify the number of documents to skip. When a query is made and the query result is returned, the skip() method will skip the first n documents specified and return the remaining.
+        syntax:
+            modelDatabaseName.find({}).limit(4).skip(5).exec( (err,result)=>{} )
+
+    distinct()
+        the distinct() method finds the distinct values for a given field across a single collection and returns the results in an array.
+        Syntax:
+            modelDatabaseName.find({}).distinct("name").exec( (err,result)=>{} )
+        NOTE: Only returns Distinct Values in an Array

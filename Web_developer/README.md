@@ -33,3 +33,7 @@
 - **MongoDB**
 
 - **REST API**
+
+- **Authentication [Google/Facebook]**
+
+- **React JS**

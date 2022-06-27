@@ -1,24 +1,12 @@
 # GIT Profile
 
-## GIT 
----------------------------------------------
-    1. What is GIT?
-    2. What is version control system?
-    3. TERMS:-
-    4. Git commands:-
-    5. What is the difference between pull and clone?
-    6. Local git workflow:-
-    7. What is Git branch?
-    8. Common options command on branch:-
-    9. How to undoing my changes in git?
-    10. What is fork in Github?
----------------------------------------------
-
 ## What is GIT?
+
     -> Free and open source version control tool.
     -> Git is a Distributed Version Control tool that supports distributed non-linear workflows by providing data assurance for developing quality software.
 
 ## What is version control system?
+
     -> The management of changes to documents,computer programs, large web sites and others collections of information.
     We track our code changes in GIT.
 
@@ -30,6 +18,7 @@
         GITHUB / GITLAB
 
 ## Why we can use VCS?
+
     -> It helps you to analyze the code or program in such a way that 
         --> VCS provides you with proper description
         --> What exactly was changed 
@@ -37,12 +26,14 @@
         And hence, you can analyze how your project evolved between versions. 
 
 ## Different types of Vcs tools.
+
     -> GIT
     -> SVN : Subversion control system
     -> CVS
     -> mercurial
 
 ## Features of GIT:
+
     -> Distributed
     -> Compatible
     -> Non-linear
@@ -54,6 +45,7 @@
     -> Secure
 
 ## What is Repository?
+
     -> A directory or storage space where your project can live. it can be local to a folder on your computer, or it can be a storage space on GITHUB or another online host. You can keep code files, text files, image files, you name it, inside a repo.
 
     Two types:
@@ -89,6 +81,7 @@
     git reset --hard 'commit no'    -> it's roll back to given commit number from git log forcefully delete extra codes.
 
 ## What is the difference between pull and clone?
+
     Both are doing the same thing but 
         clone is download the entire project to your local system.
         You don't have working repo in your system.
@@ -111,17 +104,26 @@
         That's all, All commits and branch in the remote repo now available in the local repository of your computer.
 
 ## Local git workflow:-
-<pre>
-    touch README.md                                                     ==> Before create a repo make a README.md file
+
+    touch README.md                             ==> Before create a repo make a README.md file
         |               
         |                   
-    git init                                  ==> initializaion of repository
+    git init                                    ==> initializaion of repository
         |
         |
-    git status [untracked area]               ==> check the status of your new and modified files
+    git status [untracked area]                 ==> check the status of your new and modified files
         |
         |
-    git add . (for all new and modified files)==> changes files to ready to commit
+    git stash save "message"                    ==> before commit the code we have to save in cache/local memory
+        |
+        |
+    git stash list                              ==> list all stash with respective id
+        |
+        |
+    git stash apply <id>                        ==> that id of store code apply to repo
+        |
+        |
+    git add .                                   ==> changes files to ready to commit
     git add file_name [staging area]
         |
         |
@@ -129,20 +131,26 @@
         |
         |
     git commit -m "heading message" -m "description(option)" ==> save the changes in local repo
-    git commit -am "heading message" -m "description(option)"==> shorthand for add and commit the code
         |
         |
-    git remote -v                              ==> check the origin set in correct/working repo
+    git checkout id_number                      ==> go back to the id number of repo
+        |
+        |
+    git checkout master                         ==> Now goto the master or last repo that commit in repo
+        |
+        |
+    git remote -v                               ==> check the origin set in correct/working repo
     git remote add Repository_name https://github.com/partha-bro/study-repo.git  ==> add remote working repo to origin for short hand
     OR
     git remote set-url Repository_name http://user_name:password-token@github.com/user_name/repo_name.git                                             
-                                               ==> add remote working repo to origin for short hand
-    git push origin master                     ==> upload the local repo to remote repo
+                                                ==> add remote working repo to origin for short hand
+    git push origin master                      ==> upload the local repo to remote repo
         |
         |
-    git pull https://github.com/partha-bro/study-repo.git ==> download the changes of the remote repo
-</pre>
+    git pull https://github.com/partha-bro/study-repo.git ==> download the changes of the remote repo (git fetch + git merge)= git pull
+
 ## What is Git branch?
+
     A branch represents an independent line of development. 
     Branches serve as an abstraction of the edit/stage/commit process.
 
@@ -186,15 +194,35 @@
 ## How to undoing my changes in git?
 
     git log                                    ==> check the all commit changes log file like history
-    git checkour 'file_name'                   ==> Before add to staging area, we want to roll back to previous commit of this file
+    git log --graph --oneline                  ==> check the all logs in one line manner in graph mode
     git reset 'file_name'                      ==> it's roll back staging area to untracked area
     git reset 'commit no'                      ==> it's roll back to given commit number from git log
                                                             ( it's work: add changes to untracked area)
     git reset --hard 'commit no'               ==> it's roll back to given commit number 
                                                             from git log forcefully delete extra codes.
 
+## What is Git stash in git?
+
+    Sometimes you want to switch the branches, but you are working on an incomplete part of your current project. You don't want to make a commit of half-done work. Git stashing allows you to do so. The git stash command enables you to switch branches without committing the current branch.
+
+    Generally, the stash's meaning is "store something safely in a hidden place." The sense in Git is also the same for stash; Git temporarily saves your data safely without committing like cache in browser.
+
+        Command:
+            $ git stash                             ==> To save it temporarily, we can use the git stash command. 
+            $ git stash save "<Stashing Message>"   ==> the changes can be stashed with a message. 
+            $ git stash list                        ==> It will display all the stashes respectively with different stash id
+            $ git stash apply                       ==> You can re-apply the changes that you just stashed by using the git stash command.
+            $ git stash apply <stash id>            ==> stash index id to apply the particular commit.
+            $ git stash show                        ==> command will show the file that is stashed and changes made on them.
+            $ git stash pop                         ==> Git allows the user to re-apply the previous commits by using git stash pop command.
+            $ git stash drop <stash id>             ==> <stash id> has been deleted from the queue.
+            $ git stash clear                       ==> command allows deleting all the available stashes at once.
+            $ git stash branch <Branch Name>        ==> command will create a new branch and transfer the stashed work on that.
+
 ## What is Git merge conflict?
-    -> Git can handle most merges on its own with automatic merging features. A conflict arises when two separate branches have made edits to the same line in a file, or when a file has been deleted in one branch but edited in the other. Conflicts will most likely happen when working in a team environment.
+
+    -> Git can handle most merges on its own with automatic merging features. 
+    A conflict arises when two separate branches have made edits to the same line in a file, or when a file has been deleted in one branch but edited in the other. Conflicts will most likely happen when working in a team environment.
 
     Resolving the conflit file, please goto the respective file you can change to what you want to changed, then add to staging area after that commit.
 
@@ -221,6 +249,7 @@
     Website: A collection of .gitignore templates: https://github.com/github/gitignore
 
 ## What is fork in Github?
+
     When we click fork button in any repository of github, that repo's copy is created in my github profile.
     in short, it takes ownership of any repository to mine.
 
@@ -235,6 +264,7 @@
                             ( Merge Pull Request)
 
 ## How to check prev command and how to directly run that command?
+
     A. `history` command is use to show your all prev typing command in git terminal.
     B. `!` this exponential symbol with your number of cammand hit run that command.
 

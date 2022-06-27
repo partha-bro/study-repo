@@ -182,11 +182,14 @@
 
         Step 4: passport create a model stategy and serialize and deserialize
 
-            passport.use(User.createStrategy())
+            passport.use(User.createStrategy())     // we can not use LocalStrategy because we use passport-local-mongoose module. so we use createStrategy()
             passport.serializeUser(User.serializeUser())
             passport.deserializeUser(User.deserializeUser())
 
-        Step 5: Authenticate user in register
+        Step 5: Authenticate user in register, register() method comes from passport-local-mongoose module. register() has three arguments
+            1. all other data in object format
+            2. user input password for encrypt
+            3. callBack function (err,user) of passport.authenticate('local')
 
             .post(
                 (req,res)=>{
@@ -203,7 +206,7 @@
                 }
             )
 
-        Step 6: Authenticate user to login
+        Step 6: Authenticate user to login, Here req.login() method comes from passport and it has two arguments 1. model object of data and 2. callBack function of passport.authenticate('local')
 
             .post(
                 (req,res)=>{
@@ -325,7 +328,8 @@
          passport.use(new GoogleStrategy({
                 clientID: GOOGLE_CLIENT_ID,
                 clientSecret: GOOGLE_CLIENT_SECRET,
-                callbackURL: 'http://www.example.com/auth/google/callback'
+                callbackURL: 'http://www.example.com/auth/google/callback',
+                userProfileURL:"https://www.googleapis.com/oauth2/v3/userinfo"
             },
             function(accessToken, refreshToken, profile, cb) {
                 User.findOrCreate({ googleId: profile.id }, function (err, user) {

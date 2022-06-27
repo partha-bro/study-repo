@@ -33,6 +33,7 @@
         Pesticide for Chrome (without hover bar)
         json viewer
         enhancer for youtube
+        React Developer Tools
 
 #### How to know about screen resolution in chrome browser?
 
