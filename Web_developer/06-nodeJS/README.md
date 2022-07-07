@@ -151,7 +151,10 @@
 
 ## HTTP Response Status code
 
-    
+    Success: 2XX        LIKE:> 200:OK, 201: Created, 202: Accepted
+    Redirections: 3XX   LIKE:> 301: Moved Permanently, 302: Found, 304: not modified last time you accessed it.
+    Client Error: 4XX   LIKE:> 400: Bad Request, 401: Unauthorised, 403: Forbidden, 404: Not Found
+    Server Error: 5XX   LIKE:> 500: Internal Server Error, 502: Bad Gateway
 
 ## How node js work?
 
@@ -789,6 +792,19 @@
             process.env.KEY_NAME
 
     NOTE: .env file must be mention in .gitignore file.
+
+## Morgan module
+
+    HTTP request logger middleware for node.js
+
+    Install:
+        npm i morgan
+    
+    import:
+        const logger = require('morgan')
+    
+    use:
+        server.use( logger() )
 
 ## bcrypt module
 
