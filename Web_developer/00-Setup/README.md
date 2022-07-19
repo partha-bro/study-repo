@@ -38,45 +38,45 @@
 #### How to know about screen resolution in chrome browser?
 
     In chrome browser, 
-    1. open dev tool bar 
-    2. resize the window 
-    3. look at right-top corner to see resolution of the screen.
+        1. open dev tool bar 
+        2. resize the window 
+        3. look at right-top corner to see resolution of the screen.
 
 ### Visual Code
 
 #### VS Extension
 
-    jellyfish theme
-    gerane.Dracula Theme
-    Ritwick Dey.Live Server
-    Matt Bierner.Markdown preview Github style
-    Marquee : Stay organized
+    - jellyfish theme
+    - gerane.Dracula Theme
+    - Ritwick Dey.Live Server
+    - Matt Bierner.Markdown preview Github style
+    - Marquee : Stay organized
 
     ##### Recommended
-        esbenp.prettier-vscode
-        formulahendry.auto-close-tag
-        hex-ci.stylelint-plus
-        dbaeumer.vscode-eslint
-        DigitalBrainstem.javascript-ejs-support
-        sublime babel/ babel javascript
-        Auto Rename Tag
-        Bracket Pair Colorization Toggler
-        Quokka.js : Use for live debug while codding
+        - esbenp.prettier-vscode
+        - formulahendry.auto-close-tag
+        - hex-ci.stylelint-plus
+        - dbaeumer.vscode-eslint
+        - DigitalBrainstem.javascript-ejs-support
+        - sublime babel/ babel javascript
+        - Auto Rename Tag
+        - Bracket Pair Colorization Toggler
+        - Quokka.js : Use for live debug while codding
 
 
     ##### Optional
-        erikphansen.vscode-toggle-column-selection
-        VScode-icons
+        - erikphansen.vscode-toggle-column-selection
+        - VScode-icons
 
 ### Node 
     Install: 
-        windows 8: node-v13.9.0-x64.msi
+       >> windows 8: node-v13.9.0-x64.msi
                     mongodb-win32-x86_64-2008plus-ssl-4.0.28-signed.msi
         
-        Latest:     node-v16.14.0-x64.msi
+       >> Latest:     node-v16.14.0-x64.msi
                     mongodb-windows-x86_64-5.0.6-signed.msi
 
-        ubuntu:     curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+       >> ubuntu:     curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
                     sudo apt-get install -y nodejs
                     sudo apt-get install -y npm
 
@@ -89,10 +89,10 @@
     $ mongo
 
 ### API
-    Google API
-    Facebook API
+    - Google API
+    - Facebook API
     
 ### React app
-    npx create-react-app projectName
-    cd projectName
-    npm start
+    $ npx create-react-app projectName
+    $ cd projectName
+    $ npm start
