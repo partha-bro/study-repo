@@ -50,6 +50,7 @@
     gerane.Dracula Theme
     Ritwick Dey.Live Server
     Matt Bierner.Markdown preview Github style
+    Marquee : Stay organized
 
     ##### Recommended
         esbenp.prettier-vscode
@@ -58,6 +59,10 @@
         dbaeumer.vscode-eslint
         DigitalBrainstem.javascript-ejs-support
         sublime babel/ babel javascript
+        Auto Rename Tag
+        Bracket Pair Colorization Toggler
+        Quokka.js : Use for live debug while codding
+
 
     ##### Optional
         erikphansen.vscode-toggle-column-selection
