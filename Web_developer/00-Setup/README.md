@@ -70,8 +70,32 @@
 
 ### Node 
     Install: 
-       >> windows 8: node-v13.9.0-x64.msi
-                    mongodb-win32-x86_64-2008plus-ssl-4.0.28-signed.msi
+       >> windows 8 or 7: 
+                Step 1: Node x64 link: https://nodejs.org/download/release/v16.16.0/
+                            Download the zip file.
+
+                Step 2: Extract it in C drive like C:\nodejs
+
+                Step 2: Setup Envirment Variable:
+
+                    -> In System variable, add PATH value to C:\nodejs;
+
+                    -> "NODE_SKIP_PLATFORM_CHECK" set this value to "1"
+
+                    -> "NODE_PATH" set this value to "C:\node32\node_modules"
+
+                Step 3: $ node -v   => 16.16.0
+                        $ npm -v    => 8.11.0
+                        // update npm
+                        $ npm i --location=global npm@8.15.0
+                        $ npm -v    => 8.15.0
+
+                Step 4: create project using npx 
+                            $ npx create-react-app my-first-app
+                        
+                        create react project using vite for speed
+                            $ npm create vite
+                    
         
        >> Latest:     node-v16.14.0-x64.msi
                     mongodb-windows-x86_64-5.0.6-signed.msi
