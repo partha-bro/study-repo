@@ -320,42 +320,66 @@
 
     4. $ Heroku login
 
-    5. listen to port dynamic port for Huruko server in filename.js
-        app.listen(process.env.PORT || 3000, () => {
-            console.log('Server is running on port '+process.env.PORT);
-        })
+    => For Node Express Project:
 
-    6. Make a file name 'Procfile' with no extension inside the project folder
-        $ touch Procfile
+        1. listen to port dynamic port for Huruko server in filename.js
+            app.listen(process.env.PORT || 3000, () => {
+                console.log('Server is running on port '+process.env.PORT);
+            })
 
-    7. Inside the Procfile file write
-        web: node filename.js       // filename.js that excuted using nodemon in local or default js file to run tha app
+        2. Inside the package.json file write script tab
+            "start": "node filename.js"  
 
-    7.1 Specify the version of node in package.json
-        Inside the package.json file write node version:
+    => For Vite-React Project:
 
-            after "license": property, we can write
-                "engines": {
-                    "node": "4.1.1"
+        1. Run heroku login and fill in your Heroku credentials:
+            $ heroku login
+
+        2. Create a file called static.json in the root of your project with the below content:
+            static.json file:
+                {
+                "root": "./dist"
                 }
 
-    8. $ git init
+        3. Set up your Heroku git remote:
+            # version change
+            $ git init
+            $ git add .
+            $ git commit -m "My site ready for deployment."
 
-    8.1 $ touch .gitignore
+        # creates a new app with a specified name
+            $ heroku apps:create example
+            Set buildpacks. We use heroku/nodejs to build the project and heroku-buildpack-static to serve it.
 
-    9. $ git add .
+        # set buildpacks
+            $ heroku buildpacks:set heroku/nodejs
+            $ heroku buildpacks:add https://github.com/heroku/heroku-buildpack-static.git
+            Deploy your site:
 
-    10. $ git commit -m 'message'
+        # publish site
+            $ git push heroku main
 
-    11. $ git push origin master        // for github repo
+        # opens a browser to view the Dashboard version of Heroku CI
+            $ heroku open   
 
-    11. $ heroku login
+    => For React Project:
+        8. $ git init
 
-    12. $ heroku create
+        8.1 $ touch .gitignore
 
-    13. $ git push Heroku master        // for Heroku server
+        9. $ git add .
 
-    14. heroku logs
+        10. $ git commit -m 'message'
+
+        11. $ git push origin master        // for github repo
+
+        11. $ heroku login
+
+        12. $ heroku create
+
+        13. $ git push Heroku master        // for Heroku server
+
+        14. heroku logs
 
 # Node Package Manager
 
