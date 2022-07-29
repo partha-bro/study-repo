@@ -46,7 +46,6 @@
 
 #### VS Extension
 
-    - jellyfish theme
     - gerane.Dracula Theme
     - Ritwick Dey.Live Server
     - Matt Bierner.Markdown preview Github style
@@ -62,6 +61,7 @@
         - Auto Rename Tag
         - Bracket Pair Colorization Toggler
         - Quokka.js : Use for live debug while codding
+		- Rapid API
 
 
     ##### Optional
