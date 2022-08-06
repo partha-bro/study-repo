@@ -100,9 +100,30 @@
        >> Latest:     node-v16.14.0-x64.msi
                     mongodb-windows-x86_64-5.0.6-signed.msi
 
-       >> ubuntu:     curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
-                    sudo apt-get install -y nodejs
-                    sudo apt-get install -y npm
+       >> ubuntu:     
+			
+			git:
+				sudo add-apt-repository ppa:git-core/ppa
+				sudo apt update
+				sudo apt install git -y
+			
+			node:
+				cd ~
+				sudo apt install curl
+				curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+				source ~/.bashrc
+				nvm install v16.16.1
+				npm install -g nodemon
+				nodemon -v
+				node -v
+				npm -v
+				npx -v
+			
+			mongodb:
+				sudo dpkg -i mongodb-compass_1.32.6_amd64.deb
+				sudo apt install mongodb
+				sudo apt update
+				sudo service mongodb start
 
 ### Git & GitHub
 
