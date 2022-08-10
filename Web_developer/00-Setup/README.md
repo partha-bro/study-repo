@@ -112,7 +112,7 @@
 				sudo apt install curl
 				curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 				source ~/.bashrc
-				nvm install v16.16.1
+				nvm install v16.16.0
 				npm install -g nodemon
 				nodemon -v
 				node -v
@@ -132,6 +132,18 @@
 ### mongoDb application
     $ mongod
     $ mongo
+
+    # import Array
+        mongoimport --db schandOfflineDB --collection requests --type json --file requests.json --jsonArray
+        mongoimport --db schandOfflineDB --collection users --type json --file users.json --jsonArray
+
+    # Export
+        mongoexport --db schandOfflineDB --collection requests --out requests.json
+        mongoexport --db schandOfflineDB --collection users --out users.json
+
+    # import
+        mongoimport --db schandOfflineDB --collection requests --type json --file requests.json
+        mongoimport --db schandOfflineDB --collection users --type json --file users.json
 
 ### API
     - Google API
