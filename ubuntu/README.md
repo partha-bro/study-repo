@@ -20,11 +20,20 @@
 
 ### Introduction to Linux and shells
 
+### Install Terminator shell for split terminal.
+	
+	$ sudo apt install terminator
+
 #### The Linux man command to read about fellow command
 
     This is a man (from _manual_) page. Man pages are an essential tool to learn as a developer. They contain so much information that sometimes it's almost too much.
 
-    $ man <command>
+    $ man <command> <Enter> 
+		- Press g for moving first line
+		- Press G for moving last line
+		- Press / and type search string
+		- Press n and go forward to search string
+		- Press N and go backward to search string
 
 - **The Linux ls command**
 
@@ -467,6 +476,16 @@
     It provides the previous command list in list manner
 
     $ history
+	$ !<number>
+	$ history -c  			// delete all commands
+	$ history -d <number>  	// delete specific number of command
+	$ <space><command>		// this command will not save in history
+	
+	NOTE: If you want to save command in history with proper time then
+		
+		$ HISTTIMEFORMAT="%d/%m/%y %T "
+		$ history >> history.txt
+		Now all entered command in time format and save to file
 
 ### How to check prev command and how to directly run that command?
 

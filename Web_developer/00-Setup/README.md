@@ -160,3 +160,8 @@
     $ npx create-react-app projectName
     $ cd projectName
     $ npm start
+
+### Testing js
+	- Node Js
+	- React Js
+		- JEST for Testing
