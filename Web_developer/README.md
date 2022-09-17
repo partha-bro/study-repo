@@ -37,3 +37,5 @@
 - **Authentication [Google/Facebook]**
 
 - **React JS**
+
+- **DSA**
