@@ -621,76 +621,56 @@
 
 # External Module
 
-## https Module
+## express Module
 
-    For interaction with API URL or external server
+    - Install
+        $ npm i express
+    
+    - Import
+        const express = require('express')
 
-### => It is a native/local module, no need to install it.
+    - Use
+        const server = express()
 
-### import to js file
+    NOTE: Shortcut use: const server = require('express')()
 
-        const https = require('https')
+## ejs Module
 
-### Call api url/endpoint or request a external server
+    Embbeded JS Module use for templating
 
-        get() Methods
-            https.get('URL', (request) => {
+    - Install
+        $ npm i ejs
+    
+    - Import
+        No Required
 
-            })
+    - Use
+        server.set('view engine', 'ejs')
 
-        on() Method for fetch data object from request
-            https.get('URL', (request) => {
-                request.on('data', (data) => {
-                    conslole.log( JSON.parse(data) )
-                })
-            })
+    NOTE: Make a folder name "views"
 
-### response fron api/ external server
 
-        request() Method  - to store the connection and write our json data to it
-            const request = https.request('url','options',callback_function(response){
-                                //code
-                            })
-        write() method write our data to api connection
-            request.write(jsonData)
-            request.end()
+## fileSystem Module
 
-        Parameters
-            url: endpoint url
-            options: an object of method and authentic key
-                    const options = {
-                        'method' : 'POST',
-                        'auth' : 'api_key'
-                    }
-            jsonData: our data of object type that convert to json using stringfy() method
+    - Install
+        No install required
+    
+    - Import
+        const fs = require('fs')
 
-    NOTE: https.request() instead of https.get() for api
-    But in https.request() method always assign to a variable and that variable must be call end() method
-
-        syntax:
-            const url = "https://jsonplaceholder.typicode.com/todos/1"
-            const request = https.request(url, (httpsRequest)=>{
-                // console.log(httpsRequest)
-                httpsRequest.on('data',(data)=>{
-                    console.log(data)
-                    data = JSON.parse(data)
-                    res.send(data.title)
-                })
-            })
-            request.end()
-
+    - Use
+        fs.read()
+        fs.write()
 
 ## body-parser Package
 
-### Install
-
+    - Install
         $ npm install body-parser
 
-### import
-
+    - import
         const bodyParser = require('body-parser')
 
-### Fetch html form data to javascript file
+    - Fetch html form data to javascript file
 
         app.use( bodyParser.urlencoded({extended:true}))
 
@@ -742,29 +722,29 @@
 
     A modern JavaScript utility library delivering modularity, performance & extras.
 
-    How to Install
+    - Install
         $ npm install lodash
 
-    import to page
+    - Import
         const _ = require('lodash')
 
-    use various javascript methods like
-    _.lowerCase('variable')             // return lower case of string
+    - Use
+        _.lowerCase('variable')             // return lower case of string
 
 ## Hasing( md5 ) module
 
     It is a JavaScript function for hashing messages with MD5.
 
-    Install:
+    - Install:
         npm install md5
 
-    import:
+    - Import:
         const md5 = require('md5')
 
-    use:
+    - Use:
         md5(variable)
 
-    Example:
+    - Example:
         app.route('/register')
         .get(
             (req,res)=>{
@@ -806,13 +786,13 @@
 
     How to import that module?
 
-        Install:
+        - Install:
             npm install dotenv
 
-        Import:
+        - Import:
             require('dotenv').config()      // this imort must be in top of line/ 1st line
 
-        Use:
+        - Use:
             process.env.KEY_NAME
 
     NOTE: .env file must be mention in .gitignore file.
@@ -821,26 +801,26 @@
 
     HTTP request logger middleware for node.js
 
-    Install:
+    - Install:
         npm i morgan
     
-    import:
+    - Import:
         const logger = require('morgan')
     
-    use:
+    - Use:
         server.use( logger() )
 
 ## bcrypt module
 
     Concept of bcrypt method is: user defind password + number of salt round[ it means add extra random number to strong the password] = result of encryption password to store
 
-    Install:
+    - Install:
         if any perticular version required
         npm install bcrypt@compatibleVersion
 
         npm install bcrypt
 
-    import:
+    - Import:
         const bcrypt = require('bcrypt')
         const saltRound = 10 //more number means stong password and heavy use of CPU&GPU
 
@@ -856,7 +836,7 @@
             saltRound=25: ~1 hour/hash
             saltRound=31: 2-3 days/hash
 
-    Use:
+    - Use:
         const bcrypt = require('bcrypt');
         const saltRounds = 10;
 
@@ -890,11 +870,11 @@
     express-session NOT express-sessions : Create a session middleware with the given options.
 
 
-    install:
+    - Install:
         npm i express-session
-    import:
+    - Import:
         import session from "express-session"
-    Use:
+    - Use:
         intitialize session:
             app.use(session(
                 {
@@ -908,8 +888,8 @@
 
             app.route('/cookie').get(
                 (req,res)=>{
-                    req.session.test ? req.session.test++ : req.session.test = 1;           // to store a session using req.session.sessionName = "value
-                                                                                            // to destroy the session using req.session.destroy()
+                    req.session.test ? req.session.test++ : req.session.test = 1;  // to store a session using req.session.sessionName = "value
+                                // to destroy the session using req.session.destroy()
                     res.send("<h1>Cookie: "+req.session.test+"</h1>")
                 }
             )
@@ -922,3 +902,58 @@
 
     THis method is use to find if exists or create your data in database
     NOTE: findOrCreate() is not a mongoose method we can access in different method: mongoose-findorcreate module
+
+## node-color-log Module
+
+    - Install
+        $ npm i node-color-log
+
+    - Import
+        const logger = require('node-color-log')
+
+    - Use
+        console.log(logger.success('sussess message'))      // message color green
+        console.log(logger.debug('debug message'))          // message color blue
+        console.log(logger.info('info message'))            // message color green
+        console.log(logger.warn('warning message'))      // message color yellow
+        console.log(logger.error('error message'))          // message color red
+
+## multer Module
+
+    This Module is use to upload files.
+
+    - HTML form page
+        <form action="/profile" method="post" enctype="multipart/form-data">
+            <input type="file" name="avatar" />
+        </form>
+    
+    - Install
+        $ npm i multer
+
+    - Import 
+        const multer = require('multer')
+        const upload = multer({dest: 'path'})
+
+    - Use
+    // Single file upload
+       app.post('/profile', upload.single('avatar'), function (req, res, next) {
+        // req.file is the `avatar` file
+        // req.body will hold the text fields, if there were any
+        })
+
+    // Multiple file upload
+       app.post('/photos/upload', upload.array('photos', 12), function (req, res, next) {
+        // req.files is array of `photos` files
+        // req.body will contain the text fields, if there were any
+        })
+
+    3   const cpUpload = upload.fields([{ name: 'avatar', maxCount: 1 }, { name: 'gallery', maxCount: 8 }])
+        app.post('/cool-profile', cpUpload, function (req, res, next) {
+        // req.files is an object (String -> Array) where fieldname is the key, and the value is array of files
+        //
+        // e.g.
+        //  req.files['avatar'][0] -> File
+        //  req.files['gallery'] -> Array
+        //
+        // req.body will contain the text fields, if there were any
+        })

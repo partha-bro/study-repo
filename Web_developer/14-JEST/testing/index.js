@@ -22,6 +22,12 @@ const promisesData = () => {
     })
 }
 
+const server = require('express')()
 
+server.get('/',(req,res) =>{
+    res.status(200).json({message:'ok'})
+})
 
-module.exports = { sum, obj, fetchData, promisesData }
+server.listen(5000)
+
+module.exports = { sum, obj, fetchData, promisesData,server }

@@ -46,14 +46,13 @@
 
 #### VS Extension
 
-    - gerane.Dracula Theme
-    - Ritwick Dey.Live Server
-    - Matt Bierner.Markdown preview Github style
-    - Marquee : Stay organized
+    ##### Best Theme for VS
+        - Andromeda     [My Best Theme Ever]
+        - gerane.Dracula Theme
+        - Material Icon Theme
 
     ##### Recommended
         - esbenp.prettier-vscode
-        - formulahendry.auto-close-tag
         - hex-ci.stylelint-plus
         - dbaeumer.vscode-eslint
         - DigitalBrainstem.javascript-ejs-support
@@ -62,12 +61,11 @@
         - Bracket Pair Colorization Toggler
         - Quokka.js : Use for live debug while codding
 		- Rapid API
-
-
-    ##### Optional
-        - erikphansen.vscode-toggle-column-selection
-        - VScode-icons
-
+        - Ritwick Dey.Live Server
+        - Matt Bierner.Markdown preview Github style
+        - Marquee : Stay organized
+        - Quokka [ Live debug of js code ]
+        
 ### Node 
     Install: 
        >> windows 8 or 7: 
@@ -164,4 +162,5 @@
 ### Testing js
 	- Node Js
 	- React Js
-		- JEST for Testing
+		- JEST for JS Testing
+        - Supertest for Node REST-API Testing

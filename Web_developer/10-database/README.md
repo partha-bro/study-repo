@@ -237,6 +237,12 @@
        Note: How to projection a perticular field of data and others are supressed. use second parameter with document name and value is 1 or 0, 1 means show and 0 means hide to output like above example.
 
 ### Update:
+
+    There are two type of update like 'put' or 'patch'
+
+    - put update means update entire data of object
+    - patch update means update some data from object, to achicve that use $set flag
+
         syntax:
             db.collection.updateOne( query, update with atomic oprator)
             db.collection.updateMany()
@@ -248,7 +254,7 @@
                     _id:1
                 },
                 {
-                    $set:{                  // $set is a atomic oprator for set the value, $ is mandatory
+                    $set:{     // $set is a atomic oprator for set the value, $ is mandatory
                         price:3,
                         stock:15
                     }
@@ -653,3 +659,34 @@
         Syntax:
             modelDatabaseName.find({}).distinct("name").exec( (err,result)=>{} )
         NOTE: Only returns Distinct Values in an Array
+
+## Mongoose Query Populate 
+
+    Population is the process of automatically replacing the specified paths in the document with document(s) from other collection(s). More than two collection store only object id of their data and use populate() method to recive all data in one [ like join in SQL ]
+
+    - Step 1: Need to change in schema for make relation between two collections
+
+        const newDataSchema = new mongoose.Schema(
+            {
+                fileds_1: {
+                    type: String,
+                    required: true
+                },
+                storeOtherCollectionId: [
+                    {
+                        type: mongoose.Schema.Types.ObjectId,
+                        ref: collection name for reference      // make sure ref collection name, not model name
+                    }
+                ]
+            }
+        )
+
+    - Step 2: Store reference object id in that array using $push flag
+
+    - Step 3: Now use populate('field') method to populate query in one object
+
+        ModelName.find()
+        .populate('storeOtherCollectionId_1')
+        .populate('storeOtherCollectionId_2')
+
+    

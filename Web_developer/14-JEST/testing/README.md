@@ -44,3 +44,58 @@
             expect(obj()).toEqual({name:'arjun'})
             expect(obj()).not.toEqual({name:'arjun'})
         })
+
+### Extra Methods to use
+    - expect(value)
+    - .not
+    - .resolves
+    - .rejects
+    - .toBe(value)
+    - .toEqual(value)
+    - .toBeGreaterThan(number | bigint)
+    - .toBeGreaterThanOrEqual(number | bigint)
+    - .toBeLessThan(number | bigint)
+    - .toBeLessThanOrEqual(number | bigint)
+    - .toBeNull()
+    - .toContain(item)
+    - .toThrow(error?)
+
+### beforeEach(()=>{})
+    This function use for run code before every test
+    ex: beforeEach(()=>{
+        console.log('Start the testing...');
+    })
+
+# Supertest - For API Testing
+
+## What is supertest
+    This module is to provide a high-level abstraction for testing HTTP, while still allowing you to drop down to the lower-level API provided by superagent.
+
+## Install
+    $ npm install supertest
+
+## Use
+    use in test.js file along with jest module
+
+    - fileName.js
+        const express = require('express');
+
+        const app = express();
+
+        app.get('/user', function(req, res) {
+        res.status(200).json({ name: 'john' });
+        });
+
+    - fileName.test.js
+        const request = require('supertest');
+        const { app } = require('./fileName')
+
+        describe('API Test Case', ()=>{
+            test('/ Path Test Case', ()=>{
+                request(server)
+                .get('/')
+                .expect(200)
+                .expect({message:'ok'})
+            })
+            
+        })
