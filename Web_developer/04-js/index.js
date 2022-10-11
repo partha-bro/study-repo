@@ -146,6 +146,39 @@ const checkLeapYear = (year) => {
 checkLeapYear(2024)
 
 //? Array in JS
+/*
+    length of array
+    - array.length
+    Finding an Element in an array
+    - indexOf()
+    - lastIndexOf()
+    - includes()
+    filter element in array
+    - find()
+    - findIndex()
+    Higher Order Function
+    - map()
+    - filter()
+    - reduce()
+    Input element to an array
+    - push()
+    - unshift()
+    Delete element from an array
+    - pop()
+    - shift()
+    CURD element an array
+    - splice()
+    Extracting element from an array
+    - slice()
+    Other useful methods
+    - concat()
+    - sort()
+    - reverse()
+    Convert string to array
+    - split()
+    Convert array to string
+    - join()
+*/
 arr = new Array()
 arr = ['Ram','Lakhaman','Hanuman','Ravan']
 
@@ -270,6 +303,33 @@ str = arr.join(', ')
 console.log('join: '+str)
 
 //? String in JS
+/*
+    Escape Character
+    - \", \\, \n, \t
+    Length of String
+    - string.length
+    Finding a String in a string
+    - indexOf()
+    - lastIndexOf()
+    - includes()
+    Searching for a String in a String
+    - search()
+    Extracting String Parts
+    - slice()
+    - substring()
+    - substr()
+    Replacing String Content
+    - replace()
+    Extracting String Characters
+    - charAt()
+    - charCodeAt()
+    - string[index]
+    Other useful methods
+    - concat()
+    - trim()
+    - toLowerCase()
+    - toUpperCase()
+*/
 str = "Ram is a good king and Sita is a queen of Ayodhya."
 console.log(str); 
 
@@ -310,6 +370,22 @@ console.log('Concat: '+str.concat('...The End...'))
 console.log('trim: '+str.trim())
 
 //! Date and Time 
+/*
+    - new Date()
+    - toString()
+    - toLocaleString()
+    - toLocaleDateString()
+    - toLocaleTimeString()
+    Date Methods
+    - getFullYear()
+    - getMonth()
+    - getDay()
+    Time Methods
+    - getTime()
+    - getHours()
+    - getMinutes()
+    - getSeconds()
+*/
 const date = new Date()
 
 console.log('date to string: '+date.toString());
@@ -329,6 +405,19 @@ console.log('get Minites: '+date.getMinutes());
 console.log('get Seconds: '+date.getSeconds());
 
 //! Math Object
+/*  
+    - Math.PI
+    - Math.random
+    - Math.pow
+    - Math.sqrt
+    - Math.round
+    - Math.floor
+    - Math.ceil
+    - Math.trunc
+    - Math.abs
+    - Math.min
+    - Math.max
+*/
 console.log('Pi: '+Math.PI);
 console.log('Random: '+Math.random());
 console.log('Power: '+Math.pow(4,2));
