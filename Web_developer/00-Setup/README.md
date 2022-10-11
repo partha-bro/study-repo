@@ -50,6 +50,8 @@
         - Andromeda     [My Best Theme Ever]
         - gerane.Dracula Theme
         - Material Icon Theme
+        - peacock       [For different color of workspace]
+        - Better Comments
 
     ##### Recommended
         - esbenp.prettier-vscode
@@ -158,6 +160,12 @@
     $ npx create-react-app projectName
     $ cd projectName
     $ npm start
+
+### Create React app through vite
+    $ npm create vite projectName
+    $ cd projectName
+    $ npm install
+    $ npm run dev
 
 ### Testing js
 	- Node Js

@@ -91,6 +91,6 @@ console.log(set);
 set.clear()
 console.log(set);
 
-// Import & Export
-const mul = require('./calc')
-console.log(mul(10200,12));
+// // Import & Export
+// const mul = require('./calc')
+// console.log(mul(10200,12));

@@ -957,3 +957,18 @@
         //
         // req.body will contain the text fields, if there were any
         })
+
+## cors Module
+
+    cors : Cross-Origin Resources Sharing
+        It allows you to access over network in cross origin without having error
+
+    - Install
+        $ npm i cors
+
+    - Import
+        const cors = require('cors')
+    
+    - Use
+        const server = require('express')()
+        server.use(cors())
