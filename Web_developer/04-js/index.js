@@ -433,3 +433,210 @@ console.log('Maximum number: '+Math.max(12,65,87,-20,34,67));
 
 // Find out random number between 0 to 10
 console.log('Random Number: '+Math.floor(Math.random()*10));
+
+//! window vs DOM vs BOM
+/*
+    - window is a global object
+        - setTimeout()
+        - setInterval()
+        - innerHight
+        - innerWidth
+        - location.href
+    - DOM : Document Object Model
+        - document.documentElement
+        - document.head
+        - document.body
+        - document.body.parentNode
+        - document.body.childNodes
+        - document.body.children
+        - document.body.children.length
+        - document.body.hasChildNodes()
+
+        - document.querySelector('#idName or .className or tag name')
+        - document.querySelector('').style.color = 'property'
+        - document.querySelector('').innerHTML = 'property'
+        - document.querySelector('').innerText = 'property'
+
+    - BOM : Browser Object Model
+*/
+
+//! Event in JS
+/*
+    - 3 ways of writing Events
+        - By calling function 
+        - using Inline events (HTML onclick='' property and element.onclick)
+        - using Event Listeners ( addEventListener )
+    - What is Event Object?
+        When a event fire then a event object pass through event. like e.target.name/e.target.value
+    - MouseEvent is JS
+        - onmousedown()
+        - onmouseup()
+        - onmouseenter()
+        - onmouseleave()
+    - KeyboardEvent in JS
+        - onkeypress()    
+        - onkeydown()
+        - onkeyup()
+    - inputEvents in JS
+        - onchange()
+*/
+
+//! Timing based Event in JS
+/*
+    - setTimeout()
+    - setInterval()
+    - clearTimeout('reference value of setTimeout() before time limit click this func')
+    - clearInterval('reference value of setInterval() before time limit click this func')
+*/
+
+//! Advanced JS
+/*
+    - Higher Order Function
+        - map()
+        - filter()
+        - reduce()
+        - find()
+        - findIndex()
+    - Callback Function
+    - Fetch API
+    - promises
+    - Async-Await
+    - Function Currying
+    - Error Handling
+*/
+
+// CallBack function
+const add = (a,b) => {
+    return a+b
+}
+const sub = (a,b) => {
+    return a-b
+}
+const mul = (a,b) => {
+    return a*b
+}
+const div = (a,b) => {
+    return a/b
+}
+
+const calc = (num1,num2,oprator) => {
+    return oprator(num1,num2)
+}
+
+console.log('CallBack Function: '+calc(2,4,add));
+console.log('CallBack Function: '+calc(2,4,sub));
+console.log('CallBack Function: '+calc(2,4,mul));
+console.log('CallBack Function: '+calc(2,4,div));
+
+// Event Loop
+const fun2 = () => {
+    setTimeout(()=>{
+        console.log('fun2 is starting after 3 sec.')
+    },3000)
+    
+}
+const fun1 = async () => {
+    await setTimeout(()=>{
+        console.log('fun1 is starting after 5 sec.')
+    },5000)
+    await fun2()
+    console.log('fun1 is ending')
+}
+
+fun1()
+
+// Function Currying
+/* It is a technique in functional programming, 
+  transformation of the function of multiple arguments 
+  into several functions of a single argument in sequence. */
+
+// const sum = (num1) =>{
+//     console.log('Function Currying num1: '+num1)
+//     return (num2)=>{
+//         console.log('Function Currying num2: '+num2)
+//         return (num3)=>{
+//             console.log('Function Currying num3: '+num3)
+//             console.log('sum of three number: '+(num1+num2+num3));
+//         }
+//     }
+// }
+
+const sum = (num1) => (num2)=> (num3)=> console.log('Function Curring :: sum of three number: '+(num1+num2+num3))
+
+sum(2)(4)(6)
+
+//! JSON 
+// json : javascript object notation
+
+const jsonData = {
+    "name":"Arjun",
+    "work":"MERN Stack Developer",
+    "age":28
+}
+console.log({'JSON DATA':jsonData})
+const jsonStr = JSON.stringify(jsonData)
+console.log({'JSON String':jsonStr})
+const jsonObj = JSON.parse(jsonStr)
+console.log({'JSON Object':jsonObj})
+
+// Promises
+
+// We can handle promises using then() or catch() or async await format.
+//! promises
+// function getpromisesData() {
+//     alert('Promises Data will fetched...!')
+//     const options = {
+//         method: 'GET',
+//         url: 'https://icanhazdadjoke.com/slack'
+//     }
+//     axios(options)
+//     .then(response=>{
+//         console.log(response.data);
+//     response.data.attachments.map((data)=>{
+//         document.querySelector('#promisesData').innerHTML = data.text;
+//     });
+//     }).catch(err=>console.log(err))
+// }
+
+//! async await with try-catch block
+// async function getasyncData() {
+//     alert('Async Data will fetched...!')
+//     const options = {
+//         method: 'GET',
+//         url: 'https://icanhazdadjoke.com/slacks'
+//     }
+//     try{
+//         const response = await axios(options);
+//         console.log(response.data);
+//         response.data.attachments.map((data)=>{
+//             document.querySelector('#asyncData').innerHTML = data.text;
+//         });
+//     }catch(err){
+//         console.log({Error:err})
+//     }
+// }
+
+//! OOPs in JS
+// class and object create
+class Bank{
+    constructor(name,customerName,balance){
+        this.name = name
+        this.customerName = customerName
+        this.balance = balance
+    }
+
+    setWithdraw(){
+        return this.balance-money
+    }
+    setDiposit(money){
+        return this.balance+money
+    }
+    getBalance(){
+        return this.balance
+    }
+
+}
+
+const arjun = new Bank('HDFC','Arjun',10000)
+console.log(arjun);
+
