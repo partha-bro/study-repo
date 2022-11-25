@@ -283,6 +283,13 @@
     $ chmod 755 filename
     $ chmod 644 filename
 
+- **The Linux users command**
+
+    How to add a new user in ubuntu.
+        $ sudo useradd -m <userName>        :=> use -m for create a home directory
+        $ sudo passwd <userName>
+        $ sudo userdel <userName>
+
 - **The Linux du command**
 
     The du command will calculate the size of a directory as a whole:
@@ -605,7 +612,7 @@
     Import:
             $ /opt/lampp/bin/mysql -u 'username' -p 'password' 'Database_name' < 'filename.db'
     Export:
-            $ /opt/lampp/bin/mysql -u 'username' -p 'password' 'Database_name' > 'filename.db'
+            $ /opt/lampp/bin/mysqldump -u 'username' -p 'password' 'Database_name' > 'filename.db'
 
 ### How can you start lampp server services in ubuntu system?
 
