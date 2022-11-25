@@ -280,15 +280,20 @@
     We use them in pairs of 3, to set the permissions of all the 3 groups altogether:
 
     $ chmod 777 filename
+
     $ chmod 755 filename
+
     $ chmod 644 filename
 
 - **The Linux users command**
 
     How to add a new user in ubuntu.
-        $ sudo useradd -m <userName>        :=> use -m for create a home directory
-        $ sudo passwd <userName>
-        $ sudo userdel <userName>
+
+    $ sudo useradd -m <userName>        :=> use -m for create a home directory
+
+    $ sudo passwd <userName>
+
+    $ sudo userdel <userName>
 
 - **The Linux du command**
 
