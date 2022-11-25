@@ -79,6 +79,7 @@
     git reset 'commit no'           -> it's roll back to given commit number from git log
                                         ( it's work: add changes to untracked area)
     git reset --hard 'commit no'    -> it's roll back to given commit number from git log forcefully delete extra codes.
+    git checkout 'commit no'        -> This is use to check the files in perticular commit number. it's restore the file of that commit number and not delete any forward commit number and you can goto top commit number then type <git checkout master>.
 
 ## What is the difference between pull and clone?
 
