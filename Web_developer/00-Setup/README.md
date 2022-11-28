@@ -30,10 +30,18 @@
 
 #### Chrome Extension
 
-        Pesticide for Chrome (without hover bar)
-        json viewer
-        enhancer for youtube
-        React Developer Tools
+        1. Pesticide for Chrome (without hover bar)
+        2. JSON Viewer
+        3. enhancer for youtube
+        4. React Developer Tools
+        5. Redux DevTool
+        6. Daily 2.0
+        7. Enhanced Github
+        8. Clear Cache
+        9. VidIQ
+        10.CSSViewer
+        11.Web Developer
+        12.Site Palette
 
 #### How to know about screen resolution in chrome browser?
 
