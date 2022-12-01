@@ -48,6 +48,10 @@
     - express-session
     - passport / passport-local / Authentication [Google/Facebook]
     - JWT auth
+    - EventLoop
+        - Call Stack
+        - APIs
+        - Event Queue
 
 - **Express JS**
 
