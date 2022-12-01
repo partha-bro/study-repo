@@ -142,7 +142,15 @@
 
 ### Git & GitHub
 
-### Heroku
+### Deploy apps in free
+    - Heroku is Dead for free
+
+    - Now Alternatives
+        - back4app.com
+        - Cyclic.sh
+        - railway.app
+        - fly.io
+        - render.com
 
 ### mongoDb application
     $ mongod
