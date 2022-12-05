@@ -106,4 +106,9 @@
     - PATCH
     - DELETE
 
+- **Testing** 
+    -JEST
+        - Learn Jest:  https://www.youtube.com/watch?v=33z-wPstFkE&list=PL8p2I9GklV467ShxKSeYyTg_rUT1aduvM&index=7
+        - React with Jest: https://www.youtube.com/watch?v=-WCFM6QOYSQ&list=PLxnSeqQVewBNZnDbkokG8QIyEAtMCzoq-
+
 - **DSA**
