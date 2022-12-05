@@ -62,6 +62,42 @@
     - <%- include('external file')%>
 
 - **MongoDB**
+    - MongoDB Shell Command
+        - show dbs
+        - use dbName
+        - show collections
+        - db.collectionName.find().pretty()
+    
+    - mongoose & schema
+
+    - Create
+        - insertOne
+        - insertMany
+
+    - Read
+        - findOne()
+        - findMany()
+
+    - Update
+        - updateOne()
+        - updateMany()
+
+    - Delete
+        - deleteOne()
+        - deleteMany()
+
+    - Projection
+        - findOne({},{"_id":0,"__v":0,"name":1})
+
+    - Query Chaning
+        - count()
+        - sort()
+        - limit()
+        - skip()
+        - distint()
+    
+    - Query Population [ Relation between two collection ]
+    
 
 - **REST API**
     - GET
