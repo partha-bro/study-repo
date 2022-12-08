@@ -75,6 +75,7 @@
         - Matt Bierner.Markdown preview Github style
         - Marquee : Stay organized
         - Quokka [ Live debug of js code ]
+        - ES7 anippets
         
 ### Node 
     Install: 
