@@ -118,3 +118,48 @@ for(i=0;i<arr2.length;i++){
 console.log( arr3)
 
 // using while loop [ Solution 2 ]
+/* NOTE: This solution must need sorted array otherwise it won't work.*/ 
+
+arr1 = [2,4,6,8,10,12]
+arr2 = [1,3,5,7]
+arr3 = []
+
+let a1 = 0      // iteration of an array
+let a2 = 0
+let a3 = 0
+
+while(a1<arr1.length && a2<arr2.length){
+    if(arr1[a1]<arr2[a2]){
+        arr3[a3] = arr1[a1]
+        a1++
+    }else{
+        arr3[a3] = arr2[a2]
+        a2++
+    }
+    a3++
+}
+console.log(arr3)      // this array doesn't contain all data so we use another while loop
+
+while(a1<arr1.length){
+    arr3[a3] = arr1[a1]
+    a1++
+    a3++
+}
+console.log(arr3)
+
+// Sorting
+console.log(arr)
+let sortedArr = []
+// console.log(arr.sort())
+// console.log(arr.reverse())
+
+for(i=0;i<arr.length;i++){
+    for(j=0;j<arr.length;j++){
+        if(arr[j]>arr[j+1]){
+            let temp = arr[j]
+            arr[j+1] = arr[j]
+            arr[j] = temp
+        }
+    }
+}
+console.log(arr)
