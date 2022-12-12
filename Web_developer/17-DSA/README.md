@@ -38,4 +38,10 @@
 
     Different Algo can be use for options
 
-## 
+## Array 
+### Traversing and Accessing
+### Reverse
+### Insert
+### Delete
+### Search
+### Merge two array
