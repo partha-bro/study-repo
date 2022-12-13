@@ -88,3 +88,24 @@
         - Big-O notation [ worst case ]
         - Omega notation [ avarage case ]
         - Theta notation [ best case ]
+
+## Recursion DS
+    Recursion in data structure is when a function calls itself indirectly or directly,
+     and the function calling itself is known as a recursive function. 
+     It's generally used when the answer to a larger issue could be depicted in terms of smaller problems.
+    
+    Type:
+        - directly
+            Functions are called themselves
+        - indirectly
+            Indirect recursion is where functions call other functions to call the original function.
+
+## Head and Tail Recursion
+#### Understand Debugger?
+#### How js works (Call Stack Main)
+#### Head recursion
+    - If the recursive call occurs at the start of a method, it is called a head recursion.
+#### Tail recursion
+    - If the recursive call occurs at the end of a method, it is called a tail recursion.
+
+### Recursion Array with Reverse
