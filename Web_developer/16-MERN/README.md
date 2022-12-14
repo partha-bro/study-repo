@@ -74,7 +74,7 @@
                                                 {
                                                     name: {
                                                         type: String,
-                                                        require: [true, 'must provide name'],
+                                                        required: [true, 'must provide name'],
                                                         trim: true,
                                                         maxlength: 20
                                                     },
@@ -126,4 +126,35 @@
 
                 module.exports = notFound
             - app.use(notFound)
-                
+    
+    Common try catch handle
+    - Step 15: In Controller, we use all try and catch in all DB methods wo we create a middleware
+            -    const asyncWrapper = (fn) => {
+                    return async (req,res,next) => {
+                        try{
+                            await fn(req,res,next)
+                        }catch(error){
+                            next(error)
+                        }
+                    }
+                }
+
+                module.exports = asyncWrapper
+
+            - const getAllTasks = asyncWrapper( async (req,res)=>{
+                        const tasks = await TasksDB.find({},{_id:1,name:1,completed:1})
+                        res.status(200).json({tasks})
+                    }
+                )
+
+    Error Handler
+    - Step 16: make a middleware of error handler and use it in last of app.js/server.js
+                - const errorHandler = (err,req,res,next) => {
+                    return res.status(500).json({msg:err})
+                }
+
+                module.exports = errorHandler
+
+                - app.use(errorHandler)
+
+    

@@ -109,3 +109,21 @@
     - If the recursive call occurs at the end of a method, it is called a tail recursion.
 
 ### Recursion Array with Reverse
+
+## Stack
+    It is a linear data structure that follows a particular order in which the operations are performed.
+    LIFO( Last In First Out )
+
+    Opration in stack
+    - push() to insert an element into the stack
+    - pop() to remove an element from the stack
+    - top() Returns the top element of the stack.
+    - isEmpty() returns true if stack is empty else false.
+    - size() returns the size of stack.
+
+#### Reverse String with Stack
+    - understand logic for reverse string with stack
+    - Make Stack push and pop both operations
+    - Define string and convert to array
+    - Push and Pop string to stack
+    - Get reverse string back from stack
