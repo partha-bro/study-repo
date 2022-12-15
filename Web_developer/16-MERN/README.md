@@ -117,7 +117,7 @@
                     runvalidators is use for when it update new data always check schema validation, why? A-> it default,
                      when create new data then use schema validator but when it update then it won't do it.  
 
-    Error Page
+    Error Page middleware
     - Step 14: setup error middleware for non valid routes
             - const notFound = (req,res,next) => {
                     res.status(404).send('route not Found')
@@ -127,7 +127,7 @@
                 module.exports = notFound
             - app.use(notFound)
     
-    Common try catch handle
+    Common try catch handle middleware
     - Step 15: In Controller, we use all try and catch in all DB methods wo we create a middleware
             -    const asyncWrapper = (fn) => {
                     return async (req,res,next) => {
@@ -147,14 +147,28 @@
                     }
                 )
 
-    Error Handler
+    Error Handler middleware
     - Step 16: make a middleware of error handler and use it in last of app.js/server.js
+                Here use next for error pass to middleware and create a object of error with message
+                - const getTask = asyncWrapper(  async (req,res,next) => {
+                            const task = await TasksDB.findById(req.params.id)
+                            if(!task){
+                                const error = new Error('Not Found')
+                                error.status = 404
+                                return next(error)
+                            }
+                            res.status(200).json({task})
+                        }
+                    )
+                
+                here we can catch that error using err argument
                 - const errorHandler = (err,req,res,next) => {
-                    return res.status(500).json({msg:err})
+                    return res.status(err.status).json({status:err.status,msg:err.message})
                 }
 
                 module.exports = errorHandler
 
+                here use that middleware in last of every middleware
                 - app.use(errorHandler)
 
     
