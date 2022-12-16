@@ -4,6 +4,7 @@
 
 ### Q1
     Why A->
+    JS always follow hoising rule
     - var is valid after the call and defind because it runs in scope, but program knows the variable is created but not assign value so it gives undefind.
     - let is run line by line so it gives error.
 
@@ -82,7 +83,8 @@
 
 ### Q19
     Why A-> 
-    - hasOwnProperty() is present in prototype of object and it has number or string argument in key of object 
+    - hasOwnProperty() is present in prototype of object and it has validate the key of object if exists
+    - key data type always string in object
 
 ### Q20
     Why A->
@@ -204,3 +206,101 @@
 ### Q43
     Why A-> 
     - here +"10" converts to number 10 and true converts 1 so answer is 11
+
+### Q44
+    Why A-> 
+    - Here string and array is iterable but object is not iterable
+    so error is occur in ...obj
+
+### Q45
+    Why A-> 
+    - NaN full form : Not a Number 
+    - data type of NaN is number
+
+### Q46
+    Why A-> 
+    - set data type always store unique value
+
+### Q47
+    Why A-> 
+    - delete is a oprator for delete object value and key and value will be empty
+    - but delete array value and that index value will be empty and array length not tobe decrease
+    
+    - But delete op can not delete the object or array 
+
+### Q48
+    Why A-> 
+    - {...data,...info} we can use spread op for merging
+
+### Q49
+    Why A-> 
+    - here data variable use as object literecy [shorthand]
+    - so output is {
+        data as key : { data of object },
+        info object destructure 
+    }
+
+### Q50
+    Why A-> 
+    - logical oprator compile left to right so whatever true value is present it return
+
+### Q51
+    Why A-> 
+    - here false and '' empty string is represent 0 so output is null
+
+### Q52
+    Why A-> 
+    - it return promises with fullfilled 5
+
+### Q53
+    Why A-> 
+    - Parses JSON to a JS Value
+    The JSON.parse () method parses a JSON string, constructing the JavaScript value or object described by the string.
+    JSON.stringify () takes a JavaScript object as input and transforms it into a JSON string. 
+
+### Q54
+    Why A-> 
+    - Here age variable scope is global, but name is again create let variable so that name scope is local and before define, we can call that variable
+    - output age is 25
+            name is error: cannot access 'name' before initialization
+
+### Q55
+    Why A-> 
+    - here arrow system is present with 'I Love' argument so 
+    output is I Love to program
+
+### Q56
+    Why A-> 
+    - bitwise not op only gives true or false so condition will be false
+
+### Q57
+    Why A-> 
+    - isNaN() method is check that variable is not a number
+
+### Q58
+    Why A-> 
+    - Object.seal() method is use to seal the object, not able to add any property but we can change value of existing property
+
+### Q59
+    Why A-> 
+    - map return a array but forEach doesn't return anything
+
+### Q60
+    Why A-> 
+    - here ** means to the power
+    - 3 to the power 3 is 27
+
+### Q61
+    Why A-> 
+    - Always + unary op converts to integer
+    - here -b means negative b
+    - -(-b) means first compile -b is -2 then - of -2 is 2
+    - but --b compile left to right so 1 [ i don't no how ]
+
+### Q62
+    Why A-> 
+    - race() is inbuild in Promise class to execute who is first complete resolve that is output
+
+### Q63
+    Why A-> 
+    - when person is null but inside members have different memory location so members have object of array result

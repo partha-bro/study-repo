@@ -7,7 +7,7 @@ console.log("JavaScript logical and tricky questions")
 {
     const fruit = () => {
         console.log(name)
-        // console.log(price)
+        console.log(price)
 
         var name = 'apple'
         let price = 20
@@ -85,7 +85,7 @@ console.log("JavaScript logical and tricky questions")
 // Q9. what is the output
 {
     let y
-    // let y=10
+    let y=10
     console.log(y);
 }
 
@@ -148,7 +148,7 @@ console.log("JavaScript logical and tricky questions")
         age = 21
         console.log(age)
     }
-    // getAge()
+    getAge()
 }
 
 // Q17. what is the output
@@ -159,7 +159,7 @@ console.log("JavaScript logical and tricky questions")
 
 // Q18. How long is cool_secret accessible?
 {
-    // sessionStorage.setItem('cool_secret',123)
+    sessionStorage.setItem('cool_secret',123)
 }
 
 // Q19. what is the output
@@ -169,7 +169,7 @@ console.log("JavaScript logical and tricky questions")
     console.log(obj.hasOwnProperty('1'))
     console.log(obj.hasOwnProperty(1))
     console.log(obj.hasOwnProperty('z'))
-    // console.log(obj.hasOwnProperty(z))
+    console.log(obj.hasOwnProperty(z))
 }
 
 // Q20. what is the output
@@ -199,13 +199,13 @@ console.log("JavaScript logical and tricky questions")
 
 // Q23. what is the output
 {
-    // <div onclick="console.log('first div')">
-    //     <div onclick="console.log('second div')">
-    //         <button oclick="console.log('button')">
-    //             Click!
-    //         </button>
-    //     </div>
-    // </div>
+    <div onclick="console.log('first div')">
+        <div onclick="console.log('second div')">
+            <button oclick="console.log('button')">
+                Click!
+            </button>
+        </div>
+    </div>
 }
 
 // Q24. what is the output
@@ -377,4 +377,185 @@ console.log("JavaScript logical and tricky questions")
     console.log(true + +"10");
 }
 
-// please 84 question time: 1:38:56
+// Q44. what is the output
+{
+    let str = "Hello"
+    let arr = [1,2,3,4,5,6]
+    let obj = { name: "arjun"}
+    console.log(...str);
+    console.log(...arr);
+    console.log([...arr]);
+    console.log({...obj});
+    console.log(...obj);
+}
+
+// Q45. what is the output
+{
+    console.log(typeof NaN);
+}
+
+// Q46. what is the output
+{
+    const set = new Set([1,2,1,2,3,4])
+    console.log(set);
+}
+
+// Q47. what is the output
+{
+    let obj = { name: 'Arjun', age: 28}
+    console.log(delete obj.name);
+    console.log(obj);
+    console.log(delete obj);
+
+    let arr = [ 'name','Arjun', 'age', 28 ]
+    console.log(arr.length);
+    console.log(delete arr[1]);
+    console.log(arr);
+    console.log(arr.length);
+    console.log(delete arr);
+}
+
+// Q48. Merge 2 object
+{
+    let data = { name: 'Arjun', age: 28, skill: 'MERN'}
+    let info = { city: 'Puri', mail: 'sarathi.partha95@gmail.com'}
+    // code how to merge 2 object
+   
+}
+
+// Q49. what is the output
+{
+    let data = { name: 'Arjun', age: 28, skill: 'MERN'}
+    let info = { city: 'Puri', mail: 'sarathi.partha95@gmail.com'}
+    data = {data, ...info}
+   console.log(data);
+}
+
+// Q50. what is the output
+{
+    const result = false || {} || 20 || null
+    console.log(result);
+}
+
+// Q51. what is the output
+{
+    const result =  false || '' || null
+    console.log(result);
+}
+
+// Q52. what is the output
+{
+    console.log(Promise.resolve(5));
+}
+
+// Q53. what is the output
+{
+    /*
+    What JSON.parse() method will do
+        A: Parses JSON to a JS Value
+        B: Parses a JS object to JSON
+        C: Parses any JS value to JSON
+        D: Parses JSON to a JS object only
+    */
+}
+
+// Q54. what is the output
+{
+    let name = 'Sidhu'
+    let age = 25
+    function getName() {
+        console.log(age);
+        console.log(name)
+        let name = 'anil'
+    }
+    getName()
+}
+
+// Q55. what is the output
+{
+    console.log(`${(x => x)('I Love')} to program`);
+}
+
+// Q56. what is the output
+{
+    const name = 'Code step by step'
+    console.log(!typeof name === 'object');
+    console.log(!typeof name === 'string');
+}
+
+// Q57. what is the output
+{
+    const name = "subscribe"
+    const age = 21
+    console.log(isNaN(name));
+    console.log(isNaN(age));
+}
+
+// Q58. what is the output
+{
+    let person = { name: 'Arjun' }
+    Object.seal(person)
+    person.name = 'Partha'
+    person.age = 28
+    console.log(person);
+}
+
+Q59. what is the different between map and forEach function
+{
+    
+}
+
+// Q60. what is the output
+{
+    let result = 3 ** 3
+    let result2 = Math.pow(3,3)
+    console.log(result);
+    console.log(result2);
+}
+
+// Q61. what is the output
+{
+        console.log(0.1+0.2 == 0.3)
+        console.log(0.1+0.2)
+    console.log(+'')
+    console.log(+false)
+    console.log(+true)
+    console.log(+ '10')
+    console.log(+ {})
+    console.log(+ [])
+    console.log(+ undefined)
+    console.log(+ null)
+    console.log(-2)
+    console.log(-(-2))
+    console.log(1 + + "1" === 2)
+    console.log(+"1" + + "1" === 2)
+    console.log("1" + "1" ===  "11")
+    let b = 2
+    console.log(--b === 1)
+    console.log(--b)
+}
+
+// Q62. what is the output
+{
+    const firstPromise = new Promise(
+        (resolve,reject) => {
+            setTimeout(resolve, 500, 'one')
+        }
+    )
+
+    const secondPromise = new Promise(
+        (resolve,reject) => {
+            setTimeout(resolve, 100, 'two')
+        }
+    )
+
+    Promise.race([firstPromise,secondPromise]).then(resolve => console.log(resolve))
+}
+
+// Q63. what is the output
+{
+    let person = { name:'Arjun' }
+    const members = [person]
+    person = null
+    console.log(members);
+}
