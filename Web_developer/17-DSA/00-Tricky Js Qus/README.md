@@ -304,3 +304,106 @@
 ### Q63
     Why A-> 
     - when person is null but inside members have different memory location so members have object of array result
+
+### Q64
+    Why A->
+
+### Q65
+    Why A->
+    - floating numbers data type in number
+
+### Q66
+    Why A->
+    - The delete operator returns a boolean value: true on a successful deletion, else it'll return false. However, variables declared with the var, const or let keyword cannot be deleted using the delete operator.
+
+    - The name variable was declared with a const keyword, so its deletion is not successful: false is returned. When we set age equal to 21, we actually added a property called age to the global object. You can successfully delete properties from objects this way, also the global object, so delete age returns true.
+
+### Q67
+    Why A-> Ecma 2017 topic these are string methods
+    - With the padStart method, we can add padding to the beginning of a string. The value passed to this method is the total length of the string together with the padding. The string "Akhil Sunder" has a length of 12. name.padStart(13) inserts 1 space at the start of the string, because 12 + 1 is 13.
+
+    - If the argument passed to the padStart method is smaller than the length of the array, no padding will be added.
+
+### Q68
+    Why A->
+    - String.raw returns a string where the escapes (\n, \v, \t etc.) are ignored! Backslashes can be an issue since you could end up with something like:
+
+        const path = `C:\Documents\Projects\table.html`
+
+        Which would result in:
+
+        "C:DocumentsProjects able.html"
+
+        With String.raw, it would simply ignore the escape and print:
+
+        C:\Documents\Projects\table.html
+
+        In this case, the string is Hello\nworld, which gets logged.
+
+### Q69
+    Why A->
+    - console.log(isNaN(true));     // false
+    console.log(isNaN(1));          // false
+    console.log(isNaN(''));         // false
+    console.log(isNaN('string'));   // true
+
+    NOTE: true, false, '', null may be data type is different but value is integer.
+
+### Q70
+    Why A->
+    - console.log(false == "0");    // true
+      console.log(false === "0");   // false
+
+### Q71
+    Why A->
+    - 4
+      10
+
+### Q72
+    Why A->
+    - Identifier 'x' has already been declared
+
+### Q73
+    Why A->
+    - There are only six falsy values:
+        undefined
+        null
+        NaN
+        0
+        '' (empty string)
+        false
+    
+    - Function constructors, like new Number and new Boolean are truthy.
+
+### Q74
+    Why A->
+    - A Symbol is not enumerable. The Object.keys method returns all enumerable key properties on an object. The Symbol won't be visible, and an empty array is returned. When logging the entire object, all properties will be visible, even non-enumerable ones.
+
+    - This is one of the many qualities of a symbol: besides representing an entirely unique value (which prevents accidental name collision on objects, for example when working with 2 libraries that want to add properties to the same object), you can also "hide" properties on objects this way (although not entirely. You can still access symbols using the Object.getOwnPropertySymbols() method).
+
+### Q75
+    Why A->
+    - [] is a truthy value. With the && operator, the right-hand value will be returned if the left-hand value is a truthy value. In this case, the left-hand value [] is a truthy value, so "Im' gets returned.
+
+    - "" is a falsy value. If the left-hand value is falsy, nothing gets returned. n\'t doesn't get returned.
+
+### Q76
+    Why A->
+    - SyntaxError: Unexpected end of input
+
+### Q77
+    Why A->
+    - ANS: [5]
+    Because in for loop semicolor add in end of for loop so next i is only increment 0 to 4 after that global statement will exicute and i value will be 4.
+
+### Q78
+    Why A->
+    -
+
+### Q79
+    Why A->
+    -
+
+### Q80
+    Why A->
+    -

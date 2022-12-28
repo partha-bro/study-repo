@@ -1,7 +1,7 @@
 console.log("JavaScript logical and tricky questions")
 
 // NOTE: First write output in comment after that run Qukka file to see result
-// Source: https://www.youtube.com/watch?v=riloPTtAuAM
+// Source: https://github.com/learning-zone/javascript-coding-practice
 
 // Q1. Output of below function
 {
@@ -558,4 +558,146 @@ Q59. what is the different between map and forEach function
     const members = [person]
     person = null
     console.log(members);
+}
+
+// Q64. what is the output
+{
+    let g = 0;
+    g = 1 && g++
+    c = 1 && g++
+    console.log(c);
+    console.log(g);
+}
+
+// Q65. waht is the output
+{
+    var a = 1.2;
+    console.log(typeof a); 
+}
+
+// Q66. What is the output
+{
+    const name = "Swarna";
+    age = 21;
+
+    console.log(delete name);
+    console.log(delete age);
+}
+
+// Q67. What is the output
+{
+    const name = "Akhil Sunder";
+    console.log(name);
+    console.log(name.padStart(13));
+    console.log(name.padStart(15,'-'));
+    console.log(name.padStart(2));
+    console.log(name.padEnd(15,'-'));
+}
+
+// Q68. What is the output
+{
+    console.log(String.raw`Hello\nworld`);
+    console.log(`Hello\nworld`);
+}
+
+// Q69. What is the output
+{
+    console.log(isNaN(true));
+    console.log(isNaN(1));
+    console.log(isNaN(''));
+    console.log(isNaN('string'));
+    console.log(isNaN(null));
+}
+
+// Q70. What is the output
+{
+    console.log(false == "0"); 
+    console.log(false === "0");
+}
+
+// Q71. What is the output
+{
+    var x = 10;
+    if (x) {
+    let x = 4;
+        console.log(x)
+    }
+    console.log(x); 
+}
+
+// Q72. What is the output
+{
+    var x = 10;
+    const fn = (x) => {
+    let x = 4;
+        console.log(x)
+    }
+    console.log(fn(x)); 
+}
+
+// Q73. Which of these values are falsy?
+{
+    0;
+    new Number(0);
+    ("");
+    (" ");
+    new Boolean(false);
+    undefined;
+    NaN;
+}
+
+// Q74. What is the output
+{
+    const info = {
+        [Symbol("a")]: "b",
+      };
+      
+      console.log(info);
+      console.log(Object.keys(info));
+}
+
+// Q75. What is the output
+{
+    const output = `${[] && "Im"}possible!
+You should${"" && `n't`} see a therapist after so much JavaScript lol`;
+}
+
+// Q76. What is the output
+{
+    if(2 == true) 
+
+    if(2 == false)
+}
+
+// Q77. What is the output
+{
+    const length = 4;
+    const numbers = [];
+
+    for (var i = 0; i < length; i++);
+    {
+    numbers.push(i + 1);
+    }
+
+    console.log(numbers);
+}
+
+// Q78. What is the output
+{
+
+}
+
+// Q79. What is the output
+{
+
+}
+
+// Q80. What is the output
+{
+
+}
+
+// Q81. What is the output
+{
+
 }
