@@ -564,8 +564,6 @@ Q59. what is the different between map and forEach function
 {
     let g = 0;
     g = 1 && g++
-    c = 1 && g++
-    console.log(c);
     console.log(g);
 }
 

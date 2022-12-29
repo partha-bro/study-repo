@@ -307,6 +307,7 @@
 
 ### Q64
     Why A->
+    - 1 is a truthy value. With the && operator, the right-hand value will be returned if the left-hand value is a truthy value. In this case, the left-hand value 1 is a truthy value, so 0 will gets assign to g, because its post-Incement oprand.
 
 ### Q65
     Why A->
