@@ -682,12 +682,15 @@ You should${"" && `n't`} see a therapist after so much JavaScript lol`;
 
 // Q78. What is the output
 {
-
+    const num = parseInt("7*6", 10);
+    console.log(num);
 }
 
 // Q79. What is the output
 {
-
+    console.log(Number(2) === Number(2));
+    console.log(Boolean(false) === Boolean(false));
+    console.log(Symbol("foo") === Symbol("foo"));
 }
 
 // Q80. What is the output

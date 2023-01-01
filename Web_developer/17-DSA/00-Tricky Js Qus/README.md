@@ -399,11 +399,15 @@
 
 ### Q78
     Why A->
-    -
+    - Only the first numbers in the string is returned. Based on the radix (the second argument in order to specify what type of number we want to parse it to: base 10, hexadecimal, octal, binary, etc.), the parseInt checks whether the characters in the string are valid. Once it encounters a character that isn't a valid number in the radix, it stops parsing and ignores the following characters.
+
+    - * is not a valid number. It only parses "7" into the decimal 7. num now holds the value of 7.
 
 ### Q79
     Why A->
-    -
+    - true
+    - true
+    - Every Symbol is entirely unique. The purpose of the argument passed to the Symbol is to give the Symbol a description. The value of the Symbol is not dependent on the passed argument. As we test equality, we are creating two entirely new symbols: the first Symbol('foo'), and the second Symbol('foo'). These two values are unique and not equal to each other, Symbol('foo') === Symbol('foo') returns false.
 
 ### Q80
     Why A->
