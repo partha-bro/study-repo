@@ -127,3 +127,23 @@
     - Define string and convert to array
     - Push and Pop string to stack
     - Get reverse string back from stack
+
+#### Stack with Class
+    - Understand logic to implement stack with class
+    - make stack class
+    - make push and pop both functions for operations
+
+#### Reverse String with Stack with class
+
+## Queue
+
+#### What is Queue
+    A Queue is defined as a linear data structure that is open at both ends and the operations are performed in First In First Out (FIFO) order.
+
+#### enqueue and dequeue operations
+    - Queue: the name of the array storing queue elements.
+    - Front: the index where the first element is stored in the array representing the queue.
+    - Rear: the index where the last element is stored in an array representing the queue.
+
+    - Enqueue -> add item in queue from front
+    - Dequeue -> remove item in queue from rear
