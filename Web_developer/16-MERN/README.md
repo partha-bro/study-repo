@@ -86,6 +86,15 @@
                 trim: true,
                 maxlength: 20
             },
+            phone: {
+                type: String,
+                match: /^[0-9]{10}$/        // Use regex with 10 digit number of 0 to 9
+            },
+            email: {
+                type: String,
+                required: true,
+                lowercase: true
+            }
             price:{
                 type: Number,
                 required: [true, 'price name must be provided']
@@ -98,10 +107,6 @@
                 type: Number,
                 default: 4.5
             },
-            createdAt: {
-                type: Date,
-                default: Date.now()
-            },
             company: {
                 type: String,
                 enum: {
@@ -110,7 +115,7 @@
                     }
                 // so then you will create an enum for it so that if someone tries to enter some other value apart from these two values, db will throw an error.
             }
-        }
+        },{ timestamps: true }      //Mongoose timestamps are supported by the schema. Timestamps save the current time of the document created and also when it was updated in form of a Date by turning it true. When set to true, the mongoose creates two fields as follows: createdAt, updatedAt
     ) 
     ```
 
@@ -121,7 +126,7 @@
     ```
         Eg: const deleteTask = async (req,res) => {
                 try {
-                    const task = await TasksDB.findOneAndDelete({_id:req.params.id})
+                    const task = await TasksDB.findByIdAndDelete(req.params.id)
                     if(!task){
                         return res.status(404).json({'message':`No Task Deleted with Id : ${req.params.id}`})
                     }
@@ -137,8 +142,11 @@
     - Use proper mongoose default method for CRUD
         - Create  : create()
         - Read    : find() for array and findOne() for one item
-        - Update  : findOneAndUpdate()
-        - Delete  : findOneAndDelete()
+        - Update  : findByIdAndUpdate() or findOneAndUpdate()
+        - Delete  : findByIdAndDelete() or findOneAndDelete() 
+
+        Note : we can not use findOneAndDelete or update because when we pass any argument without unique id 
+        then may be same data of first fetch will be delete or update. and it may be dangrous.
 
 #### Update Method
 - Step 13: 
