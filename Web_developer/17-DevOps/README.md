@@ -130,7 +130,11 @@
 
 - docker build
     // make a docker using [build] name [-t] and paste in current folder [.]
-    - docker build . -t node-app    
+    - docker build . -t node-app:version    
+
+- check all images
+    - docker image ls
+    - docker image rm [image-id]
 
 - access the permission to the current user for docker daemon socket
     - add User permission
@@ -150,6 +154,9 @@
 
 - check process of container
     - docker ps
+    - docker ps -a
+    - docker container list
+    - docker container rm [container-id]
 
 - kill that docker
     - docker kill [container-id]
