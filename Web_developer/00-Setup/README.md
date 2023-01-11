@@ -55,11 +55,13 @@
 #### VS Extension
 
     ##### Best Theme for VS
+        - Web Template Studio (Preview) : Microsoft
         - Andromeda     [My Best Theme Ever]
         - gerane.Dracula Theme
         - Material Icon Theme
         - peacock       [For different color of workspace]
         - Better Comments
+        - Docker
 
     ##### Recommended
         - esbenp.prettier-vscode
