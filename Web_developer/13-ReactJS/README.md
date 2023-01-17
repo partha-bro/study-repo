@@ -1340,3 +1340,37 @@
                 4. Use the React-Redux useSelector/useDispatch hooks in React components
                     i. Read data from the store with the useSelector hook
                     ii. Get the dispatch function with the useDispatch hook, and dispatch actions as needed
+
+
+### Interview Question: Is it possible to use if...else... statement in React render function?
+- Answer: There actually is a way to do exactly what OP is asking. Just render and call an anonymous function like so:
+    - Four ways of conditional rendering
+        - Ternary operator
+        - Logical operator && ||
+        - if, else, else if - Call using anonymos function and call itself LIKE IIFE [Intermidiate Invoked Function Execution]
+```
+    render () {
+        return (
+            <div>
+                {
+                    // IIFE Style
+                    (() => {
+                        if (someCase) {
+                        return (
+                            <div>someCase</div>
+                        )
+                        } else if (otherCase) {
+                        return (
+                            <div>otherCase</div>
+                        )
+                        } else {
+                        return (
+                            <div>catch all</div>
+                        )
+                        }
+                    })()
+                }
+            </div>
+        )
+    }
+```
