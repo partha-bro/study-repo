@@ -22,6 +22,56 @@
 
 ## Client - React JS
 - React-router-dom
+    - BrowserRouter
+    - Routes
+    - Route
+    - useParams
+        - const { id } = useParams()
+    - useSearchParams       // it is like fetch query of URL
+        ```
+            // URL: http://localhost:3000/api/v1/users/detail?name='arjun'&age=28
+            const [searchParams,setSearchParams] = useSearchParams()
+            const nameSearch = searchParams.get('name')
+            const ageSearch = searchParams.get('age')
+
+            // update value using setSearchParams({ age: 30})
+            // reset value using setSearchParams({})
+        ```
+    - useNavigate
+        ```
+            const navigate = useNavigate()
+            <button onClick={()=>navigate('home')}>Go Home</button>
+            <button onClick={()=>navigate(-1)}>Go Back</button>
+        ```
+    - NavLink
+    - Link
+    - Question: what is the difference between Link and NavLink in react-router-dom?
+        - A. The NavLink is used when you want to highlight a link as active. So, on every routing to a page, the link is highlighted according to the activeClassName . Link is for links that need no highlighting. And a is for external links.
+        ```
+            const navLinkStyles = ({ isActive }) => {       // isActive is a props for NalLink component
+                return {
+                    textDecoration: isActive ? 'none' : 'underline,
+                    color: isActive ? 'red' : 'white,
+                }
+            }
+
+            <NavLink to='/home' style={navLinkStyles} >Home</NavLink>
+        ```
+    - Nested route use by <Outlet /> component
+        ```
+        router App component
+        <Route path='/products' element={<Products/>}>
+            <Route element={<Features/>} />      // use index for default component render 
+            <Route path='/features' element={<Features/>} />      // use index for default component render 
+            <Route path='/new' element={<Products/>} />
+        </Route>
+
+        Products component
+        <Link to='/features' >features</Link>
+        <Link to='/new' >new</Link>
+        <Outlet />
+        ```
+
 - bootstrap
 - axios
 - useEffect() Hooks
@@ -43,6 +93,27 @@
 - { [key]:value } => if we use without [], it takes key as a key, but in [key] it takes dynamic value of key
 - spread oprator
 - Higher Order Function
+- Events in JSX
+    - onChange()
+    - onClick()
+    - onSubmit()
+    - onCopy()
+    - onPaste()
+    - onDoubleClick()
+    - onKeyPress()
+        ```
+            const handleKeyPress = (e) => {
+                if(e.key === 'Enter') alert('enter key is press!')
+            }
+        ```
+    - onKeyUp()
+    - onKeyDown()
+
+- Use CSS framework
+    - material ui: https://mui.com/
+    - color palette: https://flatuicolors.com/
+    - css shadow: https://getcssscan.com/css-box-shadow-examples
+    - Dummy API: https://dummyjson.com/
 
 ### Question: Is it possible to use if...else... statement in React render function?
 - Answer: There actually is a way to do exactly what OP is asking. Just render and call an anonymous function like so:
