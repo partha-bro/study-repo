@@ -74,22 +74,59 @@
 
 - bootstrap
 - axios
-- useEffect() Hooks
-- useParams() Hooks
-- useState() Hooks
-    - setState() 
-        - it method always return initial state value format
-        - it contains argument of previous state value
-- form input onChange method having
-    ```
-    const getInput = (e) => {       // e is a event object
-    setInput( {                     // return new state value
-            ...input,               // spead op of preveous state value
-            [e.target.name]: e.target.value     // fetch dynamic value of e.target.name
+- Hooks
+    - useEffect() Hooks
+    - useParams() Hooks
+    - useRef() Hooks
+        - It is use to manupulate dom and use uncontrolled way of form input field.
+        - We can not use setState() in useEffect() hook, because it render infinite times, so avoid that we can use useRef()
+        - use .current object to fetch that tag
+    - useState() Hooks
+        - setState() 
+            - it method always return initial state value format
+            - it contains argument of previous state value
+    - form input onChange method having
+        ```
+        const getInput = (e) => {       // e is a event object
+        setInput( {                     // return new state value
+                ...input,               // spead op of preveous state value
+                [e.target.name]: e.target.value     // fetch dynamic value of e.target.name
+            }
+        )
         }
-      )
-    }
-    ```
+        ```
+    - Custom Hooks
+        - 
+        ```
+            // custom hook || useFetch()
+            import React, { useEffect, useState } from 'react'
+            import axios from 'axios'
+
+            const useFetch = (url) => {
+                const [ data,setData ] = useState([])
+
+                const fetchCall = async (url) => {
+                    const response = await axios.get(url)
+                    const jsonData = await response.data.users
+                    setData(jsonData)
+                }
+
+                useEffect(
+                    ()=>{
+                        fetchCall(url)
+                    },[]
+                )
+
+            return [data]       // this method always return destructure state
+            }
+
+            export default useFetch
+
+            // use custom hook
+            import useFetch from './path/useFetch'
+            const [data or users] = useFetch('url link')
+        ```
+        
 - { [key]:value } => if we use without [], it takes key as a key, but in [key] it takes dynamic value of key
 - spread oprator
 - Higher Order Function
@@ -108,6 +145,66 @@
         ```
     - onKeyUp()
     - onKeyDown()
+
+- React Lazy loading
+    - React Lazy Load is an easy-to-use React component which helps you defer loading content in predictable way. It's fast, You can also use component inside scrolling container, such as div with scrollbar. It will be found automatically. 
+    ```
+        import React, { lazy,Suspense } from 'react'
+
+        const MylazyLoading = lazy( ()=>import('./LazyLoading') )
+
+        const Page4 = () => {
+        return (
+                <div>
+                    <p>Lazy loading</p>
+                    <Suspense fallback='Loading...'>
+                        <MylazyLoading/>
+                    </Suspense>
+                </div>
+            )
+        }
+    ```
+- Loading...  
+    - npm i react-loader-spinner
+    - use
+        ```
+            import { Audio } from 'react-loader-spinner'
+            ;<Audio
+            height="80"
+            width="80"
+            radius="9"
+            color="green"
+            ariaLabel="loading"
+            wrapperStyle
+            wrapperClass
+            />
+        ```
+
+- toasting
+    - npm i react-toastify
+    - use different methods
+        toast('aleart')
+        toast.success('success')
+        toast.error('error')
+        toast.warning('warning')
+        toast.info('info')
+        ```
+             import React from 'react';
+
+                import { ToastContainer, toast } from 'react-toastify';
+                import 'react-toastify/dist/ReactToastify.css';
+                
+                function App(){
+                    const notify = () => toast("Wow so easy!");     //
+
+                    return (
+                    <div>
+                        <button onClick={notify}>Notify!</button>
+                        <ToastContainer />          // Container component in top component or desire component
+                    </div>
+                    );
+                }
+        ```
 
 - Use CSS framework
     - material ui: https://mui.com/
