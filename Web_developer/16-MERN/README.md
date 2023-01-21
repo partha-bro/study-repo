@@ -205,6 +205,74 @@
                     );
                 }
         ```
+- CSS
+    - Flex Box
+        It has two parts, one is container and item
+        - container level style
+            - display: flex;
+            - flex-direction:   row [default-value]
+                                row-reverse
+                                column
+                                column-reverse
+            - flex-wrap:    nowrap [default-value]
+                            wrap
+                            wrap-reverse
+            - flex-flow: use for short hand
+                flex-flow: <flex-direction> <flex-wrap>
+                flex-flow: row wrap
+            - justify-content:  flex-start  [default]
+                                flex-end    
+                                center
+                                space-around
+                                space-between
+                                space-evenly
+                It uses for horizental alignments and no wrap content
+            - align-items:  stretch [default]
+                            flex-start 
+                            flex-end    
+                            center
+                            baseline
+                It uses for vertical alignments and no wrap content
+            - align-content:    stretch [default]
+                                flex-start  
+                                flex-end    
+                                center
+                                space-around
+                                space-between
+                                space-evenly
+                Note: This is only use when items are overflow and use wrap/nowrap property in flex-wrap
+            - 
+        - item level style
+            - align-self:   stretch [default]
+                            auto
+                            flex-start 
+                            flex-end    
+                            center
+                            baseline
+            - order:    -2
+                        -1
+                        0   [default]
+                        1
+                        2
+                Note: set order in items in negative to positive
+            - flex-grow:    0 [default]
+                            1
+                            2
+                Note: Set 2 means item has 2 times width and equally divided and higher number with higher width
+            - flex-basis: 200px/20%
+                Note: it is like max-width
+            - flex-shrink:  0 [default]
+                            1
+                Note: Flex-shrink is allow to shrink that item
+
+            short-hand
+                flex: <flex-grow> <flex-shrink> <flex-basis>
+                flex: 0 0 200px
+                
+            - margin/margin-left/right/top/bottom: auto
+        
+        - Align form with flex box
+
 
 - Use CSS framework
     - material ui: https://mui.com/
