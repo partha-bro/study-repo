@@ -56,28 +56,30 @@
 
     ##### Best Theme for VS
         - Web Template Studio (Preview) : Microsoft
-        - Andromeda     [My Best Theme Ever]
+        - ayu Theme     [My Best Theme Ever]
+        - Andromeda     
         - gerane.Dracula Theme
         - Material Icon Theme
         - peacock       [For different color of workspace]
-        - Better Comments
-        - Docker
+        
 
     ##### Recommended
         - esbenp.prettier-vscode
-        - hex-ci.stylelint-plus
         - dbaeumer.vscode-eslint
-        - DigitalBrainstem.javascript-ejs-support
         - sublime babel/ babel javascript
         - Auto Rename Tag
         - Bracket Pair Colorization Toggler
         - Quokka.js : Use for live debug while codding
-		- Rapid API
         - Ritwick Dey.Live Server
         - Matt Bierner.Markdown preview Github style
-        - Marquee : Stay organized
-        - Quokka [ Live debug of js code ]
-        - ES7 anippets
+        - ES7 React/Redux Snippets
+        - Better Comments
+        - Docker
+        - Error lens
+        - Git graph
+        - Highlight matching tag
+        - Todo tree
+        - Tabnine AI
         
 ### Node 
     Install: 

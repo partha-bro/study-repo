@@ -146,11 +146,15 @@
             - sudo systemctl restart jenkins
 
 - docker build run
-    // -d : run in daemon [background] mode 
-    // --name : give a name to container
-    // -p 8000:8000 : bind container port with system port [host]
-    // todo-node-app : docker image name
-    - docker run -d --name node-app-container -p 8000:8000 todo-node-app
+    - -d : run in daemon [background] mode 
+    - --name : give a name to container
+    - -p 8000:8000 : bind container port with system port [host]
+    - todo-node-app : docker image name
+        - docker run -d --name node-app-container -p 8000:8000 todo-node-app
+
+    - -v $(pwd):/app It means docker file sync with host file
+    - Actual meaning is when we change the code is host machice then docker file automatic change and website will be updated, no need to re-create Image build 
+        - docker run -d --name node-app-container -p 8000:8000 -v $(pwd):/app todo-node-app
 
 - check process of container
     - docker ps
@@ -160,6 +164,9 @@
 
 - kill that docker
     - docker kill [container-id]
+
+- If you want to open terminal of the docker file system
+    - docker exec -it process_id bash
 
 - What is the difference between docker image and container?
     - Dockerfile is a instruction program that create a image.
@@ -177,7 +184,7 @@
 
 ## Webhook
 - What is a webhook?
-    Webhooks are one of a few ways web applications can communicate with each other.
+    - Webhooks are one of a few ways web applications can communicate with each other.
     It allows you to send real-time data from one application to another whenever a given event occurs.
 
 - install a plugins in jenkins

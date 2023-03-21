@@ -421,8 +421,9 @@
     - Always use some flag for proper use mongoose methods like:
     ```
         const task = await TasksDB.findOneAndUpdate({_id:req.params.id},req.body, {
-                        new: true,
-                        runValidators: true
+                        new: true,                  // this flag is use to return the updated data
+                        runValidators: true,        // recheck the validator of schema when data update
+                        upsert: true                // this flag is use for create the fields/data if doesn't exists
                     })
     ```
     - Here new flag is use for always return new data, why? 
