@@ -42,6 +42,10 @@
         10.CSSViewer
         11.Web Developer
         12.Site Palette
+	13.One Tab
+ 	14.Easy color picker
+  	15.Timezone Converter
+   	16.VisBug
 
 #### How to know about screen resolution in chrome browser?
 
